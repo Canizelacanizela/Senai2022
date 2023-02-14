@@ -1,0 +1,7 @@
+1 Adicionar itens a pasta - git add .
+
+2 - git commit -m "comentario"
+
+3 -Para adicionar - git push
+
+4 -Para atualizar a pasta - git pull
