@@ -1,0 +1,26 @@
+footer{
+    position: absolute;
+    width: 100%;
+   
+    background-color: rgb(81, 172, 179);
+    bottom: 0;
+}
+
+header{
+    background-color: rgb(15, 173, 81);
+}
+
+
+main{
+    background-color: rgb(206, 206, 50);
+    align-self: center;
+    margin-top: 10%;
+    width: 100%;
+}
+
+ul{
+    color: aliceblue;
+    display: inline-block;
+    padding: 2%;
+    list-style: none;
+}
