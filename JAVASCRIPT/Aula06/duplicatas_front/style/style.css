@@ -1,0 +1,75 @@
+#tab{
+    font-family: 'Times New Roman', Times, serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+#tab td, #tab th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+#tab tr:nth-child(even){
+    background-color: #f2f2f2;
+}
+
+#tab tr:hover {background-color: #ddd;}
+
+#tab th {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  text-align: left;
+  background-color: #045aaa;
+  color: white;
+}
+
+.img{
+    width:40px;
+    height:40px;
+    
+}
+
+.btn{
+    border: none;
+    background: transparent;
+    
+}
+
+.model {
+display: none;
+visibility: hidden;
+}
+
+.modal {
+display: flex;
+align-items: center;
+justify-content: center;
+position: fixed;
+top: 0;
+left: 0;
+width: 100vw;
+height: 100vh;
+background-color: rgba(70, 70, 70, 0.5);
+}
+
+.form-modal {
+    width: 10%;
+    height: 10%;
+    background-color: rgb(255, 255, 255);
+    border-radius: 30px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding: 60px 120px;
+}
+
+.form-modal > input , button{
+    margin: 15px 0;
+}
+
+#cancel {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    border: none;
+    background-color: transparent;
+}

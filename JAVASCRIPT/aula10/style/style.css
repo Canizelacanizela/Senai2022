@@ -1,0 +1,43 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #e2ebecdc;
+}
+
+
+
+.form{
+    width: 18%;
+    height: 10%;
+    padding: 10px;
+    background: linear-gradient(to left, #c3dfe4, #d4d8f0);
+    border-radius: 10px;
+}
+
+input{
+    margin-bottom: 13px;
+    padding: 0.4%;
+    background: rgba(255, 255, 255, 0.664);
+    border:none;
+    border-radius: 7px;
+    border: 1px solid rgb(90, 89, 89);
+}
+
+.btn-primary{
+    border:none;
+    cursor: pointer;
+    padding: 0.4rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    background: linear-gradient(to left, #37b8c9, #3b54df);
+    color: white;
+}
+
+h1{
+ margin-left:25%;
+ margin-bottom: 4%;
+}

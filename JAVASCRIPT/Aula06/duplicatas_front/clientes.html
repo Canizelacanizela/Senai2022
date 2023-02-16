@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style/style.css">
+    <title>Duplicatas</title>
+</head>
+<body>
+        <div  class="clientes">
+            <div class="cliente model">
+                <table id="tab">
+                    <thead>
+                        <tr>
+                            <th>Código</th>
+                            <th>Nome</th>
+                            <th>Cidade</th>
+                            <th>UF</th>
+                            <th>Telefone</th>
+                          </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td> <p id="codCli"></p></td>
+                            <td><p id="nome"></p></td>
+                            <td><p id="cidade"></p></td>
+                            <td> <p id="uf"></p></td>
+                            <td><button class="btn" onClick="showModal()"><img  class="img" src="assets/telefone.png" alt=""></button></td>
+                          </tr>
+                    </tbody>
+                </table>
+                <br>
+              <!-- <p id="codCli"></p>
+              <p id="nome"></p>
+              <p id="cidade"></p>
+              <p id="uf"></p> -->
+              <!-- <button class="btn" onClick="showModal()"><img  class="img" src="assets/telefone.png" alt=""></button> -->
+            </div>
+        </div>
+        <div class="modal model">
+            <div class="form-modal">
+                <button id="cancel" onClick="showModal()">X</button>
+                <table id="tab">
+                    <thead>
+                        <tr>
+                            <th>
+                                Tipo
+                            </th>
+                            <th>
+                                Numero
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody id="telefones">
+                        <tr>
+                            <td>
+                                <p id="tipoTel">
+                            </td>
+                            <td>
+                                <p id="Tel">
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+            </div>
+        </div>
+    </div>
+</body>
+<script src="index.js"></script>
+</html>
