@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Salgados</title>
+</head>
+<body>
+    <header>
+        <ul>
+            <li>Home</li>
+            <li><a href="../cadastrar/index.html">Cadastrar Salgado</a></li>
+            <button onClick="modalCad()">Cadastrar</button>
+        </ul>
+</header>
+
+<main>
+    <div class="li">
+        <div class="item-li model">
+            
+            <p id="id">1</p>
+            <p id="nome">Coxinha</p>
+            <p id="descricao">Saboroso salgado recheado de costela</p>
+            <img src="../assets/coxinha.jpg" alt="coxinha">
+            <span><img src="../assets/remover.png" alt="Remover"></span>
+        </div>
+    </div>
+</main>
+<div class="modal mc model">
+    <div class="modal-body">
+        <input type="text" placeholder="Nome" class="nome">
+        <input type="text" placeholder="Descrição"  class="descricao">
+        <input type="text" placeholder="Imagem" class="img">
+        <div class="modal-footer">
+            <button class="cancelar">Cancelar</button>
+            <button class="cadastrar" onclick="cadastrar()">Cadastrar</button>
+        </div>
+        <div class="modal ms model">
+        <div class="modal-body">
+            <img src="../assets/download.png" alt="">
+            <p>Salgado Cadastrado!</p>
+        </div>
+    </div>
+</div>
+<div class="modal ms model">
+    <div class="modal-body">     
+        <p>Sucesso!</p>
+    </div>
+</body>
+<script src="script.js"></script>
+</html>
