@@ -1,59 +1,101 @@
 const { PrismaClient } = require('@prisma/client');
+const jwt = require('jsonwebtoken');
 
 const prisma = new PrismaClient();
 
-const test = async (req, res) => {
-    res.status(200).json("API online, aguardando requisições").end();
-}
-
 const create = async (req, res) => {
-    const user = await prisma.user.create({
+    let user = await prisma.user.create({
         data: req.body
     });
-    res.status(201).end();
-}
 
-const read = async (req, res) => {
-    const user = await prisma.user.findMany({
-        select: {
-            id: true,
-            nome: true,
-            email:true,
-            
-        }
-    });
     res.status(200).json(user).end();
 }
 
 const readOne = async (req, res) => {
-    const user = await prisma.user.findUnique({
+    let user = await prisma.user.findUnique({
         where: {
-            id:Number(req.params.id)
+            id: Number(req.params.id)
         },
-    })
+        select: {
+            nome: true,
+            email: true,
+            tipo: true
+        }
+    });
+
+    //SELECT * FROM user INNER JOIN publicacao ON user.id = publicacao.usuario_id WHERE ....
 
     res.status(200).json(user).end();
 }
 
-const login = async (req,res) => {
-    const user = await prisma.user.findMany({
-        where:{
-            AND:[
-            { email:req.body.email },
-            { senha:req.body.senha }
-        ]
+const read = async (req, res) => {
+    let user = await prisma.user.findMany({
+        select: {
+            email: true,
+            nome: true,
+            tipo: true
         }
-    })
-    if (user.length > 0)
-    res.status(202).json(user).end();
-    else
-    res.status(404).end();
+    });
+
+    //SELECT email, nome FROM user WHERE email = ''
+
+    res.status(200).json(user).end();
 }
 
+const login = async (req, res) => {
+    
+    let user = await prisma.user.findMany({
+        where: {
+            AND: [
+                {email : req.body.email},
+                {senha : req.body.senha}
+            ]
+        },
+        select: {
+            id: true,
+            nome: true,
+            tipo: true
+        }
+        
+    })
+
+    jwt.sign(user[0], process.env.KEY, { expiresIn: '5m' },function(err, token) {
+        console.log(err)
+        if(err == null) {
+            user[0]["token"] = token;
+            res.status(200).json(user[0]).end();
+        }else {
+            res.status(404).json(err).end();
+        }
+    })
+    //SELECT id, nome FROM user WHERE email = '' AND senha = ''
+}
+
+const update = async (req, res) => {
+    const user = await prisma.user.update({
+        where: {
+            id: Number(req.params.id)
+        },
+        data: req.body
+    })
+    res.status(202).json(user).end();
+}
+
+const del = async (req, res) => {
+    const user = await prisma.user.delete({
+        where: {
+            id: Number(req.params.id)
+        }
+    })
+    res.status(204).end();
+}
+
+
 module.exports = {
-    test,
     create,
     read,
+    login,
     readOne,
-    login
+    del,
+    update
 }
