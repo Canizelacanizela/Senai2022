@@ -8,7 +8,7 @@ const create = async (req, res) => {
         data: req.body
     });
 
-    res.status(200).json(user).end();
+    res.status(200).json(user).end();    
 }
 
 const readOne = async (req, res) => {
@@ -31,6 +31,7 @@ const readOne = async (req, res) => {
 const read = async (req, res) => {
     let user = await prisma.user.findMany({
         select: {
+            id:true,
             email: true,
             nome: true,
             tipo: true
@@ -59,7 +60,7 @@ const login = async (req, res) => {
         
     })
 
-    jwt.sign(user[0], process.env.KEY, { expiresIn: '5m' },function(err, token) {
+    jwt.sign(user[0], process.env.KEY, { expiresIn: '10h' },function(err, token) {
         console.log(err)
         if(err == null) {
             user[0]["token"] = token;
