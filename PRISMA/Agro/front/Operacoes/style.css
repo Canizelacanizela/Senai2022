@@ -33,7 +33,7 @@ body{
 
 .esq > h1{
     font-size: 3vw;
-    color: #77ffc0;
+    color: #59adbe;
 }
 
 .esq-image{
@@ -61,7 +61,7 @@ body{
 }
 
 .card > h1{
-    color: #1fc97a;
+    color: #59adbe;
     font-weight: 800;
     margin: 0;
 }
@@ -107,8 +107,8 @@ body{
     font-weight: 800;
     letter-spacing: 3px;
     color: #2f2841;
-    background-color: #31e08f;
+    background-color: #59adbe;
     cursor: pointer;
-    box-shadow: 0px 10px 40px -12px #00ff0052;
+    box-shadow: 0px 10px 40px -12px #0067ee52;
 }
 

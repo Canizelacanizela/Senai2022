@@ -34,6 +34,7 @@ const read = async (req, res) => {
             id:true,
             email: true,
             nome: true,
+            senha: true,
             tipo: true
         }
     });
