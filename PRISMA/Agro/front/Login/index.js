@@ -17,6 +17,7 @@ function login() {
     .then(res => {return res.json()})
     .then(data => {
         if(data.err === undefined) {
+            localStorage.setItem("info", JSON.stringify(data));
 
             window.location.href = "../Motoristas/index.html";
         }
