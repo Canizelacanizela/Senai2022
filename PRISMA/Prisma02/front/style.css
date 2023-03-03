@@ -1,0 +1,126 @@
+*{
+    padding: 0%;
+    margin: 0%;
+    box-sizing: border-box;
+}
+
+body{
+    background: rgb(172,114,162);
+    background: linear-gradient(90deg, rgba(172,114,162,1) 2%, rgba(37,90,173,1) 50%, rgba(119,189,173,1) 98%);
+    font-family: 'Nerko One', cursive;
+    font-family: 'Poppins', sans-serif;
+}
+
+header{
+    background-color: rgb(148, 148, 148);
+    height: 70px;
+}
+
+img{
+    border-radius: 30px;
+}
+
+h1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgb(255, 255, 255);
+}
+
+p{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgb(255, 255, 255);
+}
+
+.palha{
+    margin-left:16px ;
+    text-decoration:none;
+    color: rgb(250, 250, 250);
+}
+
+.palha::after {
+    content: '';
+    display: block;
+    height: 4px;
+    border-radius: 10px;
+    width: 0;
+    background: rgb(98, 165, 228);
+    transition:all .6s;
+}
+
+.palha:hover::after{
+    width:100%;
+}
+
+
+
+.captar{
+    display: flex;
+    align-items: center;
+    /* justify-content: space-around; */
+    justify-content: space-between;
+   
+}
+
+.sei{
+    padding-right: 900px;
+}
+
+
+.inp{
+    display: flex;
+    padding: 14px;
+    width:210px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    border: 1px;
+    border-bottom: 3px solid rgb(123, 21, 170);
+    margin-top: 10px
+}
+
+.flex-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+    
+  }
+
+.content-box{
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    padding: 30px;
+    padding-bottom: 40px;
+    margin-top: 10px;
+    background-color: rgb(241, 241, 241);
+}
+
+.button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.button-cad{
+    width: 140px;
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid transparent;
+    color:white;
+    margin-top: 12px;
+    background-color: rgba(120, 121, 224, 0.842);
+    font-family: 'Poppins', sans-serif;
+    font-size: large;
+    transition-duration: 0.6s;
+  cursor: pointer;
+}
+
+.button-cad:hover {
+    background-color: #9d63c4;
+    color: white;
+  }

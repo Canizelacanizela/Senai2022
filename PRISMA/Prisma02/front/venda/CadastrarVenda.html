@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nerko+One&family=Open+Sans:wght@300;400;500;700&family=Oswald&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="../assets/cha-de-bolhas.png">
+    <title>LojinhaBotas</title>
+</head>
+
+<body>
+    
+    <main>
+        <div class="content-left">
+            <h1 class="Cadastre">Produtos</h1>
+        <div class="flex-box container-box">
+            <div class="content-box"> 
+                <input id="nome" class="inp" type="text" placeholder="Nome do Produto">
+                <input id="valor" class="inp" type="text" placeholder="Valor do Produto">
+                <select  name="input" class="inp" id="setor_id" >
+                    <optgroup label="Setores">
+                      <option value="2">Setor de Doces</option>
+                      <option value="3">Setor de Limpeza</option>
+                      <option value="4">Setor de Bebidas</option>
+                      <option value="5">Setor de Eletrodomésticos</option>
+                      <option value="6">Setor de Higiene</option>
+                      <option value="7">Padaria</option>
+                      <option value="8">Setor de Frios</option>
+                    </optgroup>
+                  </select>
+                  </div>
+                
+            </div>
+            <div class="button"><button onclick="cadastrarProduto()" class="button-cad">CADASTRAR</button></div>
+    </div>
+        <div class="content-right">
+            <h1 class="Cadastre">Vendas</h1>
+            <div class="flex-box container-box">
+                <div class="content-box"> 
+                    <select id="id_produtos" name="input" class="inp">
+                        <optgroup label="ID do Produto">
+                        <option value="1">Barra de Chocolate</option>
+                        <option value="4">Kit Limpeza de Luxo</option>
+                    </optgroup>
+                    </select>
+                    <input id="quantidade" class="inp" type="text" placeholder="Quantidade">
+                    <select id="id_vendedor" name="input" class="inp">
+                        <optgroup label="Vendedor">
+                        <option value="1">Vendedor01</option>
+                        <option value="2">Vendedor02</option>
+                        <option value="3">Vendedor03</option>
+                        <option value="4">Maria Clara</option>
+                        <option value="5">Giovanna</option>
+                        <option value="6">Marcos</option>
+                        <option value="7">Thiago Matheus</option>
+                        <option value="8">Aleksander Julia</option>
+                        <option value="9">Leticia</option>
+                        <option value="10">Confia</option>
+                    </optgroup>
+                    </select>
+                    </div>
+                    
+                </div>
+                <div class="button"><button class="button-cad" onclick="cadastrarVenda()">CADASTRAR</button></div>
+        </div>
+        </div>
+    </main>
+</body>
+<script src="index.js"></script>
+</html>

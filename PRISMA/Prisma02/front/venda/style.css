@@ -1,0 +1,128 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(to right, rgba(53,124,109,1) , rgba(45,153,158,1) , rgba(56,65,107,1));
+}
+
+
+main{
+    display:flex;
+    height: 100%;
+    align-items:center;
+    justify-content: center;
+    
+}
+
+.img{
+    max-width: 650px;
+    height: auto;
+}
+
+.content-left{
+    width:30%;
+}
+
+main h1{
+    font-size: 40px;
+    color:rgb(0, 0, 0);
+    text-transform: uppercase;
+}
+
+main h2{
+    font-size:25px;
+    color:darkcyan;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 8px;
+}
+
+main p{
+    font-size: 14px;
+    font-weight: 400;
+    color: #333;
+    line-height: 31.5px;
+    margin: 30px 0;
+}
+
+.sign-btn{
+    padding:10px 20px;
+    background: rgb(229, 216, 243);
+    color:rgb(255, 255, 255);
+    outline: none;
+    border: none;
+    font-weight: 700;
+    text-transform: uppercase;
+    border-radius: 50px;
+}
+
+.inp{
+    display: flex;
+    padding: 14px;
+    width:210px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    border: 1px;
+    border-bottom: 3px solid rgb(123, 21, 170);
+    margin-top: 10px
+    
+}
+
+.flex-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+    
+  }
+
+.content-box{
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    padding: 30px;
+    padding-bottom: 40px;
+    margin-top: 10px;
+    background-color: rgb(241, 241, 241);
+}
+
+.button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.button-cad{
+    width: 140px;
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid transparent;
+    color:white;
+    margin-top: 12px;
+    background-color: rgba(120, 121, 224, 0.842);
+    font-family: 'Poppins', sans-serif;
+    font-size: large;
+    transition-duration: 0.5s;
+    cursor: pointer;
+}
+
+.button-cad:hover {
+    background-color: #9d63c4;
+    color: white;
+  }
+
+.Cadastre{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgb(255, 255, 255);
+}
+
+
+

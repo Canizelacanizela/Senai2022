@@ -56,6 +56,7 @@ const update = async (req, res) => {
 }
 
 const del = async (req, res) => {
+    console.log(req.params);
     const motorista = await prisma.motorista.delete({
         where: {
             id: Number(req.params.id)
@@ -63,7 +64,6 @@ const del = async (req, res) => {
     })
     res.status(204).end();
 }
-
 
 module.exports = {
     create,
