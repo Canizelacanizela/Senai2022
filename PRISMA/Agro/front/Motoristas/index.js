@@ -29,9 +29,7 @@ function listaMotor()  {
         motor.querySelector("#cnh").innerHTML += e.cnh;
         motor.querySelector("#cpf").innerHTML += e.cpf;
 
-        motor.querySelector("#edit").addEventListener("click", () => {
-            alterar(e.id_user, motor);
-        });
+        motor.querySelector("#edit").setAttribute("onclick", "modal3.setAttribute('style','display:flex')");
 
         motor.querySelector("#del").addEventListener("click", () => {
             remover(e.id_user, motor);

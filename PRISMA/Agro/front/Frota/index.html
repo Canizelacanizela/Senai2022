@@ -8,8 +8,87 @@
     <link rel="icon" href="../assets/agroT.png">
     <title>Frota AgroTech</title>
 </head>
-<body>
-    
+<body onload="carregar()">
+    <div class="info-tudo">
+        <div class="div-criar">
+            <button id="btn-cad" onclick="modal1.setAttribute('style','display:flex')">Cadastrar</button>
+        </div>
+        <div class="info model">
+            <p id="id">Id: </p>
+            <p id="placa">Placa do Veículo: </p>
+            <p id="modelo">Modelo: </p>
+            <p id="marca">Marca: </p>
+            <div class="contain">
+                <div class="btn" id="edit">
+                    <img  width="32" src="https://cdn-icons-png.flaticon.com/512/9160/9160755.png" alt="Alterar">
+                </div>
+                <div class="btn" id="del">
+                    <img id="del" width="32" src="https://cdn-icons-png.flaticon.com/512/7812/7812650.png" alt="Deletar">
+                </div>
+            </div> 
+        </div>
+    </div>
+    <div id="modal1" class="modal">
+        <div id="novo">
+            <div class="modalHeader">
+                <h3> Criar Novo Veículo</h3>
+                <button class="fechar" onclick="modal1.setAttribute('style','display:none')">X</button>
+            </div>
+            <div class="modalForm">
+                <label class="lab" for="">ID de Veículo:</label> 
+                <input type="text" id="id" />
+                <label class="lab1" for="">Placa:</label> 
+                <input type="text" id="placa" />
+                <label class="lab2" for="">Modelo:</label> 
+                <input type="text" id="modelo" />
+                <label class="lab3" for="">Marca:</label> 
+                <input class="text" type="text" id="marca" />
+                
+            </div>
+            <div class="modalFooter">
+                <button class="bn" onclick="cadastrarVeiculo()">Enviar</button>
+            </div>
+        </div>
+    </div>
+    <div id="modal2" class="modal">
+        <div id="alerta">
+            <div class="modalHeader">
+                <h3>Mensagem</h3>
+                <button onclick="modal2.setAttribute('style','display:none')">X</button>
+            </div>
+            <div id="msg"></div>
+        </div>
+    </div>
+<!-- ---------------------- Alterar ---------------------------------------- -->
+    <div id="modal3" class="modall">
+        <div id="novo3">
+            <div class="modal3Header">
+                <h3>Alterar Veículo</h3>
+                <button class="fechar" onclick="modal3.setAttribute('style','display:none')">X</button>
+            </div>
+            <div class="modal3Form">
+                <label class="lab1" for="">Placa:</label> 
+                <input type="text" id="placa" />
+                <label class="lab2" for="">Modelo:</label> 
+                <input type="text" id="modelo" />
+                <label class="lab3" for="">Marca:</label> 
+                <input class="text" type="text" id="marca" />
+                
+            </div>
+            <div class="modal3Footer">
+                <button class="bn-alt" onclick="alterar()">Enviar</button>
+            </div>
+        </div>
+    </div>
+    <!-- <div id="modal4" class="modall">
+        <div id="alerta">
+            <div class="modal3Header">
+                <h3>Mensagem</h3>
+                <button onclick="modal3.setAttribute('style','display:none')">X</button>
+            </div>
+            <div id="msg"></div>
+        </div>
+    </div> -->
 </body>
 <script src="index.js"></script>
 </html>

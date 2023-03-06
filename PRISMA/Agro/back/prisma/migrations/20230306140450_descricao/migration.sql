@@ -1,0 +1,5 @@
+-- AlterTable
+ALTER TABLE `manutencaov` MODIFY `data_inicio` DATETIME(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3);
+
+-- AlterTable
+ALTER TABLE `operacaov` MODIFY `data_saida` DATETIME(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3);

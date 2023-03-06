@@ -42,7 +42,7 @@ model Frota{
 model ManutencaoV{
     id      Int      @id @default(autoincrement())
     id_veiculo Int
-    data_inicio DateTime
+    data_inicio DateTime @default(now())
     data_fim DateTime?
     valor_gasto Float
     descricao String
@@ -53,7 +53,7 @@ model OperacaoV{
     id      Int      @id @default(autoincrement())
     id_motorista  Int
     id_veiculo  Int
-    data_saida DateTime
+    data_saida DateTime  @default(now())
     data_retorno DateTime?
     descricao_servico String
     OVeiculo   Frota @relation(fields: [id_veiculo], references: [id])

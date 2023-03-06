@@ -3,8 +3,11 @@ const { PrismaClient } = require('@prisma/client');
 const prisma = new PrismaClient();
 
 const create = async (req, res) => {
+    var info = req.body;
+
+    // info.data_inicio = new Date(req.body.data_inicio)
     let manutencaov = await prisma.manutencaoV.create({
-        data: req.body
+        data: info
     });
 
     res.status(200).json(manutencaov).end();
