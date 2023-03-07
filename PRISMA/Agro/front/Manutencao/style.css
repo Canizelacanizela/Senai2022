@@ -312,18 +312,14 @@ p{
 .lab1{
     gap:25px;
     margin-top: 7px;
-    margin-left: 68px;
+    margin-left: 75px;
 }
 .lab2{
     gap:25px;
     margin-top: 8px;
-    margin-left: 70px;
+    margin-left: 45px;
 }
-.lab3{
-    gap:25px;
-    margin-top: 8px;
-    margin-left: 75px;
-}
+
 
 #novo3 input{
     border: solid 1px #ccc;

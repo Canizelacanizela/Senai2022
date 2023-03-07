@@ -1,7 +1,6 @@
-var UrList = "http://localhost:3000/motor";
-var nomeUsuario = document.querySelector("#nome");
-var listarMotor = document.querySelector(".info-tudo");
-var itemMotor = document.querySelector(".info");
+var UrList = "http://localhost:3000/opera";
+var listarOperaco = document.querySelector(".info-tudo");
+var itemOpera = document.querySelector(".info");
 
 
 var listar = [];
@@ -14,33 +13,33 @@ function carregar() {
         .then(res => res.json())
         .then(res => {
             listar = res;
-            listaMotor();
+            listaOpera();
         })
         .catch(err => console.error(err));
     }
 
-function listaMotor()  {
+function listaOpera()  {
     listar.forEach(e => {
-        let motor = document.querySelector(".info").cloneNode(true);
-        motor.classList.remove("model");
+        let opera = document.querySelector(".info").cloneNode(true);
+        opera.classList.remove("model");
 
-        motor.querySelector("#id_user").innerHTML += e.id_user;
-        motor.querySelector("#nome").innerHTML += e.nome;
-        motor.querySelector("#cnh").innerHTML += e.cnh;
-        motor.querySelector("#cpf").innerHTML += e.cpf;
+        opera.querySelector("#id_motorista").innerHTML += e.id_motorista;
+        opera.querySelector("#id_veiculo").innerHTML += e.id_veiculo;
+        opera.querySelector("#data_saida").innerHTML += e.data_saida.toLocaleString('pt-BR', { timeZone: 'UTC' }).replace("T", " ").split(".")[0];;
+        opera.querySelector("#descricao_servico").innerHTML += e.descricao_servico;
 
-        motor.querySelector("#edit").setAttribute("onclick", "modal3.setAttribute('style','display:flex')");
+        opera.querySelector("#edit").setAttribute("onclick", "modal3.setAttribute('style','display:flex')");
 
-        motor.querySelector("#del").addEventListener("click", () => {
-            remover(e.id_user, motor);
+        opera.querySelector("#del").addEventListener("click", () => {
+            remover(e.id, opera);
         });
 
-        listarMotor.appendChild(motor);
+        listarOperaco.appendChild(opera);
     })
 }
 
-function remover(id, motor) {
-    fetch("http://localhost:3000/motordel/" + id, {
+function remover(id, opera) {
+    fetch("http://localhost:3000/operadel/" + id, {
         "method":"DELETE",
         headers:{
             'Content-Type': 'application/json',
@@ -49,12 +48,12 @@ function remover(id, motor) {
     })
     .then(resp => { return resp.status(204)})
     .then(data => {
-        motor.remove();
+        opera.remove();
     });
 }
 
 function alterar(id, alt) {
-    fetch("http://localhost:3000/motorupdate/" + id, {
+    fetch("http://localhost:3000/operaupdate/" + id, {
         "method":"PUT",
         headers:{
             'Content-Type': 'application/json',
@@ -68,19 +67,17 @@ function alterar(id, alt) {
 }
 
 
-function cadastrarMotorista() {
+function cadastrarOpera() {
     //Cria um objeto com os dados dos campos html <input>
 
-    let id_user = document.querySelector("#id_user").value
-    let nome = document.querySelector("#nome").value
-    let cnh = document.querySelector("#cnh").value
-    let cpf = document.querySelector("#cpf").value
+    let id_motorista = document.querySelector("#id_motorista").value
+    let id_veiculo = document.querySelector("#id_veiculo").value
+    let descricao_servico = document.querySelector("#descricao_servico").value
 
     let corpo = {
-        "id_user": id_user,
-        "nome": nome,
-        "cnh": cnh,
-        "cpf": cpf,
+        "id_motorista": id_motorista,
+        "id_veiculo": id_veiculo,
+        "descricao_servico": descricao_servico
         
     }
 
@@ -93,7 +90,7 @@ function cadastrarMotorista() {
         "body": JSON.stringify(corpo)
     };
 
-        fetch('http://localhost:3000/motorcriar', options)
+        fetch('http://localhost:3000/operacriar', options)
             .then(res => { return res.json() })
             .then(resp => {
                 if (resp != undefined) {

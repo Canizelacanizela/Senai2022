@@ -8,13 +8,14 @@
     <link rel="icon" href="../assets/agroT.png">
     <title>Motoristas AgroTech</title>
 </head>
+<header class="head">s</header>
 <body onload="carregar()">
     <div class="info-tudo">
         <div class="div-criar">
             <button id="btn-cad" onclick="modal1.setAttribute('style','display:flex')">Cadastrar</button>
         </div>
         <div class="info model">
-            <p id="id_user">Id: </p>
+            <p id="id">Id: </p>
             <p id="nome">Nome do motorista: </p>
             <p id="cnh">CNH: </p>
             <p id="cpf">CPF: </p>
@@ -35,14 +36,12 @@
                 <button class="fechar" onclick="modal1.setAttribute('style','display:none')">X</button>
             </div>
             <div class="modalForm">
-                <label class="lab" for="">ID de Usuario:</label> 
-                <input type="text" id="id_user" />
                 <label class="lab1" for="">Nome:</label> 
-                <input type="text" id="nome" />
+                <input type="text" id="nomec" />
                 <label class="lab2" for="">CNH:</label> 
-                <input type="text" id="cnh" />
+                <input type="text" id="cnhc" />
                 <label class="lab3" for="">CPF:</label> 
-                <input class="text" type="text" id="cpf" />
+                <input class="text" type="text" id="cpfc" />
                 
             </div>
             <div class="modalFooter">
@@ -63,16 +62,16 @@
     <div id="modal3" class="modall">
         <div id="novo3">
             <div class="modal3Header">
-                <h3>Alterar Motorista</h3>
+                <h3>Alterar Motorista</h3><label id="id">ID:</label>
                 <button class="fechar" onclick="modal3.setAttribute('style','display:none')">X</button>
             </div>
             <div class="modal3Form">
                 <label class="lab1" for="">Nome:</label> 
-                <input type="text" id="nome" />
+                <input type="text" id="nomea" />
                 <label class="lab2" for="">CNH:</label> 
-                <input type="text" id="cnh" />
+                <input type="text" id="cnha" />
                 <label class="lab3" for="">CPF:</label> 
-                <input class="text" type="text" id="cpf" />
+                <input class="text" type="text" id="cpfa" />
                 
             </div>
             <div class="modal3Footer">

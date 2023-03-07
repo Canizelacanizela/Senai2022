@@ -1,6 +1,5 @@
-var UrList = "http://localhost:3000/motor";
-var nomeUsuario = document.querySelector("#nome");
-var listarMotor = document.querySelector(".info-tudo");
+var UrList = "http://localhost:3000/manu";
+var listarManutencao = document.querySelector(".info-tudo");
 var itemMotor = document.querySelector(".info");
 
 
@@ -14,33 +13,35 @@ function carregar() {
         .then(res => res.json())
         .then(res => {
             listar = res;
-            listaMotor();
+            listarManu();
         })
         .catch(err => console.error(err));
     }
 
-function listaMotor()  {
+function listarManu()  {
     listar.forEach(e => {
-        let motor = document.querySelector(".info").cloneNode(true);
-        motor.classList.remove("model");
+        let manu = document.querySelector(".info").cloneNode(true);
+        manu.classList.remove("model");
 
-        motor.querySelector("#id_user").innerHTML += e.id_user;
-        motor.querySelector("#nome").innerHTML += e.nome;
-        motor.querySelector("#cnh").innerHTML += e.cnh;
-        motor.querySelector("#cpf").innerHTML += e.cpf;
+        manu.querySelector("#id").innerHTML += e.id;
+        manu.querySelector("#id_veiculo").innerHTML += e.id_veiculo;
+        manu.querySelector("#data_inicio").innerHTML += e.data_inicio.toLocaleString('pt-BR', { timeZone: 'UTC' }).replace("T", " ").split(".")[0];
+        manu.querySelector("#data_fim").innerHTML += e.data_fim
+        manu.querySelector("#valor_gasto").innerHTML += e.valor_gasto;
+        manu.querySelector("#descricao").innerHTML += e.descricao;
 
-        motor.querySelector("#edit").setAttribute("onclick", "modal3.setAttribute('style','display:flex')");
+        manu.querySelector("#edit").setAttribute("onclick", "modal3.setAttribute('style','display:flex')");
 
-        motor.querySelector("#del").addEventListener("click", () => {
-            remover(e.id_user, motor);
+        manu.querySelector("#del").addEventListener("click", () => {
+            remover(e.id, manu);
         });
 
-        listarMotor.appendChild(motor);
+        listarManutencao.appendChild(manu);
     })
 }
 
-function remover(id, motor) {
-    fetch("http://localhost:3000/motordel/" + id, {
+function remover(id, manu) {
+    fetch("http://localhost:3000/manudel/" + id, {
         "method":"DELETE",
         headers:{
             'Content-Type': 'application/json',
@@ -49,12 +50,12 @@ function remover(id, motor) {
     })
     .then(resp => { return resp.status(204)})
     .then(data => {
-        motor.remove();
+        manu.remove();
     });
 }
 
 function alterar(id, alt) {
-    fetch("http://localhost:3000/motorupdate/" + id, {
+    fetch("http://localhost:3000/manupdate/" + id, {
         "method":"PUT",
         headers:{
             'Content-Type': 'application/json',
@@ -68,19 +69,17 @@ function alterar(id, alt) {
 }
 
 
-function cadastrarMotorista() {
+function cadastrarManu() {
     //Cria um objeto com os dados dos campos html <input>
 
-    let id_user = document.querySelector("#id_user").value
-    let nome = document.querySelector("#nome").value
-    let cnh = document.querySelector("#cnh").value
-    let cpf = document.querySelector("#cpf").value
+    let id_veiculo = document.querySelector("#id_veiculo").value
+    let valor_gasto = document.querySelector("#valor_gasto").value
+    let descricao = document.querySelector("#descricao").value
 
     let corpo = {
-        "id_user": id_user,
-        "nome": nome,
-        "cnh": cnh,
-        "cpf": cpf,
+        "id_veiculo": id_veiculo,
+        "valor_gasto": valor_gasto,
+        "descricao": descricao,
         
     }
 
@@ -93,7 +92,7 @@ function cadastrarMotorista() {
         "body": JSON.stringify(corpo)
     };
 
-        fetch('http://localhost:3000/motorcriar', options)
+        fetch('http://localhost:3000/manucriar', options)
             .then(res => { return res.json() })
             .then(resp => {
                 if (resp != undefined) {

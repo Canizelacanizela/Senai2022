@@ -16,7 +16,7 @@ const readOne = async (req, res) => {
             id: Number(req.params.id)
         },
         select: {
-            id_user: true,
+            id: true,
             nome: true,
             cnh: true,
             cpf: true
@@ -31,7 +31,7 @@ const readOne = async (req, res) => {
 const read = async (req, res) => {
     let motorista = await prisma.motorista.findMany({
         select: {
-            id_user: true,
+            id: true,
             nome: true,
             cnh: true,
             cpf: true

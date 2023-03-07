@@ -16,16 +16,13 @@ model User{
     email   String
     senha   String
     tipo    String
-    motorista Motorista[]
 }
 
 model Motorista{
     id      Int      @id @default(autoincrement())
-    id_user Int
     nome    String
     cnh     String
     cpf     String
-    Usuario   User @relation(fields: [id_user], references: [id], onDelete: Cascade)
     operacaoV OperacaoV[]
 
 }

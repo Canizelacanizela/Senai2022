@@ -14,10 +14,12 @@
             <button id="btn-cad" onclick="modal1.setAttribute('style','display:flex')">Cadastrar</button>
         </div>
         <div class="info model">
-            <p id="id_user">Id: </p>
-            <p id="nome">Nome do motorista: </p>
-            <p id="cnh">CNH: </p>
-            <p id="cpf">CPF: </p>
+            <p id="id">ID Manutenção: </p>
+            <p id="id_veiculo">ID do Veículo: </p>
+            <p id="data_inicio">Data Inicio: </p>
+            <p id="data_fim">Data Fim: </p>
+            <p id="valor_gasto">Valor: </p>
+            <p id="descricao">Descrição: </p>
             <div class="contain">
                 <div class="btn" id="edit">
                     <img  width="32" src="https://cdn-icons-png.flaticon.com/512/9160/9160755.png" alt="Alterar">
@@ -31,22 +33,22 @@
     <div id="modal1" class="modal">
         <div id="novo">
             <div class="modalHeader">
-                <h3> Criar Novo Motorista</h3>
+                <h3> Criar Nova Manutenção</h3>
                 <button class="fechar" onclick="modal1.setAttribute('style','display:none')">X</button>
             </div>
             <div class="modalForm">
-                <label class="lab" for="">ID de Usuario:</label> 
-                <input type="text" id="id_user" />
-                <label class="lab1" for="">Nome:</label> 
-                <input type="text" id="nome" />
-                <label class="lab2" for="">CNH:</label> 
-                <input type="text" id="cnh" />
-                <label class="lab3" for="">CPF:</label> 
-                <input class="text" type="text" id="cpf" />
+                <label class="lab" for="">ID do Veículo:</label> 
+                <input type="text" id="id_veiculo" />
+
+                <label class="lab1" for="">Valor:</label> 
+                <input type="text" id="valor_gasto" />
+
+                <label class="lab2" for="">Descrição:</label> 
+                <input type="text" id="descricao" />
                 
             </div>
             <div class="modalFooter">
-                <button class="bn" onclick="cadastrarMotorista()">Enviar</button>
+                <button class="bn" onclick="cadastrarManu()">Enviar</button>
             </div>
         </div>
     </div>
@@ -63,16 +65,14 @@
     <div id="modal3" class="modall">
         <div id="novo3">
             <div class="modal3Header">
-                <h3>Alterar Motorista</h3>
+                <h3>Alterar Manutenção</h3>
                 <button class="fechar" onclick="modal3.setAttribute('style','display:none')">X</button>
             </div>
             <div class="modal3Form">
-                <label class="lab1" for="">Nome:</label> 
-                <input type="text" id="nome" />
-                <label class="lab2" for="">CNH:</label> 
-                <input type="text" id="cnh" />
-                <label class="lab3" for="">CPF:</label> 
-                <input class="text" type="text" id="cpf" />
+                <label class="lab1" for="">Valor:</label> 
+                <input type="text" id="valor_gasto" />
+                <label class="lab2" for="">Descrição:</label> 
+                <input type="text" id="descricao" />
                 
             </div>
             <div class="modal3Footer">
