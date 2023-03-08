@@ -8,6 +8,16 @@
     <link rel="icon" href="../assets/agroT.png">
     <title>Manutenção AgroTech</title>
 </head>
+<header class="head">
+    <nav>
+        <ul>
+            <li><a href="../Frota/index.html">Frota</a></li>
+            <li><a href="../Motoristas/index.html">Motoristas</a></li>
+            <li><a href="../Operacoes/index.html">Operações</a></li>
+        </ul>
+    </nav>
+</header>
+
 <body onload="carregar()">
     <div class="info-tudo">
         <div class="div-criar">
@@ -17,7 +27,7 @@
             <p id="id">ID Manutenção: </p>
             <p id="id_veiculo">ID do Veículo: </p>
             <p id="data_inicio">Data Inicio: </p>
-            <p id="data_fim">Data Fim: </p>
+            <!-- <p id="data_fim">Data Fim: </p> -->
             <p id="valor_gasto">Valor: </p>
             <p id="descricao">Descrição: </p>
             <div class="contain">
@@ -38,13 +48,13 @@
             </div>
             <div class="modalForm">
                 <label class="lab" for="">ID do Veículo:</label> 
-                <input type="text" id="id_veiculo" />
+                <input type="text" id="id_veiculoc" />
 
                 <label class="lab1" for="">Valor:</label> 
-                <input type="text" id="valor_gasto" />
+                <input type="text" id="valor_gastoc" />
 
                 <label class="lab2" for="">Descrição:</label> 
-                <input type="text" id="descricao" />
+                <input type="text" id="descricaoc" />
                 
             </div>
             <div class="modalFooter">
@@ -69,10 +79,13 @@
                 <button class="fechar" onclick="modal3.setAttribute('style','display:none')">X</button>
             </div>
             <div class="modal3Form">
-                <label class="lab1" for="">Valor:</label> 
-                <input type="text" id="valor_gasto" />
-                <label class="lab2" for="">Descrição:</label> 
-                <input type="text" id="descricao" />
+                <input type="hidden" id="ida" />
+                <label class="laba" for="">ID Veículo:</label> 
+                <input type="text" id="id_veiculoa" />
+                <label class="laba1" for="">Valor:</label> 
+                <input type="text" id="valor_gastoa" />
+                <label class="laba2" for="">Descrição:</label> 
+                <input type="text" id="descricaoa" />
                 
             </div>
             <div class="modal3Footer">

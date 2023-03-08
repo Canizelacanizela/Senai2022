@@ -1,10 +1,7 @@
 var UrList = "http://localhost:3000/motor";
-var UmMotor = "http://localhost:3000/motorOne/";
 var nomeUsuario = document.querySelector("#nome");
 var listarMotor = document.querySelector(".info-tudo");
 var itemMotor = document.querySelector(".info");
-var labelID = document.querySelector("#altLabel");
-
 
 var listar = [];
 
@@ -22,7 +19,7 @@ function carregar() {
 }
 
 function listaMotor() {
-    listar.forEach(e => {
+    listar.forEach((e, i) => {
         let motor = document.querySelector(".info").cloneNode(true);
         motor.classList.remove("model");
 
@@ -31,48 +28,24 @@ function listaMotor() {
         motor.querySelector("#cnh").innerHTML += e.cnh;
         motor.querySelector("#cpf").innerHTML += e.cpf;
 
-        motor.querySelector("#edit").setAttribute("onclick", "modal3.setAttribute('style','display:flex')");
+        motor.querySelector("#edit").setAttribute("onclick", `dadosAlterar('${i}')`);
 
         motor.querySelector("#del").addEventListener("click", () => {
-            remover(e.id, motor);
+            remover(e.id);
         });
 
         listarMotor.appendChild(motor);
     })
 }
 
-// function carregarUm(id) {
-//     const options = {
-//         method: "GET"
-//     }
-//     fetch("http://localhost:3000/motorOne/" + id, options)
-//         .then(res => res.json())
-//         .then(res => {
-//             listar = res;
-//             listaMotorUm();
-//         })
-//         .catch(err => console.error(err));
-// }
-
-// function listaMotorUm() {
-//     listar.forEach(e => {
-//         let motorUm = document.querySelector(".modall").cloneNode(false);
-
-//         motorUm.querySelector("#id").innerHTML += e.id;
-//         motorUm.querySelector("#nome").innerHTML += e.nome;
-//         motorUm.querySelector("#cnh").innerHTML += e.cnh;
-//         motorUm.querySelector("#cpf").innerHTML += e.cpf;
-
-//         motorUm.querySelector("#edit").setAttribute("onclick", "modal3.setAttribute('style','display:flex')");
-
-//         motorUm.querySelector("#del").addEventListener("click", () => {
-//             remover(e.id, motorUm);
-//         });
-
-//         listarMotorUm.appendChild(motorUm);
-//     })
-// }
-
+function dadosAlterar(i) {
+    console.log(listar[i]);
+    modal3.setAttribute('style', 'display:flex');
+    ida.value = listar[i].id;
+    nomea.value = listar[i].nome;
+    cpfa.value = listar[i].cpf;
+    cnha.value = listar[i].cnh;
+}
 
 function remover(id, motor) {
     fetch("http://localhost:3000/motordel/" + id, {
@@ -82,7 +55,7 @@ function remover(id, motor) {
             "Bearer": JSON.parse(localStorage.getItem('info')).token
         },
     })
-        .then(resp => { return resp.status(204) })
+        .then(resp => { return resp.status(204)})
         .then(data => {
             motor.remove();
         });
@@ -90,8 +63,9 @@ function remover(id, motor) {
 }
 
 
-function alterar(id, alt) {
+function alterar() {
 
+    let id = document.querySelector("#ida").value
     let nome = document.querySelector("#nomea").value
     let cnh = document.querySelector("#cnha").value
     let cpf = document.querySelector("#cpfa").value
@@ -110,11 +84,13 @@ function alterar(id, alt) {
         },
         "body": JSON.stringify(corpo)
     })
-        .then(resp => { return resp.status(204) })
-        .then(data => {
-            alt.update();
-        });
-    window.location.reload();
+    .then(resp => { return resp.status })
+    .then(resp => {
+        if (resp == 204)
+            window.location.reload();
+        else
+            console.log(resp)
+    })
 }
 
 

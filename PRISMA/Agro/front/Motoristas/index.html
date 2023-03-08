@@ -8,7 +8,16 @@
     <link rel="icon" href="../assets/agroT.png">
     <title>Motoristas AgroTech</title>
 </head>
-<header class="head">s</header>
+<header class="head">
+    <nav>
+        <ul>
+            <li><a href="../Frota/index.html">Frota</a></li>
+            <li><a href="../Manutencao/index.html">Manutenção</a></li>
+            <li><a href="../Operacoes/index.html">Operações</a></li>
+        </ul>
+    </nav>
+</header>
+
 <body onload="carregar()">
     <div class="info-tudo">
         <div class="div-criar">
@@ -62,17 +71,17 @@
     <div id="modal3" class="modall">
         <div id="novo3">
             <div class="modal3Header">
-                <h3>Alterar Motorista</h3><label id="id">ID:</label>
+                <h3>Alterar Motorista</h3>
                 <button class="fechar" onclick="modal3.setAttribute('style','display:none')">X</button>
             </div>
             <div class="modal3Form">
+                <input type="hidden" id="ida" />
                 <label class="lab1" for="">Nome:</label> 
                 <input type="text" id="nomea" />
                 <label class="lab2" for="">CNH:</label> 
                 <input type="text" id="cnha" />
                 <label class="lab3" for="">CPF:</label> 
                 <input class="text" type="text" id="cpfa" />
-                
             </div>
             <div class="modal3Footer">
                 <button class="bn-alt" onclick="alterar()">Enviar</button>

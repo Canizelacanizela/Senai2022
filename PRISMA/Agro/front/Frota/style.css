@@ -4,6 +4,42 @@
     box-sizing: border-box;
 }
 
+.head{
+    height: 5vh;
+    background-color: #59adbe;
+    width: 100vw;
+    align-items: center;
+    display: flex;
+}
+
+ul{
+    display: flex;
+    list-style-type: none;
+    align-items: center;
+}
+
+ul li a{
+    padding: 0 20px;
+    text-decoration: none;
+    color:rgb(66, 65, 65);
+    display: inline-block;
+    font-size: 20px;
+}
+
+li a::after {
+    content: '';
+    display: block;
+    height: 4px;
+    border-radius: 10px;
+    width: 0;
+    background: rgb(127, 181, 216);
+    transition:all .6s;
+}
+
+li a:hover::after{
+    width:100%;
+}
+
 body{
     margin: 0;  
 }
@@ -20,7 +56,7 @@ p{
 
 .info-tudo{
     width: 100vw;
-    height: 100vh;
+    height: 95vh;
     background: hsl(255, 19%, 21%);
     display:flex;
     align-items: flex-start;
@@ -162,20 +198,20 @@ p{
     margin-top: 7px;
     margin-left: 17px;
 }
-.lab1{
+.labc1{
     gap:25px;
     margin-top: 7px;
-    margin-left: 68px;
-}
-.lab2{
-    gap:25px;
-    margin-top: 8px;
-    margin-left: 70px;
-}
-.lab3{
-    gap:25px;
-    margin-top: 8px;
     margin-left: 75px;
+}
+.labc2{
+    gap:25px;
+    margin-top: 8px;
+    margin-left: 60px;
+}
+.labc3{
+    gap:25px;
+    margin-top: 8px;
+    margin-left: 68px;
 }
 
 #novo input{
@@ -309,20 +345,20 @@ p{
     background-color: #fff;
     box-shadow: 2px 2px 5px black;
 }
-.lab1{
+.laba1{
     gap:25px;
     margin-top: 7px;
-    margin-left: 68px;
+    margin-left: 72px;
 }
-.lab2{
+.laba2{
     gap:25px;
     margin-top: 8px;
-    margin-left: 70px;
+    margin-left: 58px;
 }
-.lab3{
+.laba3{
     gap:25px;
     margin-top: 8px;
-    margin-left: 75px;
+    margin-left: 67px;
 }
 
 #novo3 input{

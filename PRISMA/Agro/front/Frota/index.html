@@ -8,6 +8,16 @@
     <link rel="icon" href="../assets/agroT.png">
     <title>Frota AgroTech</title>
 </head>
+<header class="head">
+    <nav>
+        <ul>
+            <li><a href="../Motoristas/index.html">Motoristas</a></li>
+            <li><a href="../Manutencao/index.html">Manutenção</a></li>
+            <li><a href="../Operacoes/index.html">Operações</a></li>
+        </ul>
+    </nav>
+</header>
+
 <body onload="carregar()">
     <div class="info-tudo">
         <div class="div-criar">
@@ -28,6 +38,7 @@
             </div> 
         </div>
     </div>
+    <!-- ---------------------------------------------- Cadastrar ---------------------------------------------- -->
     <div id="modal1" class="modal">
         <div id="novo">
             <div class="modalHeader">
@@ -35,14 +46,12 @@
                 <button class="fechar" onclick="modal1.setAttribute('style','display:none')">X</button>
             </div>
             <div class="modalForm">
-                <label class="lab" for="">ID de Veículo:</label> 
-                <input type="text" id="id" />
-                <label class="lab1" for="">Placa:</label> 
-                <input type="text" id="placa" />
-                <label class="lab2" for="">Modelo:</label> 
-                <input type="text" id="modelo" />
-                <label class="lab3" for="">Marca:</label> 
-                <input class="text" type="text" id="marca" />
+                <label class="labc1" for="">Placa:</label> 
+                <input type="text" id="placac" />
+                <label class="labc2" for="">Modelo:</label> 
+                <input type="text" id="modeloc" />
+                <label class="labc3" for="">Marca:</label> 
+                <input class="text" type="text" id="marcac" />
                 
             </div>
             <div class="modalFooter">
@@ -67,12 +76,13 @@
                 <button class="fechar" onclick="modal3.setAttribute('style','display:none')">X</button>
             </div>
             <div class="modal3Form">
-                <label class="lab1" for="">Placa:</label> 
-                <input type="text" id="placa" />
-                <label class="lab2" for="">Modelo:</label> 
-                <input type="text" id="modelo" />
-                <label class="lab3" for="">Marca:</label> 
-                <input class="text" type="text" id="marca" />
+                <input type="hidden" id="ida" />
+                <label class="laba1" for="">Placa:</label> 
+                <input type="text" id="placaa" />
+                <label class="laba2" for="">Modelo:</label> 
+                <input type="text" id="modeloa" />
+                <label class="laba3" for="">Marca:</label> 
+                <input class="text" type="text" id="marcaa" />
                 
             </div>
             <div class="modal3Footer">

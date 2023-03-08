@@ -2,7 +2,6 @@ var UrList = "http://localhost:3000/frota";
 var listarFro = document.querySelector(".info-tudo");
 var itemFro = document.querySelector(".info");
 
-
 var listar = [];
 
 function carregar() {
@@ -19,7 +18,7 @@ function carregar() {
     }
 
 function listaFrota()  {
-    listar.forEach(e => {
+    listar.forEach((e,i) => {
         let frota = document.querySelector(".info").cloneNode(true);
         frota.classList.remove("model");
 
@@ -28,14 +27,23 @@ function listaFrota()  {
         frota.querySelector("#modelo").innerHTML += e.modelo;
         frota.querySelector("#marca").innerHTML += e.marca;
 
-        frota.querySelector("#edit").setAttribute("onclick", "modal3.setAttribute('style','display:flex')");
+        frota.querySelector("#edit").setAttribute("onclick", `dadosAlterar('${i}')`);
 
         frota.querySelector("#del").addEventListener("click", () => {
-            remover(e.id, frota);
+            remover(e.id);
         });
 
         listarFro.appendChild(frota);
     })
+}
+
+function dadosAlterar(i) {
+    console.log(listar[i]);
+    modal3.setAttribute('style', 'display:flex');
+    ida.value = listar[i].id;
+    placaa.value = listar[i].placa;
+    modeloa.value = listar[i].modelo;
+    marcaa.value = listar[i].marca;
 }
 
 function remover(id, frota) {
@@ -44,35 +52,52 @@ function remover(id, frota) {
         headers:{
             'Content-Type': 'application/json',
             "Bearer": JSON.parse(localStorage.getItem('info')).token
-          },
+        },
     })
-    .then(resp => { return resp.status(204)})
-    .then(data => {
-        frota.remove();
-    });
+    .then(resp => { return resp.status })
+    .then(resp => {
+        if (resp == 204)
+            window.location.reload();
+        else
+            console.log(resp)
+    })
 }
 
-function alterar(id, alt) {
+function alterar() {
+    let id = document.querySelector("#ida").value
+    let placa = document.querySelector("#placaa").value
+    let modelo = document.querySelector("#modeloa").value
+    let marca = document.querySelector("#marcaa").value
+
+    let corpo = {
+        "placa": placa,
+        "modelo": modelo,
+        "marca": marca,
+        
+    }
+
     fetch("http://localhost:3000/frotaupdate/" + id, {
         "method":"PUT",
         headers:{
             'Content-Type': 'application/json',
             "Bearer": JSON.parse(localStorage.getItem('info')).token
           },
+          "body": JSON.stringify(corpo)
     })
     .then(resp => { return resp.status(204)})
     .then(data => {
         alt.update();
     });
+    window.location.reload();
 }
 
 
 function cadastrarVeiculo() {
     //Cria um objeto com os dados dos campos html <input>
 
-    let placa = document.querySelector("#placa").value
-    let modelo = document.querySelector("#modelo").value
-    let marca = document.querySelector("#marca").value
+    let placa = document.querySelector("#placac").value
+    let modelo = document.querySelector("#modeloc").value
+    let marca = document.querySelector("#marcac").value
 
     let corpo = {
         "placa": placa,

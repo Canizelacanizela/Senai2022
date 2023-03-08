@@ -4,6 +4,42 @@
     box-sizing: border-box;
 }
 
+.head{
+    height: 5vh;
+    background-color: #59adbe;
+    width: 100vw;
+    align-items: center;
+    display: flex;
+}
+
+ul{
+    display: flex;
+    list-style-type: none;
+    align-items: center;
+}
+
+ul li a{
+    padding: 0 20px;
+    text-decoration: none;
+    color:rgb(66, 65, 65);
+    display: inline-block;
+    font-size: 20px;
+}
+
+li a::after {
+    content: '';
+    display: block;
+    height: 4px;
+    border-radius: 10px;
+    width: 0;
+    background: rgb(127, 181, 216);
+    transition:all .6s;
+}
+
+li a:hover::after{
+    width:100%;
+}
+
 body{
     margin: 0;  
 }
@@ -20,7 +56,7 @@ p{
 
 .info-tudo{
     width: 100vw;
-    height: 100vh;
+    height: 95vh;
     background: hsl(255, 19%, 21%);
     display:flex;
     align-items: flex-start;
