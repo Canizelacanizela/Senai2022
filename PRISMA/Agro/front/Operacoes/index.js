@@ -18,6 +18,16 @@ function carregar() {
         .catch(err => console.error(err));
 }
 
+function formatarData(valor) {
+    if(valor == null) return "-";
+    let data = new Date(valor);
+    return new Intl.DateTimeFormat("pt-BR", {
+        dateStyle: "short",
+        timeStyle: "short",
+    }).format(data).replace(",", "");
+}
+
+
 function listaOpera() {
     listar.forEach((e, i) => {
         let opera = document.querySelector(".info").cloneNode(true);
@@ -25,13 +35,18 @@ function listaOpera() {
 
         opera.querySelector("#id_motorista").innerHTML += e.id_motorista;
         opera.querySelector("#id_veiculo").innerHTML += e.id_veiculo;
-        opera.querySelector("#data_saida").innerHTML += e.data_saida.toLocaleString('pt-BR', { timeZone: 'UTC' }).replace("T", " ").split(".")[0];;
+        // opera.querySelector("#data_saida").innerHTML += e.data_saida.toLocaleString('pt-BR', { timeZone: 'UTC' }).replace("T", " ").split(".")[0];
+        opera.querySelector("#data_saida").innerHTML += formatarData(e.data_saida);
+        opera.querySelector("#data_retorno").innerHTML += formatarData(e.data_retorno);
         opera.querySelector("#descricao_servico").innerHTML += e.descricao_servico;
 
         opera.querySelector("#edit").setAttribute("onclick", `dadosAlterar('${i}')`);
 
         opera.querySelector("#del").addEventListener("click", () => {
             remover(e.id);
+        });
+        opera.querySelector("#final").addEventListener("click", () => {
+            final(e.id);
         });
 
         listarOperaco.appendChild(opera);
@@ -93,6 +108,25 @@ function alterar() {
     window.location.reload();
 }
 
+function final(id) {
+    fetch("http://localhost:3000/operaretorno/" + id, {
+        "method": "PUT",
+        headers: {
+            'Content-Type': 'application/json',
+            "Bearer": JSON.parse(localStorage.getItem('info')).token
+        }
+    })
+        .then(res => {
+            if(res.status == 202) {
+                console.log("Deu certo");
+                window.location.reload();
+            }else{
+                console.log("Deu errado")
+            }
+        })
+}
+
+
 
 function cadastrarOpera() {
     //Cria um objeto com os dados dos campos html <input>
@@ -122,11 +156,12 @@ function cadastrarOpera() {
         .then(resp => {
             if (resp != undefined) {
                 console.log("Deu Certo");
+                window.location.reload();
             } else {
                 console.log("Parece que deu erro");
             }
         });
-    window.location.reload();
+    
 }
 
 function alerta(a) {

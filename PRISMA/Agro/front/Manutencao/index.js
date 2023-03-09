@@ -18,15 +18,26 @@ function carregar() {
         .catch(err => console.error(err));
 }
 
+function formatarData(valor) {
+    if(valor == null) return "-";
+    let data = new Date(valor);
+    return new Intl.DateTimeFormat("pt-BR", {
+        dateStyle: "short",
+        timeStyle: "short",
+    }).format(data).replace(",", "");
+}
+
 function listarManu() {
     listar.forEach((e,i) => {
+        console.log(e);
         let manu = document.querySelector(".info").cloneNode(true);
         manu.classList.remove("model");
 
         manu.querySelector("#id").innerHTML += e.id;
         manu.querySelector("#id_veiculo").innerHTML += e.id_veiculo;
-        manu.querySelector("#data_inicio").innerHTML += e.data_inicio.toLocaleString('pt-BR', { timeZone: 'UTC' }).replace("T", " ").split(".")[0];
-        // manu.querySelector("#data_fim").innerHTML += e.data_fim
+        // manu.querySelector("#data_inicio").innerHTML += e.data_inicio.toLocaleString('pt-BR', { timeZone: 'UTC' }).replace("T", " ").split(".")[0];
+        manu.querySelector("#data_inicio").innerHTML += formatarData(e.data_inicio);
+        manu.querySelector("#data_fim").innerHTML += formatarData(e.data_fim);
         manu.querySelector("#valor_gasto").innerHTML += e.valor_gasto;
         manu.querySelector("#descricao").innerHTML += e.descricao;
 
@@ -34,6 +45,10 @@ function listarManu() {
 
         manu.querySelector("#del").addEventListener("click", () => {
             remover(e.id);
+        });
+
+        manu.querySelector("#final").addEventListener("click", () => {
+            final(e.id);
         });
 
         listarManutencao.appendChild(manu);
@@ -92,6 +107,24 @@ function alterar() {
             alt.update();
         });
     window.location.reload();
+}
+
+function final(id) {
+    fetch("http://localhost:3000/manufim/" + id, {
+        "method": "PUT",
+        headers: {
+            'Content-Type': 'application/json',
+            "Bearer": JSON.parse(localStorage.getItem('info')).token
+        }
+    })
+        .then(res => { 
+            if (res.status == 202) {
+                console.log("Deu Certo");
+                window.location.reload();
+            } else {
+                console.log("Parece que deu erro");
+            }
+         })
 }
 
 

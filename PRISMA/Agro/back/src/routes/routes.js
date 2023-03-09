@@ -38,6 +38,7 @@ router.get('/opera', Operacoes.read);
 router.get('/operaOne/:id', Operacoes.readOne);
 router.post('/operacriar',Operacoes.create);
 router.put('/operaupdate/:id',Operacoes.update);
+router.put('/operaretorno/:id',Operacoes.toRetorno);
 router.delete('/operadel/:id',Operacoes.del);
 // ------------------------------Usuario--------------------------------------
 router.get('/user', User.read);
