@@ -1,101 +1,75 @@
 import {StyleSheet} from 'react-native';
 
 export default StyleSheet.create({
-   
-    title: {
-        fontSize: '1.05rem',
-        fontWeight: 'bold',
-        marginBottom: '5px'
-    },
-   
-    Tex: {
-        paddingTop:6,
-     paddingBottom:6,
-        backgroundColor: "#FFF",
-        borderRadius: 6,
-        borderBottomWidth: 1,
-        borderBottomColor: "#7242F5",
-        marginTop: 8,
-        marginBottom: 8,
-        marginLeft:35,
-        width: 310,
-        alignContent: "center",
-    },
-
-    logo: {
-        width: 200,
-        height: 200,
-        marginTop:250,
-        marginLeft:84,
-        marginBottom:22
-    },
-    
-    container : {
+    container:{
         flex: 1,
-        alignItems: 'center',
-        justifyContent: 'center',
-        height: '100%',
-        width: '100%',
-        gap: '10px'
+        backgroundColor: '#413A50'
+        
+        
     },
-
-    body: {
-        alignItems: 'center',
-        justifyContent: 'center',
-        height: '100%',
-        width: '100%',
-        gap: '10px',
-        borderRadius: '5px',
-    },
-
-    containers : {
-        marginBottom: 4,
-        backgroundColor: '#FFFFFF',
-        width: '80vw',
-        padding: '15px',
-        border: 'none',
-        borderRadius: '5px',
-        shadowColor: "#000",
-        shadowOffset: {
-            width: 0,
-            height: 6,
-        },
-        shadowOpacity: 0.58,
-        shadowRadius: 20.00,
-        elevation: 16,
-    },
-    
-    excluirIm: {
-        width: '28px',
-        height: '28px',
-        shadowColor: "#000"
-    },
- 
-    button: {
-        width: '75%',
-        backgroundColor: '#33ACF5',
-        paddingHorizontal: '12px',
-        paddingVertical: '12px',
-        alignItems: 'center',
-        justifyContent: 'center',
-        borderRadius: '5px',
-        shadowColor: "#000",
-        shadowOffset: {
-            width: 0,
-            height: 6,
-        },
-        shadowOpacity: 0.58,
-        shadowRadius: 20.00,
-        elevation: 16,
-    },
-    textButton: {
-        fontSize: '1.2rem',
+    title: {
+        fontSize: '1.00rem',
         fontWeight: 'bold',
-        color: '#EFEFEF',
+        marginBottom: '5px',
+        marginLeft:13,
+        color: '#FFF',
     },
-    hairline: {
-        backgroundColor: '#A2A2A2',
-        height: 1,
-        width: 450
-      },
+    item: {
+        display: '',
+    },
+    l: {
+        width: 90,
+        height: 90,
+        borderRadius: '5px',
+       alignSelf: 'center',
+        marginTop:25,
+        marginLeft:10,
+        marginBottom:20,
+    },
+    botao: {
+        marginTop: '16px',
+        margin: '15px',
+        alignItems: 'center',
+        height: '70px',
+        width: '190px',
+        justifyContent: 'center',
+        borderRadius: '18px',
+        backgroundColor: '#86ADFC'
+    },
+    car:{
+        fontSize: '1.02rem',
+        fontFamily: 'times New Roman',
+        padding : '11px',
+        marginTop: '8px',
+        marginBottom: '6px',
+        fontWeight: 'bold',
+        alignItems: 'center',
+        backgroundColor: '#EFEFEF',
+        justifyContent: 'center',
+        color: 'gray',
+        borderRadius: '5px'
+    },
+    op:{
+        fontSize: '1.17rem',
+        fontWeight: 'bold',
+    },
+    p:{
+        marginLeft: 6,
+        marginTop: 6,
+        display: 'flex', 
+        flexDirection:'row',
+        backgroundColor: "#50496B",
+        alignItems: 'center',
+        width: '180px',
+        borderRadius:'10px',
+        marginBottom: '8px',
+        shadowColor: "#000",
+shadowOffset: {
+	width: 0,
+    height: 12,
+},
+shadowOpacity: 0.58,
+shadowRadius: 16.00,
+elevation: 24,
+    }
 })

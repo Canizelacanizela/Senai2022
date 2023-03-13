@@ -2,30 +2,41 @@ import { useState, useEffect } from 'react';
 import { StyleSheet, Text, View, TextInput, Button, Image, ScrollView, TouchableOpacity } from 'react-native';
 import styles from './style';
 export default function App() {
-  const [operacao, setOpera] = useState([]);
-
-  // const deletar = (id) => {
+  const [manutencao, setManu] = useState([]);
 
 
-  //   fetch("http://10.87.207.28:3000/motordel/", + id, {
-  //      "method": "DELETE",
+function formataData(val) {
+   if(val == null) return "-";
+    let data = new Date(val);
+    return new Intl.DateTimeFormat("pt-BR", {
+        dateStyle: "short",
+        timeStyle: "short",
+    }).format(data).replace(",", "");
+}
+
+  // const alterar () {
+
+
+  //   fetch("http://10.87.207.28:3000/frotaupdate/" + id, {
+  //      "method": "PUT",
   //      "headers":{
   //        "Content-Type": "application/json"
-  //      }
+  //        "Bearer": JSON.parse(localStorage.getItem('info')).token
+  //      },
+  //      body: JSON.stringify(manu)
   //    })
   //    .then(res => {return res.json()})
   //    .then(data => {
-  //      setOpera(data);
+  //  setManu(data);
   //    })
   //    }
 
 
 
   useEffect(() => {
-    fetch("http://10.87.207.28:3000/opera")
+    fetch("http://10.87.207.28:3000/manu")
     .then(res => {return res.json()})
-    .then(data => {
-      setOpera(data);
+    .then(data => {setManu(data);
     })
   });
 
@@ -35,28 +46,28 @@ export default function App() {
         <View  style={styles.container}>
         <ScrollView>
             {
- operacao.map((opera, index) => {
+ manutencao.map((manu, index) => {
     return (
         <View style={styles.containers} key={index} >
             
-            {/* ${opera.data_post.split("T")[0]} */}
+            {/* ${manu.data_post.split("T")[0]} */}
            <View style={styles.body}>
-            <Text>ID motorista: {`${opera.id_motorista}`}</Text>
-            <Text>ID veiculo: {`${opera.id_veiculo}`}</Text>
-            <Text>Data de saida: {`${opera.data_saida}`}</Text>
-          
-             <Text>Descrição: {`${opera.descricao_servico}`}</Text>
-              {/* <TouchableOpacity onPress={() => {
-                deletar()
+            <Text style={styles.title}>ID veiculo: {`${manu.id_veiculo}`}</Text>
+            <Text style={styles.title}>Data de Início: {`${manu.data_inicio}`}</Text>
+            {/* <Text style={styles.title}>Data de Finalização: {`${manu.data_fim}`}</Text> */}
+            <Text style={styles.title}>Valor gasto: {`${manu.valor_gasto}`}</Text>
+            <Text style={styles.title}>Descrição: {`${manu.descricao}`}</Text>
+              <TouchableOpacity onPress={() => {
+                alterar()
+                 }}>
+                <Image style={styles.excluirIm} source={{uri: "https://cdn-icons-png.flaticon.com/512/9160/9160755.png"}}></Image>
+              </TouchableOpacity>
+           </View>
+           {/* <TouchableOpacity onPress={() => {
+                alterar()
                  }}>
                 <Image style={styles.excluirIm} source={{uri: "https://cdn-icons-png.flaticon.com/512/491/491722.png"}}></Image>
               </TouchableOpacity> */}
-           </View>
-           <TouchableOpacity onPress={() => {
-                deletar()
-                 }}>
-                <Image style={styles.excluirIm} source={{uri: "https://cdn-icons-png.flaticon.com/512/491/491722.png"}}></Image>
-              </TouchableOpacity>
         </View>
     )
 })

@@ -36,7 +36,8 @@ export default StyleSheet.create({
         justifyContent: 'center',
         height: '100%',
         width: '100%',
-        gap: '10px'
+        gap: '10px', 
+        backgroundColor: '#413A50'
     },
 
     body: {
@@ -49,8 +50,9 @@ export default StyleSheet.create({
     },
 
     containers : {
-        marginBottom: 4,
-        backgroundColor: '#FFFFFF',
+        marginTop: 10,
+        marginBottom: 10,
+        backgroundColor: '#50496B',
         width: '80vw',
         padding: '15px',
         border: 'none',
@@ -98,4 +100,9 @@ export default StyleSheet.create({
         height: 1,
         width: 450
       },
+
+      title:{
+        color: '#FFFFFF',
+        // letterSpacing: 1
+      }
 })
