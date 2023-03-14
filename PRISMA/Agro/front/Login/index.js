@@ -8,18 +8,28 @@ function login() {
     }
 
     fetch("http://localhost:3000/login", {
-        "method":"POST",
+        "method": "POST",
         "headers": {
-            "Content-Type":"application/json"
+            "Content-Type": "application/json"
         },
         "body": JSON.stringify(info)
-    })
-    .then(res => {return res.json()})
-    .then(data => {
-        if(data.err === undefined) {
-            localStorage.setItem("info", JSON.stringify(data));
-
-            window.location.href = "../Motoristas/index.html";
+    }).then(res => {
+        let data = {
+            info: res.json(),
+            status: res.status
         }
+        return data;
     })
+        .then(res => {
+            if (res.status == 404)
+                alert("Dados inválidos")
+            else
+                return res.info
+        }).then(data => {
+            localStorage.setItem("info", JSON.stringify(data));
+            if (data.tipo == "Gerente")
+                window.location.href = "../Motoristas/index.html";
+            else
+                window.location.href = "../Comum/index.html";
+        })
 }
