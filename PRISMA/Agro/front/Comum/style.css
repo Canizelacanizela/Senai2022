@@ -18,7 +18,7 @@ ul{
     align-items: center;
 }
 
-ul li a{
+ul li h1{
     padding: 0 20px;
     text-decoration: none;
     color:rgb(66, 65, 65);
@@ -26,7 +26,7 @@ ul li a{
     font-size: 20px;
 }
 
-li a::after {
+li h1::after {
     content: '';
     display: block;
     height: 4px;
@@ -36,7 +36,7 @@ li a::after {
     transition:all .6s;
 }
 
-li a:hover::after{
+li h1:hover::after{
     width:100%;
 }
 
@@ -49,9 +49,19 @@ p{
     letter-spacing: 1px;
 }
 
+.info-video{
+    width: 100vw;
+    height: 55vh;
+    background: hsl(255, 19%, 21%);
+    display:flex;
+    align-items: flex-start;
+    padding: 25px;
+    gap: 25px;
+}
+
 .info-tudo{
     width: 100vw;
-    height: 100vh;
+    height: 40vh;
     background: hsl(255, 19%, 21%);
     display:flex;
     align-items: flex-start;
