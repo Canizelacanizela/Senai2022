@@ -22,7 +22,7 @@ export default function SignIn({navigation}) {
     .then(res => {return res.json()})
     .then(data => {
       if(data.id !== undefined){
-        navigation.navigate("Frota");
+        navigation.navigate("Home");
       }
     })
   }

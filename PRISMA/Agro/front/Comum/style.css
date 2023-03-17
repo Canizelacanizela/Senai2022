@@ -40,6 +40,28 @@ li h1:hover::after{
     width:100%;
 }
 
+ul li a{
+    padding: 0 20px;
+    text-decoration: none;
+    color:rgb(66, 65, 65);
+    display: inline-block;
+    font-size: 20px;
+}
+
+li a::after {
+    content: '';
+    display: block;
+    height: 4px;
+    border-radius: 10px;
+    width: 0;
+    background: rgb(38, 126, 185);
+    transition:all .6s;
+}
+
+li a:hover::after{
+    width:100%;
+}
+
 body{
     margin: 0;  
 }
