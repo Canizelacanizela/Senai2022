@@ -1,50 +1,48 @@
 const { PrismaClient } = require('@prisma/client');
 
+const prisma = new PrismaClient();
+
 const create = async (req, res) => {
-    let tabela_profissionais = await prisma.tabela_profissionais.create({
+    let tabela_Profissionais = await prisma.tabelaProfissionais.create({
         data: req.body
     });
 
-    res.status(200).json(tabela_profissionais).end();    
+    res.status(200).json(tabela_Profissionais).end();
 }
 
 const read = async (req, res) => {
-    let tabela_profissionais = await prisma.tabela_profissionais.findMany({
+    let tabela_Profissionais = await prisma.tabelaProfissionais.findMany({
         select: {
-            data:true,
-            tabela_profissionais:{
-                select:{
-            id:true,
+            id: true,
             nome_p: true,
             email: true,
             endereco: true,
             tel: true,
-            nome_p: true
-                }
-            },
-            tabela_profissionais: {
-                select:{
+            descricao: true,
+            preco_h: true,
+            categorias: {
+                select: {
                     nome_categoria: true
                 }
             }
         }
     });
 
-    res.status(200).json(tabela_profissionais).end();
+    res.status(200).json(tabela_Profissionais).end();
 }
 
 const update = async (req, res) => {
-    const tabela_profissionais = await prisma.tabela_profissionais.update({
+    const tabela_Profissionais = await prisma.tabelaProfissionais.update({
         where: {
             id: Number(req.params.id)
         },
         data: req.body
     })
-    res.status(202).json(tabela_profissionais).end();
+    res.status(202).json(tabela_Profissionais).end();
 }
 
 const del = async (req, res) => {
-    const tabela_profissionais = await prisma.tabela_profissionais.delete({
+    const tabela_Profissionais = await prisma.tabelaProfissionais.delete({
         where: {
             id: Number(req.params.id)
         }

@@ -1,5 +1,7 @@
 const { PrismaClient } = require('@prisma/client');
 
+const prisma = new PrismaClient();
+
 const create = async (req, res) => {
     let Clientes = await prisma.Clientes.create({
         data: req.body
@@ -33,4 +35,11 @@ const del = async (req, res) => {
         }
     })
     res.status(204).end();
+}
+
+module.exports = {
+    create,
+    read,
+    del,
+    update
 }

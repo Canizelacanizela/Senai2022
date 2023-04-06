@@ -1,36 +1,38 @@
 const { PrismaClient } = require('@prisma/client');
 
+const prisma = new PrismaClient();
+
 const create = async (req, res) => {
-    let categoria_profissoes = await prisma.categoria_profissoes.create({
+    let categoriaProfissoes = await prisma.categoriaProfissoes.create({
         data: req.body
     });
 
-    res.status(200).json(categoria_profissoes).end();    
+    res.status(200).json(categoriaProfissoes).end();
 }
 
 const read = async (req, res) => {
-    let categoria_profissoes = await prisma.categoria_profissoes.findMany({
+    let categoriaProfissoes = await prisma.categoriaProfissoes.findMany({
         select: {
-            id:true,
-           nome_categoria: true
+            id: true,
+            nome_categoria: true
         }
     });
 
-    res.status(200).json(categoria_profissoes).end();
+    res.status(200).json(categoriaProfissoes).end();
 }
 
 const update = async (req, res) => {
-    const categoria_profissoes = await prisma.categoria_profissoes.update({
+    const categoriaProfissoes = await prisma.categoriaProfissoes.update({
         where: {
             id: Number(req.params.id)
         },
         data: req.body
     })
-    res.status(202).json(categoria_profissoes).end();
+    res.status(202).json(categoriaProfissoes).end();
 }
 
 const del = async (req, res) => {
-    const categoria_profissoes = await prisma.categoria_profissoes.delete({
+    const categoriaProfissoes = await prisma.categoriaProfissoes.delete({
         where: {
             id: Number(req.params.id)
         }
