@@ -12,7 +12,10 @@ const create = async (req, res) => {
 
 const read = async (req, res) => {
     let Avalia = await prisma.Avalia.findMany({
-        data: req.body
+        select: {
+            id: true,
+            comentario: true
+        }
     });
 
     res.status(200).json(Avalia).end();

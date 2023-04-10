@@ -12,7 +12,13 @@ const create = async (req, res) => {
 
 const read = async (req, res) => {
     let Clientes = await prisma.Clientes.findMany({
-        data: req.body
+        select: {
+            id:true,
+            nome: true,
+            email: true,
+            telefone: true,
+            endereco: true
+        }
     });
 
     res.status(200).json(Clientes).end();
