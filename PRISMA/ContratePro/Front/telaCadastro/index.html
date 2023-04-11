@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../tela de cadastro/style.css">
-    <title>tela de login</title>
+    <link rel="stylesheet" href="style.css">
+    <title>tela de cadastro</title>
 </head>
 <body>
     <div class="main">
@@ -17,6 +17,10 @@
             <div class="card">
                 <h1 class="h1">Cadastre-se</h1>
                 <div class="in">
+                    <label for="Nome">Nome</label>
+                    <input id="nome" value="Aninha" placeholder="Nome" type="text">
+                </div>
+                <div class="in">
                     <label for="E-mail">E-mail</label>
                     <input id="email" value="bana@gmail.com" placeholder="E-mail" type="text">
                 </div>
@@ -26,15 +30,16 @@
                 </div>
                 <div class="in">
                     <label for="tipo">Tipo:</label>
-                    <select name="categoria" id="categoria">
+                    <select name="categoria" id="tipo">
                         <option value="Profissional">Profissional</option>
                         <option value="cliente">Cliente</option>
                     </select>
                    
                 </div>
-                <button class="btn" onclick="login()">Cadastre</button>
+                <button class="btn" onclick="cadastrarUsuario()">Cadastre</button>
             </div>
-            
+            <a href="../telaLogin/index.html"><p class="p">Já tem uma conta? Faça Login</p></a>
     </div>
 </body>
+<script src="index.js"></script>
 </html>

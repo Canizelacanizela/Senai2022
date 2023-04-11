@@ -51,7 +51,7 @@ body {
 
 .card > h1 {
   color: #59adbe;
-  margin-bottom: 45px;
+  margin-bottom: 15px;
   font-family: "Oxygen", sans-serif;
   /* font-weight: 500px; */
   align-items: center;
@@ -87,11 +87,11 @@ body {
 }
 
 .in > select::placeholder {
-  color: #cfe7e78c;
+  color: #1f20208c;
 }
 
 .in > input::placeholder {
-  color: #cfe7e78c;
+  color: #1f20208c;
 }
 
 .in > label {

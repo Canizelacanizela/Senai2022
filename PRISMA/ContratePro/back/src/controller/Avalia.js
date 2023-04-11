@@ -40,8 +40,6 @@ const del = async (req, res) => {
     res.status(204).end();
 }
 
-<<<<<<< HEAD
-
 const readOne = async (req, res) => {
 
      let Avalia = await prisma.Avalia.findUnique({
@@ -66,5 +64,4 @@ module.exports = {
     update,
     readOne
 }
-=======
->>>>>>> 0cd047da7f2b4010caa55f7d91fd926a4dcf4e68
+
