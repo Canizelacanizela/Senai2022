@@ -3,3 +3,14 @@
     margin: 0%;
     box-sizing: border-box;
 }
+body{
+    font-family: "Bebas Neue", cursive;
+}
+.perfil-user{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+.iconimage{
+    list-style: none;
+}
