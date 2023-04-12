@@ -1,44 +1,54 @@
-*{
+* {
     padding: 0;
     box-sizing: border-box;
     margin: 0;
 }
 
 
-header{
+header {
     height: 100px;
     display: flex;
     justify-content: space-around;
     align-items: center;
-    box-shadow: 0px 1px 6px rgb(36, 85, 158);
+    box-shadow: 0px 1px 10px rgb(36, 85, 158);
 }
 
 
-#i{
+#i {
     width: 100px;
     height: 100px;
 }
 
-img{
+img {
     width: 30px;
     height: 30px;
 }
 
+input[type="search"] {
+    width: 300px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 2px solid #ccc;
+    font-size: 16px;
+    background-color: #f2f2f2;
+    color: #333;
+}
 
-
-ul{
+ul {
     display: flex;
     list-style-type: none;
     align-items: center;
 }
 
-ul li a{
+ul li a {
     padding: 0 20px;
     text-decoration: none;
-    color:rgb(66, 65, 65);
+    color: rgb(66, 65, 65);
     display: inline-block;
     font-size: 20px;
 }
+
+
 
 li a::after {
     content: '';
@@ -47,21 +57,21 @@ li a::after {
     border-radius: 10px;
     width: 0;
     background: rgb(127, 181, 216);
-    transition:all .6s;
+    transition: all .6s;
 }
 
-li a:hover::after{
-    width:100%;
+li a:hover::after {
+    width: 100%;
 }
 
-ul li .btn-cad{
+ul li .btn-cad {
     padding: 0 20px;
     text-decoration: none;
-    color:rgb(66, 65, 65);
+    color: rgb(66, 65, 65);
     display: inline-block;
     font-size: 19px;
 
-    
+
 }
 
 li .btn-cad::after {
@@ -71,10 +81,28 @@ li .btn-cad::after {
     border-radius: 10px;
     width: 0;
     background: rgb(64, 155, 216);
-    transition:all .6s;
+    transition: all .6s;
 
 }
 
-li .btn-cad:hover::after{
-    width:100%;
+li .btn-cad:hover::after {
+    width: 100%;
+}
+
+ul li .n {
+    padding: 6px 14px;
+    text-decoration: none;
+    color: rgb(66, 65, 65);
+    display: inline-block;
+    font-size: 16px;
+}
+
+ul li .nn {
+    color: rgb(66, 65, 65);
+    font-size: 20px;
+}
+
+
+.logo{
+  display: flex;
 }
