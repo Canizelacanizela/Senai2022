@@ -8,6 +8,17 @@ body {
     background-color: #FFFFFF;
     padding: 20px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+.profileTwo{
+    margin: 20px auto;
+    width: 50%;
+    height: 70vh;
+    background-color: #FFFFFF;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+
 }
 .profile-header {
     display: flex;
