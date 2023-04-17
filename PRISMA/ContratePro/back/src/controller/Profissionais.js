@@ -17,6 +17,7 @@ const read = async (req, res) => {
             nome_p: true,
             email: true,
             endereco: true,
+            biografia: true,
             tel: true,
             descricao: true,
             preco_h: true,
