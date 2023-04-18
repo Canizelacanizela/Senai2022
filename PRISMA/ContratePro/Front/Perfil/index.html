@@ -9,7 +9,7 @@
     <title>Tela de perfil</title>
 </head>
 
-<body onload=" carregar()">
+<body onload="carregar()">
     <div class="profile">
         <div class="profile-header">
             <img src="https://via.placeholder.com/150" alt="Foto de Perfil">
@@ -17,24 +17,53 @@
                 <h1 id="nome">Seu nome</h1>
             </div>
             <div>
-               <img class="lapis" src="../assets/relatorio.png" alt="lapis">
+                <img  data-id="1" class="lapis" src="../assets/relatorio.png" alt="lapis">
             </div>
+            <p class="hr">Por hora R$:<p class="hr" id="hora">por hora</p></p>
         </div>
+        <button class="btn">Enviar mensagem</button>
         <div class="profile-body">
             <div class="profile-body-section">
-                <h2>Resumo</h2>
-                <p>Sua biografia ou resumo profissional.</p>
+                <h2>Contato</h2>
+                <p class="info" id="tel">Telefone:</p>
+                <p id="email">Email:</p>
+            </div>
+            <div class="profile-body-section">
+                <h2>Biografia</h2>
+                <p id="biografia">Biografia: Sua biografia ou resumo profissional.</p>
             </div>
             <div class="profile-body-section">
                 <h2>Experiência Profissional</h2>
-                <p>Descrição de suas experiências profissionais passadas.</p>
+                <p id="des">Descrição de suas experiências profissionais passadas.</p>
             </div>
             <div class="profile-body-section">
                 <h2>Formação Acadêmica</h2>
-                <p>Formação em:</p>
+                <p id="cat">Formação em:</p>
             </div>
         </div>
     </div>
+
+
+    <div class="modal">
+        <div class="modal-content">
+          <h2>Editar Informações</h2>
+          <form>
+            <label for="name">Por hora:</label>
+            <input type="text" id="name">
+            <label for="tel">Telefone:</label>
+            <input type="text" id="teli">
+            <label for="email">Email:</label>
+            <input type="email" id="emai">
+            <label for="bio">Biografia:</label>
+            <input type="text" id="bio">
+            <label for="bio">Email:</label>
+            <input type="text" id="bio">
+            <label for="categoria">Formação:</label>
+            <input type="text" id="categoria">
+            <button type="submit">Salvar</button>
+          </form>
+        </div>
+      </div>
 </body>
 <script src="index.js"></script>
 
