@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -21,7 +20,7 @@
 
                 <li><a href="#"><img src="../assets/silhueta-de-icone-de-casa.png" alt="Home"></a></li>
                 <li><a href="#"><img src="../assets/bater-papo.png" alt="Bate-Papo"></a></li>
-                <li><a href="#"><img src="../assets/perfil.png" alt="Perfil"></a></li>
+                <li><a href="../Perfil/index.html"><img src="../assets/perfil.png" alt="Perfil"></a></li>
             </ul>
         </nav>
     </header>
@@ -29,18 +28,49 @@
 
 <body onload="carregar()">
     <div class="main">
-        <div class="lista model">
+        <div class="lista">
             <div class="profileTwo">
-                <div class="profile-body-section">
-                    <h2 id="nome_p">Maria</h2>
-                    <p id="descricao">Trabalho bem legal para pessoas bem legais, precisam vir na minha casa fazer uma coisa bem legal
-                        e vou fazer um preço beeeem legal e tudo mais legal.Observação: sou muito legal!.</p>
-                    <p id="preco_h">R$: </p>
+                <div class="profile-body-section model">
+                    
+                    <p id="descricao"></p>
+                    <h2 id="preco_h">Por hora: R$<h2>
+                        <h2 id="nome_p"></h2>
+                    <div class="contain">
+                        <div class="btn" id="edit">
+                            <img  width="32"  onclick="modal1.setAttribute('style','display:flex')" src="../assets/comente.png" alt="Alterar">
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-
+     <!-- ------------------------------------------------------- -->
+     <div id="modal1" class="modal">
+        <div id="novo">
+            <div class="modalHeader">
+                <h3> Enviar Proposta</h3>
+                <button class="fechar" onclick="modal1.setAttribute('style','display:none')">X</button>
+            </div>
+            <div class="modalForm">
+                <input type="hidden" id="idc" />
+                <label class="lab1" for="">Nome Completo:</label> 
+                <input type="text" id="nomec" />
+                <label class="lab2" for="">Proposta:</label> 
+                <textarea name="" id="propostac" cols="20" rows="3"></textarea>
+            </div>
+            <div class="modalFooter">
+                <button class="bn" onclick="makeProposta()">Enviar</button>
+            </div>
+        </div>
+    </div>
+    <div id="modal2" class="modal">
+        <div id="alerta">
+            <div class="modalHeader">
+                <h3>Mensagem</h3>
+                <button onclick="modal2.setAttribute('style','display:none')">X</button>
+            </div>
+            <div id="msg"></div>
+        </div>
     </div>
 </body>
 <script src="index.js"></script>

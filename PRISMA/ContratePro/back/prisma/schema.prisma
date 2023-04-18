@@ -36,6 +36,7 @@ model tabelaProfissionais {
     id_categoria Int
     categorias   categoriaProfissoes @relation(fields: [id_categoria], references: [id])
     id_pr        Avalia[]
+    id_profissional  Propostas[]
 }
 
 model Clientes {
@@ -54,4 +55,12 @@ model Avalia {
     comentario      String
     id_pr           tabelaProfissionais @relation(fields: [id_profissional], references: [id])
     id_cli          Clientes            @relation(fields: [id_cliente], references: [id])
+}
+
+model Propostas {
+    id       Int    @id @default(autoincrement())
+    nome     String
+    proposta String
+    id_profissional Int
+    id_pr    tabelaProfissionais @relation(fields: [id_profissional], references: [id])
 }

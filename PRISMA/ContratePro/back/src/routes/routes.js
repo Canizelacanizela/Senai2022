@@ -4,6 +4,7 @@ const router = express.Router();
 
 const Middle = require('../middleware/middleware');
 
+const Prop = require('../controller/Propostas');
 const Cat = require('../controller/Categoria');
 const Profissa = require('../controller/Profissionais');
 const Cli = require('../controller/Clientes');
@@ -14,6 +15,10 @@ const User = require('../controller/User');
 // router.delete('*', Middle.ValidaAcesso);
 // router.post('*', Middle.ValidaAcesso);
 
+//-------------------------------------------------------------------------------------
+router.get('/prop', Prop.read);
+router.post('/propcriar', Prop.create);
+router.delete('/propdel/:id', Prop.del);
 // ------------------------------Categorias-----------------------------------------
 router.get('/cat', Cat.read);
 router.post('/catcriar', Cat.create);
