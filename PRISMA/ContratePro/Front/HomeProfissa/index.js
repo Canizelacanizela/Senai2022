@@ -34,15 +34,17 @@ function dados(i) {
     idc.value = listar[i].id;
 }
 
-function makeProposta() {
-    //Cria um objeto com os dados dos campos html <input>
+const button = document.querySelector('.enviar-proposta');
+const profissionalId = button.dataset.id_profissional;
 
+
+button.addEventListener('click', () => {
     let id = document.querySelector("#idc").value
     let nome = document.querySelector("#nomec").value
     let proposta = document.querySelector("#propostac").value
 
     let corpo = {
-        "id_profissionais": id,
+        "id_profissionais": profissionalId,
         "nome": nome,
         "proposta": proposta
     }
@@ -56,17 +58,17 @@ function makeProposta() {
         "body": JSON.stringify(corpo)
     };
 
-    fetch('http://localhost:3000/propcriar', options)
+    fetch('http://localhost:3000/profcriar', options)
         .then(res => { return res.json() })
         .then(resp => {
             if (resp != undefined) {
                 alert("Proposta enviada para o profissional.");
                 window.location.reload();
             } else {
-                console.log("Parece que aconteceu um erro inesperado.Tente de novo mais tarde.");
+                console.log("Parece que aconteceu um erro inesperado. Tente novamente mais tarde.");
             }
         });
-}
+});
 
 function alerta(a) {
     document.querySelector('#modal2').setAttribute('style', 'display:flex;');
