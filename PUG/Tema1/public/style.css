@@ -1,0 +1,172 @@
+@import url(./paleta.css);
+
+body {
+    background-color: var(--agudo);
+    color: var(--grave);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+input,
+textarea,
+button,
+select {
+    padding: 5px;
+    margin: 5px;
+    border: none;
+    box-shadow: 0px 0px 3px var(--grave);
+}
+
+textarea,
+select {
+    width: 100%;
+}
+
+header {
+    height: 7vh;
+    width: 100%;
+    background-color: var(--mediograve);
+    box-shadow: 1px 1px 5px var(--grave);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+main {
+    height: 93vh;
+    width: 75%;
+    overflow-y: auto;
+    font-size: small;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+h2{
+    width: 100%;
+    height: 10%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    font-size: medium;
+    background-color: var(--mediograve);
+    color: var(--agudo);
+}
+
+h1{
+    width: 100%;
+    height: 10%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    font-size: medium;
+    background-color: var(--mediograve);
+    color: var(--agudo);
+}
+
+h1 .m
+
+p {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+input[type=submit],
+button {
+    border: none;
+    border-radius: 5px;
+    padding: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: var(--medio);
+    box-shadow: 1px 1px 5px var(--grave);
+    color: var(--agudo);
+    cursor: pointer;
+}
+
+div {
+    margin: 5px;
+    box-shadow: 1px 1px 5px var(--mediograve);
+    padding: 5px;
+    width: 98%;
+}
+
+.sombra {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.oculto {
+    display: none;
+}
+
+
+.novo {
+    position: relative;
+    top: 50px;
+    max-width: 500px;
+    background-color: var(--graveagudo);
+    color: var(--grave);
+    padding: 10px;
+}
+
+.novo .i{
+    width: 50%;
+    background-color:var(--agudo);
+}
+
+.novo p {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin: 5px;
+}
+
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td{
+    text-align: left;
+    padding: 8px;
+}
+
+th{
+    text-align: left;
+    padding: 8px;
+    color:var(--agudo);
+}
+
+th{
+    background-color: var(--mediomedio);
+}
+
+
+tr:nth-child(even) {
+    background-color: var(--graveagudo);
+  }

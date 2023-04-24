@@ -1,0 +1,72 @@
+head
+  meta(charset='utf-8')
+  title Avaliação Física
+  link(rel='stylesheet', href='style.css')
+  link(rel="shortcut icon" href="avaliacao.png")
+  script(src="script.js")
+body
+  header
+    h2 Avaliação Física
+      button(onclick="novo.classList.remove('oculto')") Novo Paciente
+    div(class="sombra oculto" id="novo")
+      div(class="novo")
+        h1 Cadastro de Pacientes
+        form(action="/paciente/create", method="POST")
+          p Nome:
+            input(class="i" name="nome_completo", placeholder="Digite o nome do paciente", required)
+          p Data de Nascimento:
+            input(class="i" type="date" name="nascimento", required)
+          p Peso Kg:
+            input(class="i" name="peso", placeholder="0", required)
+          p Altura m:
+            input(class="i" name="altura", placeholder="0", required)
+          button(onclick="novo.classList.add('oculto')") Cancelar
+          input(type="submit", value="Cadastrar")
+  main 
+    table
+      thead
+        tr
+          th ID
+          th Nome 
+          th Nascimento 
+          th Peso
+          th Altura
+          th IMC
+          th Diagnóstico
+          th Atualizar
+          th Excluir
+            tbody
+              each paciente in pacientes
+                -let imc = paciente.peso / (paciente.altura * paciente.altura)
+                -let diagnostico = ''
+                if imc < 18.5
+                  -diagnostico = 'Abaixo do peso'
+                else if imc < 25
+                  -diagnostico = 'Peso Ideal'
+                else if imc < 30
+                  -diagnostico = 'Excesso de peso'
+                else if imc < 35
+                  -diagnostico = 'Obesidade classe I'
+                else if imc < 40
+                  -diagnostico = 'Obesidade classe II'
+                else if imc >= 40
+                  -diagnostico = 'Obesidade classe III'
+                tr
+                  form(action="/paciente/update?_method=PUT", method='POST')
+                    td= paciente.id
+                    td= paciente.nome_completo
+                    td= new Date(paciente.nascimento).toLocaleDateString('pt-BR')
+                    td= paciente.peso
+                    td= paciente.altura
+                    td= imc.toFixed(1)
+                    td= diagnostico
+                    td(data-label="Alterar:")
+                      input(type="submit" value="*")
+                  form(action=`/paciente/del/${paciente.id}?_method=DELETE`, method='POST')
+                    td(data-label="Excluir:")
+                      input(type="submit" value="-")
+  footer 
+    p Total de Pacientes:             
+                  
+
+          
