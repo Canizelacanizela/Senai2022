@@ -75,8 +75,6 @@ ul li .btn-cad {
     color: rgb(66, 65, 65);
     display: inline-block;
     font-size: 19px;
-
-
 }
 
 li .btn-cad::after {
@@ -101,12 +99,47 @@ ul li .n {
     display: inline-block;
     font-size: 16px;
 }
+ul li .nnn {
+    padding: 6px 14px;
+    text-decoration: none;
+    color: rgb(66, 65, 65);
+    display: inline-block;
+    font-size: 16px;
+}
 
 ul li .nn {
     color: rgb(66, 65, 65);
     font-size: 20px;
 }
 
+.n{
+
+    padding: 14px 10px;
+    border: none;
+    border-radius: 8px;
+    outline: none;
+    font-weight: 600;
+    letter-spacing: 2px;
+    color: #2f2841;
+    
+}
+.nnn{
+
+    padding: 14px 10px;
+    border: none;
+    border-radius: 8px;
+    outline: none;
+    font-weight: 600;
+    letter-spacing: 2px;
+    color: #2f2841;
+    background-color: #aa6bdf;
+    cursor: pointer;
+}
+.nnn:hover {
+    background-color: #4570d2;
+    transition: all .6s;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+  }
 
 .logo {
     display: flex;
@@ -139,11 +172,9 @@ ul li .nn {
     flex-direction:row ;
     align-items: center;
     margin-top:6px;
-    
 } 
 
 .btn{
-    
     padding: 4px 10px;
     margin-top: 4px;
     margin-left: 1px;
@@ -157,16 +188,6 @@ ul li .nn {
     box-shadow: 0px 3px 4px  #82868b52;
 }
 
-
-/* .profile-header button {
-    background-color: #0077B5;
-    color: #FFFFFF;
-    border: none;
-    border-radius: 4px;
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
-} */
 .profile-body {
     display: flex;
     justify-content: space-between;
@@ -192,7 +213,7 @@ ul li .nn {
     margin: 0;
 }
 
-/* ---------------- Cadastro ------------------------- */
+/* ---------------- Proposta ------------------------- */
 .modal {
     display: none;
     flex-direction: column;
@@ -283,14 +304,14 @@ ul li .nn {
 .lab1{
     gap:25px;
     margin-top: 4px;
-    margin-left: 40px;
+    margin-left: 30px;
 }
 
 
 .lab2{
     gap:25px;
     margin-top: 12px;
-    margin-left: 45px;
+    margin-left: 35px;
 }
 
 #novo input{
@@ -339,6 +360,27 @@ ul li .nn {
 textarea {
     resize: none;
     border-radius: 4px;
+  }
+
+.enviar-proposta{
+    width: 50%;
+    padding: 14px 10px;
+    border: none;
+    border-radius: 8px;
+    outline: none;
+    text-transform: uppercase;
+    font-weight: 800;
+    letter-spacing: 3px;
+    color: #2f2841;
+    background-color: #59adbe;
+    cursor: pointer;
+    box-shadow: 0px 10px 40px -12px #076aeb8f;
+}
+
+.enviar-proposta:hover {
+    background-color: #aa6bdf;
+    transition: all .6s;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
   }
 /* --------------------- */
 

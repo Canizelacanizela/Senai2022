@@ -1,8 +1,91 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Heebo:wght@300;400&family=Noto+Serif&family=Oxygen:wght@300;400&family=Righteous&display=swap');
+* {
+    padding: 0;
+    box-sizing: border-box;
+    margin: 0;
+}
+
 body {
     background-color: #F5F5F5;
     font-family: Arial, sans-serif;
 }
+
+header {
+    height: 100px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #ffffff;
+    box-shadow: 0px 1px 10px rgb(36, 85, 158);
+}
+
+#i {
+    width: 100px;
+    height: 100px;
+}
+
+img {
+    width: 30px;
+    height: 30px;
+}
+
+ul {
+    display: flex;
+    list-style-type: none;
+    align-items: center;
+}
+
+ul li a {
+    padding: 0 20px;
+    text-decoration: none;
+    color: rgb(66, 65, 65);
+    display: inline-block;
+    font-size: 20px;
+}
+
+li a::after {
+    content: '';
+    display: block;
+    height: 4px;
+    border-radius: 10px;
+    width: 0;
+    background: rgb(127, 181, 216);
+    transition: all .6s;
+}
+
+li a:hover::after {
+    width: 100%;
+}
+
+ul li .btn-cad {
+    padding: 0 20px;
+    text-decoration: none;
+    color: rgb(66, 65, 65);
+    display: inline-block;
+    font-size: 19px;
+}
+
+li .btn-cad::after {
+    content: '';
+    display: block;
+    height: 4px;
+    border-radius: 10px;
+    width: 0;
+    background: rgb(64, 155, 216);
+    transition: all .6s;
+
+}
+
+li .btn-cad:hover::after {
+    width: 100%;
+}
+
+.logo {
+    display: flex;
+}
+
+/* ---- */
+
 .profile {
     margin: 20px auto;
     width: 55%;

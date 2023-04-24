@@ -57,7 +57,7 @@ button.addEventListener('click', () => {
         "body": JSON.stringify(corpo)
     };
 
-    fetch('http://localhost:3000/profcriar', options)
+    fetch('http://localhost:3000/prop', options)
         .then(res => { return res.json() })
         .then(resp => {
             if (resp != undefined) {
