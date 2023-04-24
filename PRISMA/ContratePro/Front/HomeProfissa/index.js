@@ -18,7 +18,6 @@ function listaProfissionais(profissionais) {
     profissionais.forEach((e, i) => {
         let prof = document.querySelector(".profile-body-section").cloneNode(true);
         prof.classList.remove("model");
-
         prof.querySelector("#nome_p").innerHTML += e.nome_p;
         prof.querySelector("#descricao").innerHTML += e.descricao;
         prof.querySelector("#preco_h").innerHTML += e.preco_h;
@@ -75,3 +74,4 @@ function alerta(a) {
     document.querySelector('#alerta').setAttribute('style', 'display:flex;');
     document.querySelector('#msg').innerHTML = a;
 }
+

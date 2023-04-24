@@ -26,6 +26,7 @@ router.put('/catupdate/:id', Cat.update);
 router.delete('/catdel/:id', Cat.del);
 // ------------------------------Profissional------------------------------------
 router.get('/prof', Profissa.read);
+router.get('/prof/:id', Profissa.readOne);
 router.post('/profcriar',Profissa.create);
 router.put('/profupdate/:id',Profissa.update);
 router.delete('/profdel/:id',Profissa.del);
