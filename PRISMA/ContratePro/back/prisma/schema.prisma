@@ -10,57 +10,52 @@ datasource db {
     url      = env("DATABASE_URL")
 }
 
-model User {
+model UserCliente {
     id    Int    @id @default(autoincrement())
     nome  String
     email String
     senha String
-    tipo  String
+    telefone String
+    id_cli   avaliaProfisional[]
+    id_cliente Propostas[]
+}
+
+model UserProfissionais {
+    id    Int    @id @default(autoincrement())
+    nome  String
+    email String
+    senha String
+    biografia String
+    porhora String
+    telefone String
+    id_categoria Int
+    categoria  categoriaProfissoes @relation(fields: [id_categoria], references: [id])
+    profissional avaliaProfisional[]
+    profissi Propostas[]
 }
 
 model categoriaProfissoes {
     id             Int                   @id @default(autoincrement())
     nome_categoria String
-    profissionais  tabelaProfissionais[]
+    user  UserProfissionais[]
 }
 
-model tabelaProfissionais {
-    id           Int                 @id @default(autoincrement())
-    nome_p       String
-    email        String
-    endereco     String
-    tel          String
-    descricao    String
-    biografia    String
-    preco_h      Float
-    id_categoria Int
-    categorias   categoriaProfissoes @relation(fields: [id_categoria], references: [id])
-    id_pr        Avalia[]
-    id_profissional  Propostas[]
-}
-
-model Clientes {
-    id       Int      @id @default(autoincrement())
-    nome     String
-    email    String
-    telefone String
-    endereco String
-    id_cli   Avalia[]
-}
-
-model Avalia {
+model avaliaProfisional {
     id              Int                 @id @default(autoincrement())
-    id_profissional Int
     id_cliente      Int
     comentario      String
-    id_pr           tabelaProfissionais @relation(fields: [id_profissional], references: [id])
-    id_cli          Clientes            @relation(fields: [id_cliente], references: [id])
+    id_profissional Int
+    id_cli          UserCliente            @relation(fields: [id_cliente], references: [id])
+    id_prof          UserProfissionais            @relation(fields: [id_profissional], references: [id])
 }
 
 model Propostas {
     id       Int    @id @default(autoincrement())
     nome     String
     proposta String
+    id_cliente Int
     id_profissional Int
-    id_pr    tabelaProfissionais @relation(fields: [id_profissional], references: [id])
+    id_pr UserProfissionais @relation(fields: [id_profissional], references: [id])
+    id_cli UserCliente @relation(fields: [id_cliente], references: [id])
 }
+
