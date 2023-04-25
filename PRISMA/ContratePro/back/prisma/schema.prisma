@@ -11,33 +11,33 @@ datasource db {
 }
 
 model UserCliente {
-    id    Int    @id @default(autoincrement())
-    nome  String
-    email String
-    senha String
-    telefone String
-    id_cli   avaliaProfisional[]
+    id         Int                 @id @default(autoincrement())
+    nome       String
+    email      String
+    senha      String
+    telefone   String
+    id_cli     avaliaProfisional[]
     id_cliente Propostas[]
 }
 
 model UserProfissionais {
-    id    Int    @id @default(autoincrement())
-    nome  String
-    email String
-    senha String
-    biografia String
-    porhora String
-    telefone String
+    id           Int                 @id @default(autoincrement())
+    nome         String
+    email        String
+    senha        String
+    biografia    String
+    porhora      String
+    telefone     String
     id_categoria Int
-    categoria  categoriaProfissoes @relation(fields: [id_categoria], references: [id])
-    profissional avaliaProfisional[]
-    profissi Propostas[]
+    categoria    categoriaProfissoes @relation(fields: [id_categoria], references: [id])
+    Comentario avaliaProfisional[]
+    profissi     Propostas[]
 }
 
 model categoriaProfissoes {
-    id             Int                   @id @default(autoincrement())
+    id             Int                 @id @default(autoincrement())
     nome_categoria String
-    user  UserProfissionais[]
+    user           UserProfissionais[]
 }
 
 model avaliaProfisional {
@@ -45,17 +45,16 @@ model avaliaProfisional {
     id_cliente      Int
     comentario      String
     id_profissional Int
-    id_cli          UserCliente            @relation(fields: [id_cliente], references: [id])
-    id_prof          UserProfissionais            @relation(fields: [id_profissional], references: [id])
+    id_cli          UserCliente         @relation(fields: [id_cliente], references: [id])
+    id_prof         UserProfissionais   @relation(fields: [id_profissional], references: [id])
 }
 
 model Propostas {
-    id       Int    @id @default(autoincrement())
-    nome     String
-    proposta String
-    id_cliente Int
+    id              Int               @id @default(autoincrement())
+    nome            String
+    proposta        String
+    id_cliente      Int
     id_profissional Int
-    id_pr UserProfissionais @relation(fields: [id_profissional], references: [id])
-    id_cli UserCliente @relation(fields: [id_cliente], references: [id])
+    id_pr           UserProfissionais @relation(fields: [id_profissional], references: [id])
+    id_cli          UserCliente       @relation(fields: [id_cliente], references: [id])
 }
-

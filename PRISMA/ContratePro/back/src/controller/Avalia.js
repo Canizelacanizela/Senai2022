@@ -3,36 +3,36 @@ const { PrismaClient } = require('@prisma/client');
 const prisma = new PrismaClient();
 
 const create = async (req, res) => {
-    let Avalia = await prisma.Avalia.create({
+    let AvaliaProfissional = await prisma.avaliaProfisional.create({
         data: req.body
     });
 
-    res.status(200).json(Avalia).end();    
+    res.status(200).json(AvaliaProfissional).end();    
 }
 
 const read = async (req, res) => {
-    let Avalia = await prisma.Avalia.findMany({
+    let AvaliaProfissional = await prisma.avaliaProfisional.findMany({
         select: {
             id: true,
             comentario: true
         }
     });
 
-    res.status(200).json(Avalia).end();
+    res.status(200).json(AvaliaProfissional).end();
 }
 
 const update = async (req, res) => {
-    const Avalia = await prisma.Avalia.update({
+    const AvaliaProfissional = await prisma.avaliaProfisional.update({
         where: {
             id: Number(req.params.id)
         },
         data: req.body
     })
-    res.status(202).json(Avalia).end();
+    res.status(202).json(AvaliaProfissional).end();
 }
 
 const del = async (req, res) => {
-    const Avalia = await prisma.Avalia.delete({
+    const AvaliaProfissional = await prisma.avaliaProfisional.delete({
         where: {
             id: Number(req.params.id)
         }
@@ -42,7 +42,7 @@ const del = async (req, res) => {
 
 const readOne = async (req, res) => {
 
-     let Avalia = await prisma.Avalia.findUnique({
+     let AvaliaProfissional = await prisma.avaliaProfisional.findUnique({
     
      where: {
      id: Number(req.params.id)
@@ -54,7 +54,7 @@ const readOne = async (req, res) => {
 
     //SELECT * FROM user INNER JOIN publicacao ON user.id = publicacao.usuario_id WHERE ....
   
-     res.status(200).json(Avalia).end();
+     res.status(200).json(AvaliaProfissional).end();
     }
 
 module.exports = {
