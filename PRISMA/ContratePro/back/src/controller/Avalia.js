@@ -3,7 +3,7 @@ const { PrismaClient } = require('@prisma/client');
 const prisma = new PrismaClient();
 
 const create = async (req, res) => {
-    let AvaliaProfissional = await prisma.avaliaProfisional.create({
+    let AvaliaProfissional = await prisma.avaliaProfissional.create({
         data: req.body
     });
 
@@ -11,7 +11,7 @@ const create = async (req, res) => {
 }
 
 const read = async (req, res) => {
-    let AvaliaProfissional = await prisma.avaliaProfisional.findMany({
+    let AvaliaProfissional = await prisma.avaliaProfissional.findMany({
         select: {
             id: true,
             comentario: true
@@ -22,7 +22,7 @@ const read = async (req, res) => {
 }
 
 const update = async (req, res) => {
-    const AvaliaProfissional = await prisma.avaliaProfisional.update({
+    const AvaliaProfissional = await prisma.avaliaProfissional.update({
         where: {
             id: Number(req.params.id)
         },
@@ -32,7 +32,7 @@ const update = async (req, res) => {
 }
 
 const del = async (req, res) => {
-    const AvaliaProfissional = await prisma.avaliaProfisional.delete({
+    const AvaliaProfissional = await prisma.avaliaProfissional.delete({
         where: {
             id: Number(req.params.id)
         }
@@ -42,7 +42,7 @@ const del = async (req, res) => {
 
 const readOne = async (req, res) => {
 
-     let AvaliaProfissional = await prisma.avaliaProfisional.findUnique({
+     let AvaliaProfissional = await prisma.avaliaProfissional.findUnique({
     
      where: {
      id: Number(req.params.id)

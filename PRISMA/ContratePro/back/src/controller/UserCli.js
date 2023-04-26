@@ -36,6 +36,7 @@ const read = async (req, res) => {
       nome: true,
       senha: true,
       telefone: true,
+      cidade: true,
     },
   });
 

@@ -5,6 +5,7 @@ CREATE TABLE `UserCliente` (
     `email` VARCHAR(191) NOT NULL,
     `senha` VARCHAR(191) NOT NULL,
     `telefone` VARCHAR(191) NOT NULL,
+    `cidade` VARCHAR(191) NOT NULL,
 
     PRIMARY KEY (`id`)
 ) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
@@ -15,11 +16,11 @@ CREATE TABLE `UserProfissionais` (
     `nome` VARCHAR(191) NOT NULL,
     `email` VARCHAR(191) NOT NULL,
     `senha` VARCHAR(191) NOT NULL,
+    `cidade` VARCHAR(191) NOT NULL,
     `biografia` VARCHAR(191) NOT NULL,
     `porhora` VARCHAR(191) NOT NULL,
     `telefone` VARCHAR(191) NOT NULL,
     `id_categoria` INTEGER NOT NULL,
-    `id_coment` INTEGER NOT NULL,
 
     PRIMARY KEY (`id`)
 ) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
@@ -33,7 +34,7 @@ CREATE TABLE `categoriaProfissoes` (
 ) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
 -- CreateTable
-CREATE TABLE `avaliaProfisional` (
+CREATE TABLE `avaliaProfissional` (
     `id` INTEGER NOT NULL AUTO_INCREMENT,
     `id_cliente` INTEGER NOT NULL,
     `comentario` VARCHAR(191) NOT NULL,
@@ -57,13 +58,10 @@ CREATE TABLE `Propostas` (
 ALTER TABLE `UserProfissionais` ADD CONSTRAINT `UserProfissionais_id_categoria_fkey` FOREIGN KEY (`id_categoria`) REFERENCES `categoriaProfissoes`(`id`) ON DELETE RESTRICT ON UPDATE CASCADE;
 
 -- AddForeignKey
-ALTER TABLE `UserProfissionais` ADD CONSTRAINT `UserProfissionais_id_coment_fkey` FOREIGN KEY (`id_coment`) REFERENCES `avaliaProfisional`(`id`) ON DELETE RESTRICT ON UPDATE CASCADE;
+ALTER TABLE `avaliaProfissional` ADD CONSTRAINT `avaliaProfissional_id_cliente_fkey` FOREIGN KEY (`id_cliente`) REFERENCES `UserCliente`(`id`) ON DELETE RESTRICT ON UPDATE CASCADE;
 
 -- AddForeignKey
-ALTER TABLE `avaliaProfisional` ADD CONSTRAINT `avaliaProfisional_id_cliente_fkey` FOREIGN KEY (`id_cliente`) REFERENCES `UserCliente`(`id`) ON DELETE RESTRICT ON UPDATE CASCADE;
-
--- AddForeignKey
-ALTER TABLE `avaliaProfisional` ADD CONSTRAINT `avaliaProfisional_id_profissional_fkey` FOREIGN KEY (`id_profissional`) REFERENCES `UserProfissionais`(`id`) ON DELETE RESTRICT ON UPDATE CASCADE;
+ALTER TABLE `avaliaProfissional` ADD CONSTRAINT `avaliaProfissional_id_profissional_fkey` FOREIGN KEY (`id_profissional`) REFERENCES `UserProfissionais`(`id`) ON DELETE RESTRICT ON UPDATE CASCADE;
 
 -- AddForeignKey
 ALTER TABLE `Propostas` ADD CONSTRAINT `Propostas_id_profissional_fkey` FOREIGN KEY (`id_profissional`) REFERENCES `UserProfissionais`(`id`) ON DELETE RESTRICT ON UPDATE CASCADE;

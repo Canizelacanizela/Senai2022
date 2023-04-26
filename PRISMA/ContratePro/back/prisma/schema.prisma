@@ -16,7 +16,8 @@ model UserCliente {
     email      String
     senha      String
     telefone   String
-    id_cli     avaliaProfisional[]
+    cidade     String
+    id_cli     avaliaProfissional[]
     id_cliente Propostas[]
 }
 
@@ -25,12 +26,13 @@ model UserProfissionais {
     nome         String
     email        String
     senha        String
+    cidade       String
     biografia    String
     porhora      String
     telefone     String
     id_categoria Int
     categoria    categoriaProfissoes @relation(fields: [id_categoria], references: [id])
-    Comentario avaliaProfisional[]
+    Comentario   avaliaProfissional[]
     profissi     Propostas[]
 }
 
@@ -40,13 +42,13 @@ model categoriaProfissoes {
     user           UserProfissionais[]
 }
 
-model avaliaProfisional {
-    id              Int                 @id @default(autoincrement())
+model avaliaProfissional {
+    id              Int               @id @default(autoincrement())
     id_cliente      Int
     comentario      String
     id_profissional Int
-    id_cli          UserCliente         @relation(fields: [id_cliente], references: [id])
-    id_prof         UserProfissionais   @relation(fields: [id_profissional], references: [id])
+    id_cli          UserCliente       @relation(fields: [id_cliente], references: [id])
+    id_prof         UserProfissionais @relation(fields: [id_profissional], references: [id])
 }
 
 model Propostas {

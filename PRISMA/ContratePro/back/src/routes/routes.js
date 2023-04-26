@@ -26,6 +26,7 @@ router.delete('/catdel/:id', Cat.del);
 // ------------------------------UserProfissional------------------------------------
 router.post('/login', Middle.ValidaAcesso, Profissa.login);
 router.get('/prof', Profissa.read);
+router.get('/profcom', Profissa.readComent);
 router.get('/prof/:id', Profissa.readOne);
 router.post('/profcriar', Profissa.create);
 router.put('/profupdate/:id', Profissa.update);
