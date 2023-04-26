@@ -106,7 +106,10 @@ li .btn-cad:hover::after {
     border-radius: 50%;
     justify-content: space-between;
 }
-
+.model{
+    display: none;
+    visibility: hidden;
+}
 .profile-header .lapis {
     width: 7%;
     height: 10%;
@@ -128,6 +131,7 @@ li .btn-cad:hover::after {
 }
 .profile-body {
     display: flex;
+    align-items: center;
     justify-content: space-between;
 }
 .profile-body-section .lapis{
@@ -151,7 +155,7 @@ li .btn-cad:hover::after {
 .hr{
     font-size: 20px;
     font-weight: 600;
-    margin-bottom: 5px;
+    margin-top: 1.4rem;
 }
 .profile-body-section p{
    padding: 10px;
@@ -173,4 +177,9 @@ li .btn-cad:hover::after {
   .btn:hover {
     background-color: #5589c0;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+  }
+  .footer{
+      display: column;
+      margin: 40px;
+      
   }

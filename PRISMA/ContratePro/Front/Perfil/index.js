@@ -1,19 +1,37 @@
-function carregar() {
-    
+var UrList = "http://localhost:3000/prof";
+var listarProf = document.querySelector(".profile");
 
-    fetch('http://localhost:3000/prof/1')
-    .then(response => response.json())
-    .then(data => {
-      document.querySelector("#id").innerHTML = data.id;
-      document.querySelector("#nome").innerHTML = data.nome_p;
-      document.querySelector("#biografia").innerHTML = data.biografia;
-      document.querySelector("#des").innerHTML = data.descricao;
-      document.querySelector("#cat").innerHTML = data.categorias.nome_categoria;
-      document.querySelector("#tel").innerHTML = data.tel;
-      document.querySelector("#email").innerHTML = data.email;
-      document.querySelector("#hora").innerHTML = data.preco_h;
+function carregar() {
+  const options = {
+    method: "GET",
+  };
+  fetch(UrList, options)
+    .then((res) => res.json())
+    .then((res) => {
+      listInfo(res);
     })
-    .catch(error => {
-      console.error('Erro ao buscar dados:', error);
+    .catch((err) => console.error(err));
+}
+
+function listInfo(profissionais) {
+  profissionais.forEach((e, i) => {
+    let prof = document.querySelector(".all").cloneNode(true);
+    console.log(prof);
+    prof.classList.remove("model");
+
+    prof.querySelector("#id").innerHTML += e.id;
+    prof.querySelector("#nome").innerHTML += e.nome;
+    prof.querySelector("#hora").innerHTML += e.porhora;
+    prof.querySelector("#tel").innerHTML += e.telefone;
+    prof.querySelector("#email").innerHTML += e.email;
+    prof.querySelector("#biografia").innerHTML += e.biografia;
+    prof.querySelector("#cat").innerHTML += e.categoria.nome_categoria;
+    prof.querySelector("#city").innerHTML += e.cidade;
+
+    e.Comentario.forEach(comentario => {
+      prof.querySelector("#coment").innerHTML += comentario.comentario + "<br>";
     });
-  }
+
+    listarProf.appendChild(prof);
+})
+}

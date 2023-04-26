@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,48 +11,55 @@
     <header>
         <div class="logo">
             <img id="i" src="../assets/logo.png" alt="" width="94px" height="94px">
-            
+
         </div>
         <nav>
             <ul>
-                <li><a href="../HomeProfissa/index.html"><img src="../assets/silhueta-de-icone-de-casa.png" alt="Home"></a></li>
+                <li><a href="../HomeProfissa/index.html"><img src="../assets/silhueta-de-icone-de-casa.png"
+                            alt="Home"></a></li>
                 <li><a href="#"><img src="../assets/bater-papo.png" alt="Bate-Papo"></a></li>
-        
+
             </ul>
         </nav>
     </header>
 </head>
+
 <body onload="carregar()">
     <div class="profile">
-        <div class="profile-header">
-            <img src="https://via.placeholder.com/150" alt="Foto de Perfil">
-            <div>
-                <p id="id">id:</p>
-                <h1 id="nome">Seu nome</h1>
+        <div class="all model">
+            <div class="profile-header">
+                <img src="https://via.placeholder.com/150" alt="Foto de Perfil">
+                <div>
+                    <p id="id" hidden>id:</p>
+                    <h1 id="nome"></h1>
+                </div>
+                <div>
+                    <img data-id="1" class="lapis" src="../assets/relatorio.png" alt="lapis">
+                </div>
+                <p class="hr">Por hora R$: 
+                <p class="hr" id="hora"></p>
+                </p>
             </div>
-            <div>
-                <img  data-id="1" class="lapis" src="../assets/relatorio.png" alt="lapis">
+            <button class="btn">Enviar mensagem</button>
+            <div class="profile-body">
+                <div class="profile-body-section">
+                    <h2>Contato</h2>
+                    <p class="info" id="tel">Telefone:</p>
+                    <p id="email">Email:</p>
+                    <p id="city">cidade:</p>
+                </div>
+                <div class="profile-body-section">
+                    <h2>Biografia</h2>
+                    <p id="biografia"></p>
+                </div>
+                <div class="profile-body-section">
+                    <h2>Categoria</h2>
+                    <p id="cat"></p>
+                </div>
             </div>
-            <p class="hr">Por hora R$:<p class="hr" id="hora">por hora</p></p>
-        </div>
-        <button class="btn">Enviar mensagem</button>
-        <div class="profile-body">
-            <div class="profile-body-section">
-                <h2>Contato</h2>
-                <p class="info" id="tel">Telefone:</p>
-                <p id="email">Email:</p>
-            </div>
-            <div class="profile-body-section">
-                <h2>Biografia</h2>
-                <p id="biografia">Biografia: Sua biografia ou resumo profissional.</p>
-            </div>
-            <div class="profile-body-section">
-                <h2>Experiência Profissional</h2>
-                <p id="des">Descrição de suas experiências profissionais passadas.</p>
-            </div>
-            <div class="profile-body-section">
-                <h2>Formação Acadêmica</h2>
-                <p id="cat">Formação em:</p>
+            <div class="footer">
+                <h3>Comentários:</h3>
+                <p id="coment"></p>
             </div>
         </div>
     </div>
