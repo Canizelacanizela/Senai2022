@@ -110,6 +110,8 @@ li .btn-cad:hover::after {
     display: none;
     visibility: hidden;
 }
+
+
 .profile-header .lapis {
     width: 7%;
     height: 10%;

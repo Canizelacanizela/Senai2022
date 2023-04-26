@@ -19,16 +19,11 @@ function listaProfissionais(profissionais) {
     profissionais.forEach((e, i) => {
         let prof = document.querySelector(".profile-body-section").cloneNode(true);
         prof.classList.remove("model");
-<<<<<<< HEAD
-        prof.querySelector("#nome_p").innerHTML += e.nome_p;
-        prof.querySelector("#descricao").innerHTML += e.descricao;
-        prof.querySelector("#preco_h").innerHTML += e.preco_h;
-=======
 
         prof.querySelector("#nome").innerHTML += e.nome;
         prof.querySelector("#biografia").innerHTML += e.biografia;
         prof.querySelector("#nome_categoria").innerHTML += e.categoria.nome_categoria;
->>>>>>> c1fc5013ebf592b9520a4e857032bb320f6ba8fc
+
 
         listarProf.appendChild(prof);
     });
@@ -83,8 +78,7 @@ function alerta(a) {
     document.querySelector('#msg').innerHTML = a;
 }
 
-<<<<<<< HEAD
-=======
+
 
 function search() {
     const Categorias = document.querySelectorAll('#nome_categoria');
@@ -98,4 +92,4 @@ function search() {
         }
     });
 }
->>>>>>> c1fc5013ebf592b9520a4e857032bb320f6ba8fc
+

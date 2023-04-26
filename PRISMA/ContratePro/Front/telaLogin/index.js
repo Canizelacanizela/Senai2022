@@ -26,7 +26,7 @@ function login() {
       localStorage.setItem("info", JSON.stringify(data));
       if (data.tipo == "Profissional")
         window.location.href = "../HomeProfissa/index.html";
-      else window.location.href = "../telaCadastro/index.html";
+      else window.location.href = "../CadastroPrpfissional/index.html";
     });
   // .then(data => {
 
