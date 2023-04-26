@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -12,7 +13,7 @@
             <img id="i" src="../assets/logo.png" alt="" width="94px" height="94px">
             <ul class="ni">
                 <li><label class="nn" for="search">Pesquisar:</label> <input class="n" type="search" id="search"
-                        name="search" placeholder="Pesquisar"> <button class="nnn" type="submit">Buscar</button></li>
+                        name="search" placeholder="Pesquisar"> <button class="nnn" onclick="search()" type="submit">Buscar</button></li>
             </ul>
         </div>
         <nav>
@@ -23,26 +24,33 @@
         </nav>
     </header>
 </head>
+
 <body onload="carregar()">
     <div class="main">
         <div class="lista">
             <div class="profileTwo">
                 <div class="profile-body-section model">
-                    
-                    <p id="descricao"></p>
-                    <h2 id="preco_h">Por hora: R$<h2>
-                        <h2 id="nome_p"></h2>
+                    <div class="profile-header">
+                        <a href="../Perfil/index.html"><img src="https://via.placeholder.com/150"
+                                alt="Foto de Perfil"></a>
+                        <div>
+                            <h2 id="nome"></h2>
+                        </div>
+                    </div>
+                    <p id="biografia"></p>
+                    <h4 id="nome_categoria"></h4>
                     <div class="contain">
                         <div class="btn" id="edit">
-                            <img  width="32"  onclick="modal1.setAttribute('style','display:flex')" src="../assets/comente.png" alt="Alterar">
+                            <img width="32" onclick="modal1.setAttribute('style','display:flex')"
+                                src="../assets/comente.png" alt="Alterar">
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-     <!-- ------------------------------------------------------- -->
-     <div id="modal1" class="modal">
+    <!-- ------------------------------------------------------- -->
+    <div id="modal1" class="modal">
         <div id="novo">
             <div class="modalHeader">
                 <h3> Enviar Proposta</h3>
@@ -50,9 +58,9 @@
             </div>
             <div class="modalForm">
                 <input type="hidden" id="idc" />
-                <label class="lab1" for="">Nome Completo:</label> 
+                <label class="lab1" for="">Nome Completo:</label>
                 <input type="text" id="nomec" />
-                <label class="lab2" for="">Proposta:</label> 
+                <label class="lab2" for="">Proposta:</label>
                 <textarea name="" id="propostac" cols="20" rows="3"></textarea>
             </div>
             <div class="modalFooter">
