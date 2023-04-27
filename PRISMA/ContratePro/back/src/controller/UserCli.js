@@ -20,6 +20,7 @@ const readOne = async (req, res) => {
       nome: true,
       email: true,
       telefone: true,
+      tipo: true
     },
   });
 
@@ -37,6 +38,7 @@ const read = async (req, res) => {
       senha: true,
       telefone: true,
       cidade: true,
+      tipo: true,
     },
   });
 
@@ -57,12 +59,10 @@ const login = async (req, res) => {
   });
   console.log(userCliente[0]);
   if (userCliente[0] != undefined) {
-    jwt.sign(
-      userCliente[0],
-      process.env.KEY,
-      { expiresIn: "10h" },
-      function (err, token) {
-        console.log(err);
+    jwt.sign(userCliente[0],
+    process.env.KEY, { expiresIn: "10h" },
+    function (err, token) {
+      console.log(err);
         if (err == null) {
           userCliente[0]["token"] = token;
           res.status(200).json(userCliente[0]).end();

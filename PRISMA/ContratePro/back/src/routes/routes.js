@@ -24,7 +24,7 @@ router.post('/catcriar', Cat.create);
 router.put('/catupdate/:id', Cat.update);
 router.delete('/catdel/:id', Cat.del);
 // ------------------------------UserProfissional------------------------------------
-router.post('/login', Middle.ValidaAcesso, Profissa.login);
+router.post('/loginProf', Profissa.login);
 router.get('/prof', Profissa.read);
 router.get('/profcom', Profissa.readComent);
 router.get('/prof/:id', Profissa.readOne);
@@ -52,7 +52,7 @@ router.delete('/avaldel/:id', Aval.del);
 router.get('/user', UserCli.read);
 router.get('/userOne/:id', UserCli.readOne);
 router.post('/usercriar', UserCli.create);
-router.post('/login', Middle.ValidaAcesso, UserCli.login);
+router.post('/login', UserCli.login);
 router.put('/userupdate/:id', UserCli.update);
 router.delete('/userdel/:id', UserCli.del);
 

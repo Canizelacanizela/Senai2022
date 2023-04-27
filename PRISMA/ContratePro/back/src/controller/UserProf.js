@@ -41,6 +41,7 @@ const read = async (req, res) => {
       telefone: true,
       cidade: true,
       porhora: true,
+      tipo: true,
       categoria: {
         select: {
           nome_categoria: true
@@ -69,28 +70,19 @@ res.status(200).json(userProfissionais).end();
       },
       select: {
         id: true,
-        nome: true
+        nome: true,
+        tipo: true
       },
-    });
-    console.log(userProfissionais[0]);
-    if (userProfissionais[0] != undefined) {
-      jwt.sign(
-        userProfissionais[0],
-        process.env.KEY,
-        { expiresIn: "10h" },
-        function (err, token) {
-          console.log(err);
-          if (err == null) {
-            userProfissionais[0]["token"] = token;
-            res.status(200).json(userProfissionais[0]).end();
-          } else {
-            res.status(404).json(err).end();
-          }
-        }
-      );
-    } else {
-      res.status(404).json({ msg: "Usuario ou Senha Invalidos" }).end();
-    }
+    })
+    jwt.sign(userProfissionais[0], process.env.KEY, { expiresIn: '10h' },function(err, token) {
+      console.log(err)
+      if(err == null) {
+        userProfissionais[0]["token"] = token;
+          res.status(200).json(userProfissionais[0]).end();
+      }else {
+          res.status(404).json(err).end();
+      }
+  })
     //SELECT id, nome FROM userProfissionais WHERE email = '' AND senha = ''
   };
 

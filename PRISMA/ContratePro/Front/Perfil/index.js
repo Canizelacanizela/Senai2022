@@ -1,3 +1,4 @@
+
 var UrList = "http://localhost:3000/prof";
 var UrComent = "http://localhost:3000/profcom";
 var listarProf = document.querySelector(".profile");
@@ -18,7 +19,7 @@ function carregar() {
 function listInfo(profissionais) {
   profissionais.forEach((e, i) => {
     let prof = document.querySelector(".all").cloneNode(true);
-    console.log(prof);
+  
     prof.classList.remove("model");
 
     prof.querySelector("#id").innerHTML += e.id;

@@ -4,13 +4,23 @@ function cadastrarUsuario() {
     let nome = document.querySelector("#nome").value
     let email = document.querySelector("#email").value
     let senha = document.querySelector("#senha").value
+    let cidade = document.querySelector("#cidade").value
+    let biografia = document.querySelector("#biografia").value
+    let porhora = document.querySelector("#porhora").value
+    let telefone = document.querySelector("#telefone").value
     let tipo = document.querySelector("#tipo").value
+    let id_categoria = document.querySelector("#id_categoria").value
 
     let corpo = {
         "nome": nome,
         "email": email,
         "senha": senha,
-        "tipo": tipo, 
+        "cidade": cidade, 
+        "biografia": biografia, 
+        "porhora": porhora, 
+        "telefone": telefone, 
+        "tipo": tipo,
+        "id_categoria": id_categoria 
     }
 
     let options = {
