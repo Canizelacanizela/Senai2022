@@ -26,8 +26,10 @@ function login() {
         else
             return res.info
     }).then(data => {
-        localStorage.setItem("info", JSON.stringify(data));
-        if (data.tipo == "Cliente")
+        window.localStorage.setItem("info", JSON.stringify(info));
+
+        // localStorage.setItem("info", JSON.stringify(data));
+        // if (data.tipo == "Cliente")
         console.log(data)
             window.location.href = "../HomeProfissa/index.html";
     })

@@ -17,7 +17,6 @@ model UserCliente {
     senha      String
     telefone   String
     cidade     String
-    tipo       String
     id_cli     avaliaProfissional[]
     id_cliente Propostas[]
 }
@@ -31,7 +30,6 @@ model UserProfissionais {
     biografia    String
     porhora      String
     telefone     String
-    tipo         String
     id_categoria Int
     categoria    categoriaProfissoes  @relation(fields: [id_categoria], references: [id])
     Comentario   avaliaProfissional[]

@@ -37,8 +37,7 @@ const read = async (req, res) => {
       nome: true,
       senha: true,
       telefone: true,
-      cidade: true,
-      tipo: true,
+      cidade: true
     },
   });
 
@@ -54,7 +53,10 @@ const login = async (req, res) => {
     },
     select: {
       id: true,
-      nome: true
+      nome: true,
+      email: true,
+      telefone: true,
+      cidade: true
     },
   });
   console.log(userCliente[0]);

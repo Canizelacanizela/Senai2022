@@ -8,7 +8,6 @@ function cadastrarUsuario() {
     let biografia = document.querySelector("#biografia").value
     let porhora = document.querySelector("#porhora").value
     let telefone = document.querySelector("#telefone").value
-    let tipo = document.querySelector("#tipo").value
     let id_categoria = document.querySelector("#id_categoria").value
 
     let corpo = {
@@ -19,8 +18,7 @@ function cadastrarUsuario() {
         "biografia": biografia, 
         "porhora": porhora, 
         "telefone": telefone, 
-        "tipo": tipo,
-        "id_categoria": id_categoria 
+        "id_categoria": Number(id_categoria) 
     }
 
     let options = {
@@ -31,14 +29,15 @@ function cadastrarUsuario() {
         "body": JSON.stringify(corpo)
     };
 
-    fetch('http://localhost:3000/usercriar', options)
-        .then(res => { return res.json() })
-        .then(resp => {
-            if (resp != undefined) {
-                alert("Deu Certo");
-                window.location.reload();
-            } else {
-                alert("Parece que deu erro");
-            }
-        });
-}
+    fetch('http://localhost:3000/profcriar', options)
+            .then(res => { return res.json() })
+            .then(resp => {
+                if (resp != undefined) {
+                    alert("Deu Certo");
+                    window.location.reload();
+                } else {
+                    alert("Parece que deu erro");
+                    window.location.reload();
+                }
+            });
+    }

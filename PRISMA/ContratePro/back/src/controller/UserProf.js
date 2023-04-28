@@ -41,7 +41,6 @@ const read = async (req, res) => {
       telefone: true,
       cidade: true,
       porhora: true,
-      tipo: true,
       categoria: {
         select: {
           nome_categoria: true
@@ -71,7 +70,11 @@ res.status(200).json(userProfissionais).end();
       select: {
         id: true,
         nome: true,
-        tipo: true
+        email: true,
+        biografia: true,
+        telefone: true,
+        cidade: true,
+        porhora: true
       },
     })
     jwt.sign(userProfissionais[0], process.env.KEY, { expiresIn: '10h' },function(err, token) {
