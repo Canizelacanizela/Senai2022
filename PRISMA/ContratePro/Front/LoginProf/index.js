@@ -1,6 +1,7 @@
 const email = document.querySelector("#email");
 const senha = document.querySelector("#senha");
 
+
 function login() {
   let info = {
     email: email.value,

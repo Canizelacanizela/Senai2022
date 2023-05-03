@@ -1,0 +1,79 @@
+* {
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .left {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .left img {
+    width: 80%;
+    max-width: 300px;
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  }
+  
+  .right {
+    flex: 2;
+    padding: 20px;
+  }
+  
+  h1 {
+    font-size: 32px;
+    margin: 0 0 10px 0;
+  }
+  
+  p {
+    font-size: 18px;
+    margin: 0 0 20px 0;
+    line-height: 1.5;
+  }
+  
+  .buttons {
+    display: flex;
+  }
+  
+  button {
+    font-size: 18px;
+    padding: 10px;
+    margin-right: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .delete {
+    background-color: #ff6b6b;
+    color: #fff;
+  }
+  
+  .delete:hover {
+    background-color: #ff5252;
+  }
+  
+  .message {
+    background-color: #42a5f5;
+    color: #fff;
+  }
+  
+  .message:hover {
+    background-color: #2979ff;
+  }

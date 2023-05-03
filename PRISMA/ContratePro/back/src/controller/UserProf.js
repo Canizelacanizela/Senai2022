@@ -17,6 +17,7 @@ const readOne = async (req, res) => {
       id: Number(req.params.id),
     },
     select: {
+      id: true,
       nome: true,
       email: true,
       biografia: true,
@@ -47,73 +48,73 @@ const read = async (req, res) => {
         }
       }
     },
-});
+  });
 
-res.status(200).json(userProfissionais).end();
+  res.status(200).json(userProfissionais).end();
 };
 
-  const readComent = async (req, res) => {
-    let userProfissionais = await prisma.$queryRaw`SELECT  uc.id,uc.nome,av.comentario from UserCliente uc INNER JOIN avaliaProfissional av ON uc.id = av.id_cliente`
+const readComent = async (req, res) => {
+  let userProfissionais = await prisma.$queryRaw`SELECT  uc.id,uc.nome,av.comentario from UserCliente uc INNER JOIN avaliaProfissional av ON uc.id = av.id_cliente`
 
-    //SELECT email, nome FROM userProfissionais WHERE email = ''
+  //SELECT email, nome FROM userProfissionais WHERE email = ''
 
-    res.status(200).json(userProfissionais).end();
-  };
+  res.status(200).json(userProfissionais).end();
+};
 
 
-  
-  const login = async (req, res) => {
-    let userProfissionais = await prisma.userProfissionais.findMany({
-      where: {
-        AND: [{ email: req.body.email }, { senha: req.body.senha }],
-      },
-      select: {
-        id: true,
-        nome: true,
-        email: true,
-        biografia: true,
-        telefone: true,
-        cidade: true,
-        porhora: true
-      },
-    })
-    jwt.sign(userProfissionais[0], process.env.KEY, { expiresIn: '10h' },function(err, token) {
-      console.log(err)
-      if(err == null) {
-        userProfissionais[0]["token"] = token;
-          res.status(200).json(userProfissionais[0]).end();
-      }else {
-          res.status(404).json(err).end();
-      }
+
+const login = async (req, res) => {
+  let userProfissionais = await prisma.userProfissionais.findMany({
+    where: {
+      AND: [{ email: req.body.email }, { senha: req.body.senha }],
+    },
+    select: {
+      id: true,
+      nome: true,
+      email: true,
+      biografia: true,
+      telefone: true,
+      cidade: true,
+      porhora: true
+    },
   })
-    //SELECT id, nome FROM userProfissionais WHERE email = '' AND senha = ''
-  };
+  jwt.sign(userProfissionais[0], process.env.KEY, { expiresIn: '10h' }, function (err, token) {
+    console.log(err)
+    if (err == null) {
+      userProfissionais[0]["token"] = token;
+      res.status(200).json(userProfissionais[0]).end();
+    } else {
+      res.status(404).json(err).end();
+    }
+  })
+  //SELECT id, nome FROM userProfissionais WHERE email = '' AND senha = ''
+};
 
-  const update = async (req, res) => {
-    const userProfissionais = await prisma.userProfissionais.update({
-      where: {
-        id: Number(req.params.id),
-      },
-      data: req.body,
-    });
-    res.status(202).json(userProfissionais).end();
-  };
+const update = async (req, res) => {
+  const userProfissionais = await prisma.userProfissionais.update({
+    where: {
+      id: Number(req.params.id),
+    },
+    data: req.body,
+  });
+  res.status(202).json(userProfissionais).end();
+};
 
-  const del = async (req, res) => {
-    const userProfissionais = await prisma.userProfissionais.delete({
-      where: {
-        id: Number(req.params.id),
-      },
-    });
-    res.status(204).end();
-  };
+const del = async (req, res) => {
+  const userProfissionais = await prisma.userProfissionais.delete({
+    where: {
+      id: Number(req.params.id),
+    },
+  });
+  res.status(204).end();
+};
 
-  module.exports = {
-    create,
-    read,
-    readComent,
-    login,
-    readOne,
-    del,
-    update,
-  };
+module.exports = {
+  create,
+  read,
+  readComent,
+  login,
+  readOne,
+  del,
+  update,
+};
