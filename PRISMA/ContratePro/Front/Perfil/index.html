@@ -34,10 +34,14 @@
                     <h1 id="nome"></h1>
                 </div>
                 <div>
-                    <img data-id="1" class="lapis" src="../assets/relatorio.png" alt="lapis">
+                    <img id="myBtn" onclick="AbrirModalEditar()" class="lapis" src="../assets/relatorio.png"
+                        alt="lapis">
                 </div>
-                <p class="hr">Por hora R$: 
-                <p class="hr" id="hora"></p>
+                <div class="hr">
+                    <p>Por hora R$:
+                    <p id="hora"></p>
+                </div>
+
                 </p>
             </div>
             <button class="btn">Enviar mensagem</button>
@@ -46,7 +50,7 @@
                     <h2>Contato</h2>
                     <p class="info" id="tel">Telefone:</p>
                     <p id="email">Email:</p>
-                    <p id="city">cidade:</p>
+                    <p id="city">Cidade:</p>
                 </div>
                 <div class="profile-body-section">
                     <h2>Biografia</h2>
@@ -63,6 +67,27 @@
             </div>
         </div>
     </div>
+    
+<!-- -----------------------------------------alterar----------------------------------------- -->
+    <div id="myModal" class="modal editar">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <div class="modal-content-body">
+            <input type="text" class="input" id="id" placeholder="id" readonly>
+            <input type="text" class="input" id="nome" placeholder="nome">
+            <input type="text" class="input" id="email" placeholder="email">
+            <input type="text" class="input" id="cidade" placeholder="cidade">
+            <input type="text" class="input" id="biografia" placeholder="biografia">
+            <input type="text" class="input" id="porhora" placeholder="porhora">
+            <input type="text" class="input" id="telefone" placeholder="telefone">
+    
+        </div>
+        <div class="modal-content-footer">
+            <button onclick="alterarModal()" class="btn confirm">Alterar</button>
+            <button id="close" onclick="fecharCadastro()" class="btn cancel">Cancelar</button>
+        </div>
+    </div>
+</div>
 
 </body>
 <script src="index.js"></script>

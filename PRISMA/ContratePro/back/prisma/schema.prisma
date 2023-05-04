@@ -36,6 +36,7 @@ model UserProfissionais {
     profissi     Propostas[]
 }
 
+
 model categoriaProfissoes {
     id             Int                 @id @default(autoincrement())
     nome_categoria String

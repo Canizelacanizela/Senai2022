@@ -21,7 +21,7 @@ function cadastrarUsuario() {
         "body": JSON.stringify(corpo)
     };
 
-    fetch('http://localhost:3000/usercriar', options)
+    fetch('http://localhost:3000/profcriar', options)
         .then(res => { return res.json() })
         .then(resp => {
             if (resp != undefined) {

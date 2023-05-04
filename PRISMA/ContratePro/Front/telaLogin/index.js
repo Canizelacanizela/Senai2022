@@ -15,11 +15,11 @@ function login() {
     body: JSON.stringify(info),
   })
     .then((res) => {
-      // let data = {
-      //     info: res.json(),
-      //     status: res.status
-      // }
-      // return data;
+      let data = {
+          info: res.json(),
+          status: res.status
+      }
+      return data;
       return res.json();
     })
     .then((data) => {
@@ -28,12 +28,12 @@ function login() {
         window.location.href = "../HomeProfissa/index.html";
       else window.location.href = "../telaCadastro/index.html";
     });
-  // .then(data => {
+  .then(data => {
 
-  //     localStorage.setItem("info", JSON.stringify(data));
-  //     if (data.tipo == "Profissional")
-  //         window.location.href = "../HomeProfissa/index.html";
-  //     else
-  //         window.location.href = "../telaCadastro/index.html";
-  // })
+      localStorage.setItem("info", JSON.stringify(data));
+      if (data.tipo == "Profissional")
+          window.location.href = "../HomeProfissa/index.html";
+      else
+          window.location.href = "../telaCadastro/index.html";
+  })
 }

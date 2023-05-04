@@ -120,5 +120,5 @@ res.status(200).json(userProfissionais).end();
     login,
     readOne,
     del,
-    update,
+    update
   };
