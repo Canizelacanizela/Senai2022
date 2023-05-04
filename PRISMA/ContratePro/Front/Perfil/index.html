@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -22,6 +23,7 @@
         </nav>
     </header>
 </head>
+
 <body onload="listInfo()">
     <div class="profile">
         <div class="all model">
@@ -31,10 +33,13 @@
                     <p id="id" hidden>id:</p>
                     <h1 id="nome"></h1>
                 </div>
-                <div>
-                    <img data-id="1" class="lapis" src="../assets/relatorio.png" alt="lapis">
+                <div class="btnn" id="edit">
+                    <img  width="32" src="../assets/relatorio.png" alt="Alterar">
                 </div>
-                <p class="hr">Por hora R$: 
+                <!-- <div>
+                    <img  class="lapis" src="../assets/relatorio.png" alt="lapis">
+                </div> -->
+                <p class="hr">Por hora R$:
                 <p class="hr" id="hora"></p>
                 </p>
             </div>
@@ -55,15 +60,60 @@
                     <p id="cat"></p>
                 </div>
             </div>
-            <div  class="footer">
+            <div class="footer">
                 <h3>Comentários:</h3>
                 <p id="nomec"></p>
                 <p id="coment"></p>
-        </main>
+                </main>
+            </div>
+        </div>
+<!-- ------------------------------Modal de alterar------------------------------ -->
+<div id="modal3" class="modall">
+    <div id="novo3">
+        <div class="modal3Header">
+            <h3>Alterar Trouxa</h3>
+            <button class="fechar" onclick="modal3.setAttribute('style','display:none')">X</button>
+        </div>
+        <div class="modal3Form">
+            <input type="hidden" id="ida" />
+            <label class="lab1" for="">Nome:</label> 
+            <input type="text" id="nomea" />
+            <label class="lab2" for="">E-mail:</label> 
+            <input type="text" id="emaila" />
+            <label class="lab3" for="">Cidade:</label> 
+            <input class="text" type="text" id="cidadea" />
+            <label class="lab1" for="">Biografia:</label> 
+            <input type="text" id="biografiaa" />
+            <label class="lab2" for="">Valor Por hora:</label> 
+            <input type="text" id="porhoraa" />
+            <label class="lab3" for="">Telefone:</label> 
+            <input class="text" type="text" id="telefonea" />
+        </div>
+        <div class="modal3Footer">
+            <button class="bn-alt" onclick="alterar()">Enviar</button>
         </div>
     </div>
+</div>
 
+<!-- <div id="myModal" class="model editar">
+             <div class="modal-content">
+                 <span class="close">&times;</span>
+                 <div class="modal-content-body">
+                    <input type="text" class="input" id="id" placeholder="id" readonly>
+                    <input type="text" class="input" id="nome" placeholder="nome">
+                    <input type="text" class="input" id="email" placeholder="email">
+                    <input type="text" class="input" id="cidade" placeholder="cidade">
+                    <input type="text" class="input" id="biografia" placeholder="biografia">
+                    <input type="text" class="input" id="porhora" placeholder="porhora">
+                    <input type="text" class="input" id="telefone" placeholder="telefone">
+
+                    </div>
+                 <div class="modal-content-footer">
+                     <button onclick="alterarModal()" class="btn confirm">Altera
+                     <button id="close" onclick="fecharCadastro()" class="btn cancel">Cancelar</button>
+                     </div>
+                 </div>
+        </div> -->
 </body>
 <script src="index.js"></script>
-
 </html>

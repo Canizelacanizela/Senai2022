@@ -23,6 +23,12 @@ const readOne = async (req, res) => {
       biografia: true,
       telefone: true,
       porhora: true,
+      cidade: true,
+      categoria: {
+        select: {
+          nome_categoria: true
+        }
+      }
     },
   });
 
