@@ -22,7 +22,7 @@ model Equipamentos {
   equipamento String
   imagem      String
   descricao   String
-  ativo       String
+  ativo       Int
   data        DateTime
   coment   Comentarios[]
 }

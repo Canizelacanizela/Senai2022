@@ -11,7 +11,6 @@ let bt0 = document.getElementById("b0");
 let btc = document.getElementById("bc");
 let bplay = document.getElementById("bplay");
 let senha = document.getElementById("senha");
-let senha_atual = "1";
 let senha_digitada = "";
 
 bt1.addEventListener("click", function () {
@@ -60,10 +59,67 @@ btc.addEventListener("click", function () {
 });
 
 bplay.addEventListener("click", function () {
-    if (senha_digitada == senha_atual) {
+     let info = {
+        "senha":senha.value
+    };
+    fetch("http://localhost:3000/login", {
+        "method": "POST",
+        "headers": {
+            "Content-Type": "application/json"
+        },
+        "body": JSON.stringify(info)
+    }).then(res => {
+        let data = {
+            info: res.json(),
+            status: res.status
+        }
+        return data;
+    })
+        // .then(res => {
+        //     if (res.status == 404)
+        //         alert("Dados inválidos")
+        //     else
+        //         return res.info
+        // }).then(data => {
+        //     window.localStorage.setItem("info", JSON.stringify(data));
+        //     window.location.href = "../Home/index.html";
+        // })
+
+    if (senha_digitada == senha) {
         alert("Senha correta!");
         window.location.href = "../home/index.html";
     } else {
         alert("Senha incorreta!");
     }
 });
+
+
+
+// function login() {
+//     let info = {
+//         "senha":senha.value
+//     };
+
+//     fetch("http://localhost:3000/login", {
+//         "method": "POST",
+//         "headers": {
+//             "Content-Type": "application/json"
+//         },
+//         "body": JSON.stringify(info)
+//     }).then(res => {
+//         let data = {
+//             info: res.json(),
+//             status: res.status
+//         }
+//         return data;
+//     })
+//         .then(res => {
+//             if (res.status == 404)
+//                 alert("Dados inválidos")
+//             else
+//                 return res.info
+//         }).then(data => {
+//             window.localStorage.setItem("info", JSON.stringify(data));
+//             window.location.href = "../Home/index.html";
+//         })
+// }
