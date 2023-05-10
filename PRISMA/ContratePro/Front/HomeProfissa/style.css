@@ -239,8 +239,8 @@ ul li .nn {
 .modal {
     display: none;
     flex-direction: column;
-    background-color: rgba(0, 0, 0, 0.5);
-    position: absolute;
+    background-color: rgba(61, 59, 59, 0.253);
+    position: fixed;
     width: 100%;
     height: 100%;
     top: 0px;

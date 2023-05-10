@@ -104,3 +104,7 @@ function search() {
     });
 }
 
+function sair() {
+    window.localStorage.removeItem("info");
+    window.location.href = "../LoginProf.html"
+}
