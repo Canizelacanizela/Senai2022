@@ -160,6 +160,15 @@ li .btn-cad:hover::after {
     visibility: hidden;
 }
 
+<<<<<<< HEAD
+=======
+
+.profile-header .lapis {
+    width: 7%;
+    height: 10%;
+   
+}
+>>>>>>> 8007879744f02549ad53119606a6f44879b068b9
 .profile-header h1 {
     font-size: 25px;
     margin: 0;

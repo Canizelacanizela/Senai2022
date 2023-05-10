@@ -4,13 +4,15 @@ function cadastrarUsuario() {
     let nome = document.querySelector("#nome").value
     let email = document.querySelector("#email").value
     let senha = document.querySelector("#senha").value
-    let tipo = document.querySelector("#tipo").value
+    let telefone = document.querySelector("#telefone").value
+    let cidade = document.querySelector("#cidade").value
 
     let corpo = {
         "nome": nome,
         "email": email,
         "senha": senha,
-        "tipo": tipo, 
+        "telefone": telefone, 
+        "cidade": cidade
     }
 
     let options = {
@@ -29,6 +31,7 @@ function cadastrarUsuario() {
                 window.location.reload();
             } else {
                 alert("Parece que deu erro");
+                window.location.reload();
             }
         });
 }

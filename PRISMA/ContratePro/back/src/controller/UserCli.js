@@ -20,6 +20,7 @@ const readOne = async (req, res) => {
       nome: true,
       email: true,
       telefone: true,
+      tipo: true
     },
   });
 
@@ -36,7 +37,7 @@ const read = async (req, res) => {
       nome: true,
       senha: true,
       telefone: true,
-      cidade: true,
+      cidade: true
     },
   });
 
@@ -52,17 +53,18 @@ const login = async (req, res) => {
     },
     select: {
       id: true,
-      nome: true
+      nome: true,
+      email: true,
+      telefone: true,
+      cidade: true
     },
   });
   console.log(userCliente[0]);
   if (userCliente[0] != undefined) {
-    jwt.sign(
-      userCliente[0],
-      process.env.KEY,
-      { expiresIn: "10h" },
-      function (err, token) {
-        console.log(err);
+    jwt.sign(userCliente[0],
+    process.env.KEY, { expiresIn: "10h" },
+    function (err, token) {
+      console.log(err);
         if (err == null) {
           userCliente[0]["token"] = token;
           res.status(200).json(userCliente[0]).end();

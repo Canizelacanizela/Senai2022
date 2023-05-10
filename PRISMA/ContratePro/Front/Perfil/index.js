@@ -1,41 +1,77 @@
-var UrList = "http://localhost:3000/prof";
+var UrList = "http://localhost:3000/prof/";
+var UrComent = "http://localhost:3000/profcom";
 var listarProf = document.querySelector(".profile");
+
 var editar = document.querySelector(".editar");
 
-function carregar() {
-  const options = {
-    method: "GET",
-  };
-  fetch(UrList, options)
-    .then((res) => res.json())
-    .then((res) => {
-      listInfo(res);
-    })
-    .catch((err) => console.error(err));
-}
+var listarComent = document.querySelector(".footer");
 
-function listInfo(profissionais) {
-  profissionais.forEach((e, i) => {
-    let prof = document.querySelector(".all").cloneNode(true);
 
-    prof.classList.remove("model");
 
-    prof.querySelector("#id").innerHTML += e.id;
-    prof.querySelector("#nome").innerHTML += e.nome;
-    prof.querySelector("#hora").innerHTML += e.porhora;
-    prof.querySelector("#tel").innerHTML += e.telefone;
-    prof.querySelector("#email").innerHTML += e.email;
-    prof.querySelector("#biografia").innerHTML += e.biografia;
-    prof.querySelector("#cat").innerHTML += e.categoria.nome_categoria;
-    prof.querySelector("#city").innerHTML += e.cidade;
+// function listInfo() {
+//   const options = { method: 'GET' };
+//   let info = JSON.parse(window.localStorage.getItem("info"))
 
-    // e.Comentario.forEach(comentario => {
-    //   prof.querySelector("#coment").innerHTML += comentario.comentario + "<br>";
-    // });
+//   fetch('http://localhost:3000/prof/'+id, options)
+//     .then((res) => res.json())
+//     .then((info) => {
+//       let prof = document.querySelector(".all").cloneNode(true);
+//       prof.classList.remove("model");
 
-    listarProf.appendChild(prof);
-  });
-}
+//       prof.querySelector("#nome").innerHTML += info.nome;
+//       prof.querySelector("#hora").innerHTML += info.porhora;
+//       prof.querySelector("#tel").innerHTML += info.telefone;
+//       prof.querySelector("#email").innerHTML += info.email;
+//       prof.querySelector("#biografia").innerHTML += info.biografia;
+
+//       // prof.Comentario.forEach((comentario) => {
+//       //   prof.querySelector("#coment").innerHTML += comentario.comentario + "<br>";
+//       // });
+
+//       document.getElementById("listarProf").appendChild(prof);
+//     })
+//     .catch((err) => console.error(err));
+//   }
+
+
+// // let info = JSON.parse(window.localStorage.getItem("info"))
+// // querySelector("#nome").innerHTML += info.nome;
+
+
+
+// function comentarios() {
+//   const options = {
+//     method: "GET",
+//   };
+//   fetch(UrComent, options)
+//     .then((res) => res.json())
+//     .then((res) => {
+//       listInfo(res);
+//     })
+//     .catch((err) => console.error(err));
+// }
+
+// function listInfo(profissionais) {
+//   profissionais.forEach((e, i) => {
+//     let prof = document.querySelector(".all").cloneNode(true);
+
+//     prof.classList.remove("model");
+
+// function listComent(comentario) {
+//   comentario.forEach((e, i) => {
+//     let com = document.querySelector(".all").cloneNode(true);
+//     console.log(com);
+//     com.classList.remove("modell");
+
+
+
+//     // e.Comentario.forEach(comentario => {
+//     //   prof.querySelector("#coment").innerHTML += comentario.comentario + "<br>";
+//     // });
+
+//     listarProf.appendChild(prof);
+//   });
+// }
 
 const myBtn = document.getElementById("myBtn");
 const modal = document.getElementById("myModal");
@@ -94,5 +130,10 @@ function alterarModal() {
   })
   .catch(error => console.error(error));
 }
+    com.querySelector("#nomec").innerHTML += e.nome;
+    com.querySelector("#coment").innerHTML += e.comentario
 
+    listarComent.appendChild(com);
+  })
+}
 

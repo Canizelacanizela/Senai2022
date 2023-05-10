@@ -4,13 +4,21 @@ function cadastrarUsuario() {
     let nome = document.querySelector("#nome").value
     let email = document.querySelector("#email").value
     let senha = document.querySelector("#senha").value
-    let tipo = document.querySelector("#tipo").value
+    let cidade = document.querySelector("#cidade").value
+    let biografia = document.querySelector("#biografia").value
+    let porhora = document.querySelector("#porhora").value
+    let telefone = document.querySelector("#telefone").value
+    let id_categoria = document.querySelector("#id_categoria").value
 
     let corpo = {
         "nome": nome,
         "email": email,
         "senha": senha,
-        "tipo": tipo, 
+        "cidade": cidade, 
+        "biografia": biografia, 
+        "porhora": porhora, 
+        "telefone": telefone, 
+        "id_categoria": Number(id_categoria) 
     }
 
     let options = {
@@ -22,6 +30,7 @@ function cadastrarUsuario() {
     };
 
     fetch('http://localhost:3000/profcriar', options)
+<<<<<<< HEAD
         .then(res => { return res.json() })
         .then(resp => {
             if (resp != undefined) {
@@ -32,3 +41,16 @@ function cadastrarUsuario() {
             }
         });
 }
+=======
+            .then(res => { return res.json() })
+            .then(resp => {
+                if (resp != undefined) {
+                    alert("Deu Certo");
+                    window.location.reload();
+                } else {
+                    alert("Parece que deu erro");
+                    window.location.reload();
+                }
+            });
+    }
+>>>>>>> 8007879744f02549ad53119606a6f44879b068b9

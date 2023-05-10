@@ -19,11 +19,14 @@ function listaProfissionais(profissionais) {
     profissionais.forEach((e, i) => {
         let prof = document.querySelector(".profile-body-section").cloneNode(true);
         prof.classList.remove("model");
+<<<<<<< HEAD
 
         prof.querySelector("#nome_p").innerHTML += e.nome_p;
         prof.querySelector("#descricao").innerHTML += e.descricao;
         prof.querySelector("#preco_h").innerHTML += e.precohora;
 
+=======
+>>>>>>> 8007879744f02549ad53119606a6f44879b068b9
 
         prof.querySelector("#nome").innerHTML += e.nome;
         prof.querySelector("#biografia").innerHTML += e.biografia;
@@ -83,6 +86,11 @@ function alerta(a) {
     document.querySelector('#msg').innerHTML = a;
 }
 
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> 8007879744f02549ad53119606a6f44879b068b9
 function search() {
     const Categorias = document.querySelectorAll('#nome_categoria');
 

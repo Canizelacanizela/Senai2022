@@ -11,7 +11,7 @@ datasource db {
 }
 
 model UserCliente {
-    id         Int                 @id @default(autoincrement())
+    id         Int                  @id @default(autoincrement())
     nome       String
     email      String
     senha      String
@@ -22,7 +22,7 @@ model UserCliente {
 }
 
 model UserProfissionais {
-    id           Int                 @id @default(autoincrement())
+    id           Int                  @id @default(autoincrement())
     nome         String
     email        String
     senha        String
@@ -31,7 +31,7 @@ model UserProfissionais {
     porhora      String
     telefone     String
     id_categoria Int
-    categoria    categoriaProfissoes @relation(fields: [id_categoria], references: [id])
+    categoria    categoriaProfissoes  @relation(fields: [id_categoria], references: [id])
     Comentario   avaliaProfissional[]
     profissi     Propostas[]
 }
