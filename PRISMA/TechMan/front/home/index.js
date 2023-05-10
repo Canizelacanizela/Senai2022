@@ -33,18 +33,16 @@ function listaEquipamento(profissionais) {
 
 }
 
-<<<<<<< HEAD
-=======
 
 
 
-function montaImg(img) {
-    if (img != null) {
-        return `data:image/png;base64,${img}`;
-    } else
-        return `../assets/disaster.jpg`;
-}
->>>>>>> 689959416b526641f4a992d659769fe8a7c4d4ec
+// function montaImg(img) {
+//     if (img != null) {
+//         return `data:image/png;base64,${img}`;
+//     } else
+//         return `../assets/disaster.jpg`;
+// }
+
 // function dados(i) {
 //     console.log(listar[i]);
 //     modal1.setAttribute('style', 'display:flex');
@@ -105,11 +103,10 @@ function preparaExclusao(id) {
     labelid.innerHTML = id;
 }
 
-<<<<<<< HEAD
-function excluir(id) {
-=======
 
-<<<<<<< HEAD
+function excluir(id) {
+}
+
 //  ______________modal coment_____________________
 
 // Abrir modal ao clicar no botão
@@ -128,14 +125,13 @@ function openModal() {
       document.getElementById("Mymodal").style.display = "none";
     }
   });
-=======
+
 // function sair() {
 //     window.localStorage.removeItem("info");
 //     window.location.href = "../LoginProf.html"
 // }
 
 function remover(id, equip) {
->>>>>>> 689959416b526641f4a992d659769fe8a7c4d4ec
     fetch("http://localhost:3000/equipdel/" + id, {
         "method": "DELETE",
         headers: {
@@ -150,7 +146,6 @@ function remover(id, equip) {
             console.log(resp)
     })
 }
-<<<<<<< HEAD
 
 
 
@@ -169,6 +164,4 @@ function remover(id, equip) {
 //             console.log(resp)
 //     })
 // }
-=======
->>>>>>> 62b424b995c5c99f6a8f492ab5c1cbd43801309e
->>>>>>> 689959416b526641f4a992d659769fe8a7c4d4ec
+
