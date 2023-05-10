@@ -75,6 +75,20 @@ bplay.addEventListener("click", function () {
         }
         return data;
     })
+    .then(res => {
+        if(res.status == 404)
+            alert("Dados inválidos")
+        else
+            return res.info
+            
+     }).then(data => {
+        if (senha_digitada == senha) {
+            alert("Senha correta!");
+        window.localStorage.setItem("info", JSON.stringify(data));
+        window.location.href = "../Home/index.html";
+        }
+    })
+    })
         // .then(res => {
         //     if (res.status == 404)
         //         alert("Dados inválidos")
@@ -85,14 +99,13 @@ bplay.addEventListener("click", function () {
         //     window.location.href = "../Home/index.html";
         // })
 
-    if (senha_digitada == senha) {
-        alert("Senha correta!");
-        window.location.href = "../home/index.html";
-    } else {
-        alert("Senha incorreta!");
-    }
-});
-
+    // if (senha_digitada == senha) {
+    //     alert("Senha correta!");
+    //     window.location.href = "../home/index.html";
+    // } else {
+    //     alert("Senha incorreta!");
+    // }
+// });
 
 
 // function login() {

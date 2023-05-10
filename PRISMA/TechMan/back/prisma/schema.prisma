@@ -23,7 +23,7 @@ model Equipamentos {
   imagem      String
   descricao   String
   ativo       Int
-  data        DateTime
+  data        DateTime @default(now())
   coment   Comentarios[]
 }
 

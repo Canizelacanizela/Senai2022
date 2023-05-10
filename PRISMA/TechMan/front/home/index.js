@@ -1,6 +1,8 @@
 var UrList = "http://localhost:3000/equip";
 var listarEquip = document.querySelector(".profileTwo");
 var itemSec = document.querySelector(".profile-body-section");
+const mExcluir = document.querySelector("#modalExcluir");
+const labelid = document.querySelector("#idExclui");
 
 function carregar() {
     const options = {
@@ -19,23 +21,18 @@ function listaEquipamento(profissionais) {
         let equip = document.querySelector(".profile-body-section").cloneNode(true);
         equip.classList.remove("model");
 
-        equip.querySelector("#imagem").innerHTML += montaImg(e.imagem);
+        equip.querySelector("#imagem").src = '../assets/' + e.imagem;
         equip.querySelector("#equipamento").innerHTML += e.equipamento;
         equip.querySelector("#descricao").innerHTML += e.descricao;
-
+        equip.querySelector("#del").addEventListener("click", () => {
+            preparaExclusao(e.id);
+        });
 
         listarEquip.appendChild(equip);
     });
 
 }
 
-
-function montaImg(img) {
-    if (img != null) {
-        return `data:image/png;base64,${img}`;
-    } else
-        return `../assets/disaster.jpg`;
-}
 // function dados(i) {
 //     console.log(listar[i]);
 //     modal1.setAttribute('style', 'display:flex');
@@ -86,15 +83,17 @@ function montaImg(img) {
 
 
 
+function sair() {
+    window.localStorage.removeItem("info");
+    window.location.href = "../Login/index.html";
+}
 
+function preparaExclusao(id) {
+    mExcluir.setAttribute('style', 'display:flex');
+    labelid.innerHTML = id;
+}
 
-
-// function sair() {
-//     window.localStorage.removeItem("info");
-//     window.location.href = "../LoginProf.html"
-// }
-
-function remover(id, equip) {
+function excluir(id) {
     fetch("http://localhost:3000/equipdel/" + id, {
         "method": "DELETE",
         headers: {
@@ -109,3 +108,21 @@ function remover(id, equip) {
             console.log(resp)
     })
 }
+
+
+
+// function remover(id) {
+//     fetch("http://localhost:3000/equipdel/" + id, {
+//         "method": "DELETE",
+//         headers: {
+//             'Content-Type': 'application/json'
+//         },
+//     })
+//     .then(resp => { return resp.status })
+//     .then(resp => {
+//         if (resp == 204)
+//             window.location.reload();
+//         else
+//             console.log(resp)
+//     })
+// }
