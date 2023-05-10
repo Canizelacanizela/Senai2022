@@ -37,8 +37,8 @@
                             <p id="descricao"></p>
                             <div class="contain">
                                 <div class="btn-btn" id="coment">
-                                    <img width="32" onclick="modal3.setAttribute('style','display:flex')"
-                                        src="../assets/comentario.png" alt="Alterar">
+                                    <img  onclick="openModal()"
+                                    width="32"src="../assets/comentario.png" alt="Alterar">
                                 </div>
                                 <div class="btn-btn" id="del">
                                     <img width="32" src="../assets/deletar.png" alt="Alterar">
@@ -91,6 +91,21 @@
     </div>
 
     <!-- ---------------------- Comentario ---------------------------------------- -->
+<<<<<<< HEAD
+    <div id="Mymodal" class="modall">
+        <div class="modal-contentt">
+            <span class="close">&times;</span>
+            <form id="proposal-form">
+                <label for="perfil">Nome:</label>
+                <label for="data">Data:</label>
+                <label for="cm">Comentario</label>
+                <button type="adm">Adicionar comentário</button>
+            </form>
+        </div>
+    </div>
+
+
+=======
     <!-- <div id="modal3" class="modall">
         <div id="novo3">
             <div class="modal3Header">
@@ -106,11 +121,15 @@
             </div>
         </div>
     </div> -->
+<<<<<<< HEAD
     <div id="modalExcluir" class="modall excluir">
         <h3>Exclusão de equipamento<input type="button" value="X" onclick="modalExcluir.setAttribute('style','display:none;')"> </h3>
         <p>Atenção! Tem certeza que deseja excluir o equipamento<label id="idExclui" hidden></label>? Essa ação não poderá ser desfeita.</p>
         <button id="confirmaExclusao" onclick="excluir(idExclui.innerHTML)">Excluir</button>
     </div>
+=======
+>>>>>>> 62b424b995c5c99f6a8f492ab5c1cbd43801309e
+>>>>>>> 689959416b526641f4a992d659769fe8a7c4d4ec
 </body>
 <script src="index.js"></script>
 

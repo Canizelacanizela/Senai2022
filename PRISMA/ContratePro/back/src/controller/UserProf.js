@@ -115,12 +115,13 @@ const del = async (req, res) => {
   res.status(204).end();
 };
 
-module.exports = {
-  create,
-  read,
-  readComent,
-  login,
-  readOne,
-  del,
-  update,
-};
+
+  module.exports = {
+    create,
+    read,
+    readComent,
+    login,
+    readOne,
+    del,
+    update
+  };

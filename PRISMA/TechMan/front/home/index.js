@@ -33,6 +33,18 @@ function listaEquipamento(profissionais) {
 
 }
 
+<<<<<<< HEAD
+=======
+
+
+
+function montaImg(img) {
+    if (img != null) {
+        return `data:image/png;base64,${img}`;
+    } else
+        return `../assets/disaster.jpg`;
+}
+>>>>>>> 689959416b526641f4a992d659769fe8a7c4d4ec
 // function dados(i) {
 //     console.log(listar[i]);
 //     modal1.setAttribute('style', 'display:flex');
@@ -93,7 +105,37 @@ function preparaExclusao(id) {
     labelid.innerHTML = id;
 }
 
+<<<<<<< HEAD
 function excluir(id) {
+=======
+
+<<<<<<< HEAD
+//  ______________modal coment_____________________
+
+// Abrir modal ao clicar no botão
+function openModal() {
+    document.getElementById("Mymodal").style.display = "block";
+}
+  
+  // Fechar modal ao clicar no botão de fechar
+  document.getElementsByClassName("close")[0].addEventListener("click", function() {
+    document.getElementById("Mymodal").style.display = "none";
+  });
+  
+  // Fechar modal ao clicar fora do conteúdo do modal
+  window.addEventListener("click", function(event) {
+    if (event.target == document.getElementById("Mymodal")) {
+      document.getElementById("Mymodal").style.display = "none";
+    }
+  });
+=======
+// function sair() {
+//     window.localStorage.removeItem("info");
+//     window.location.href = "../LoginProf.html"
+// }
+
+function remover(id, equip) {
+>>>>>>> 689959416b526641f4a992d659769fe8a7c4d4ec
     fetch("http://localhost:3000/equipdel/" + id, {
         "method": "DELETE",
         headers: {
@@ -108,6 +150,7 @@ function excluir(id) {
             console.log(resp)
     })
 }
+<<<<<<< HEAD
 
 
 
@@ -126,3 +169,6 @@ function excluir(id) {
 //             console.log(resp)
 //     })
 // }
+=======
+>>>>>>> 62b424b995c5c99f6a8f492ab5c1cbd43801309e
+>>>>>>> 689959416b526641f4a992d659769fe8a7c4d4ec
