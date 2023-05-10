@@ -37,8 +37,8 @@
                             <p id="descricao"></p>
                             <div class="contain">
                                 <div class="btn-btn" id="coment">
-                                    <img width="32" onclick="modal3.setAttribute('style','display:flex')"
-                                        src="../assets/comentario.png" alt="Alterar">
+                                    <img  onclick="openModal()"
+                                    width="32"src="../assets/comentario.png" alt="Alterar">
                                 </div>
                                 <div class="btn-btn" id="del">
                                     <img width="32" onclick="modal4.setAttribute('style','display:flex')"
@@ -92,21 +92,19 @@
     </div>
 
     <!-- ---------------------- Comentario ---------------------------------------- -->
-    <div id="modal3" class="modall">
-        <div id="novo3">
-            <div class="modal3Header">
-                <h3>Alterar Motorista</h3>
-                <button class="fechar" onclick="modal3.setAttribute('style','display:none')">X</button>
-            </div>
-            <div class="modal3Form">
-                <input type="hidden" id="ida" />
-                <label class="lab1" for="">Nome:</label> 
-            </div>
-            <div class="modal3Footer">
-                <button class="bn-alt" onclick="alterar()">Enviar</button>
-            </div>
+    <div id="Mymodal" class="modall">
+        <div class="modal-contentt">
+            <span class="close">&times;</span>
+            <form id="proposal-form">
+                <label for="perfil">Nome:</label>
+                <label for="data">Data:</label>
+                <label for="cm">Comentario</label>
+                <button type="adm">Adicionar comentário</button>
+            </form>
         </div>
     </div>
+
+
 </body>
 <script src="index.js"></script>
 

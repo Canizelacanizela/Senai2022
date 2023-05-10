@@ -30,6 +30,8 @@ function listaEquipamento(profissionais) {
 }
 
 
+
+
 function montaImg(img) {
     if (img != null) {
         return `data:image/png;base64,${img}`;
@@ -89,7 +91,21 @@ function montaImg(img) {
 
 
 
-// function sair() {
-//     window.localStorage.removeItem("info");
-//     window.location.href = "../LoginProf.html"
-// }
+//  ______________modal coment_____________________
+
+// Abrir modal ao clicar no botão
+function openModal() {
+    document.getElementById("Mymodal").style.display = "block";
+}
+  
+  // Fechar modal ao clicar no botão de fechar
+  document.getElementsByClassName("close")[0].addEventListener("click", function() {
+    document.getElementById("Mymodal").style.display = "none";
+  });
+  
+  // Fechar modal ao clicar fora do conteúdo do modal
+  window.addEventListener("click", function(event) {
+    if (event.target == document.getElementById("Mymodal")) {
+      document.getElementById("Mymodal").style.display = "none";
+    }
+  });
