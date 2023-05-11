@@ -87,11 +87,6 @@ function montaImg(img) {
 // }
 
 
-
-
-
-
-<<<<<<< HEAD
 //  ______________modal coment_____________________
 
 // Abrir modal ao clicar no botão
@@ -110,7 +105,7 @@ function openModal() {
       document.getElementById("Mymodal").style.display = "none";
     }
   });
-=======
+
 // function sair() {
 //     window.localStorage.removeItem("info");
 //     window.location.href = "../LoginProf.html"
@@ -131,4 +126,4 @@ function remover(id, equip) {
             console.log(resp)
     })
 }
->>>>>>> 62b424b995c5c99f6a8f492ab5c1cbd43801309e
+
