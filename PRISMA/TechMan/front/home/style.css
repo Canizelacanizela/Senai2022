@@ -423,7 +423,7 @@ textarea {
   }
 
 
-.modall{
+  .modall{
     display:none;
     position:absolute;
     background-color: #fff;
@@ -433,8 +433,8 @@ textarea {
     flex-direction: column;
     justify-content: space-between;
     border: solid 1px #35797d;
-    
     box-shadow: 1px 1px #888;
+    
 }
 
 .modall h3{
@@ -461,6 +461,7 @@ textarea {
     border-radius: 10px;
     box-shadow: 2px 2px #888;
     margin-left: 0px;
+    cursor: pointer;
 }
 
 .excluir{
@@ -468,7 +469,6 @@ textarea {
     height: 200px;
     top:30%;
     left:30%;
-    
 }
 
 /* --------------------- */
@@ -480,8 +480,9 @@ textarea {
 
 /* _________________________Modal Comentário_________________ */
 
-.modall {
+.modamdm {
     /* display: ;  */
+    display:none;
     position: fixed; 
     z-index: 1; 
     left: 0;

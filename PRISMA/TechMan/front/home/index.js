@@ -2,6 +2,7 @@ var UrList = "http://localhost:3000/equip";
 var listarEquip = document.querySelector(".profileTwo");
 var itemSec = document.querySelector(".profile-body-section");
 const mExcluir = document.querySelector("#modalExcluir");
+const mComent = document.querySelector("#Mymodal");
 const labelid = document.querySelector("#idExclui");
 
 function carregar() {
@@ -100,18 +101,30 @@ function sair() {
 
 function preparaExclusao(id) {
     mExcluir.setAttribute('style', 'display:flex');
-    labelid.innerHTML = id;
+    labelid.innerHTML = id; 
 }
 
 
 function excluir(id) {
+    let options = { method: 'DELETE' };
+
+    fetch('http://localhost:3000/equipdel/' + id, options)
+        .then(resp => resp.status)
+        .then(resp => {
+            if (resp == 204) {
+                window.location.reload();
+            } else {
+                alert("Erro ao excluir: + " + resp)
+            }
+        });
 }
+
 
 //  ______________modal coment_____________________
 
 // Abrir modal ao clicar no botão
 function openModal() {
-    document.getElementById("Mymodal").style.display = "block";
+    mComent.setAttribute('style', 'display:block');
 }
   
   // Fechar modal ao clicar no botão de fechar
@@ -126,26 +139,21 @@ function openModal() {
     }
   });
 
-// function sair() {
-//     window.localStorage.removeItem("info");
-//     window.location.href = "../LoginProf.html"
+// function remover(id, equip) {
+//     fetch("http://localhost:3000/equipdel/" + id, {
+//         "method": "DELETE",
+//         headers: {
+//             'Content-Type': 'application/json'
+//         },
+//     })
+//     .then(resp => { return resp.status })
+//     .then(resp => {
+//         if (resp == 204)
+//             window.location.reload();
+//         else
+//             console.log(resp)
+//     })
 // }
-
-function remover(id, equip) {
-    fetch("http://localhost:3000/equipdel/" + id, {
-        "method": "DELETE",
-        headers: {
-            'Content-Type': 'application/json'
-        },
-    })
-    .then(resp => { return resp.status })
-    .then(resp => {
-        if (resp == 204)
-            window.location.reload();
-        else
-            console.log(resp)
-    })
-}
 
 
 
