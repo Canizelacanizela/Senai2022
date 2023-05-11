@@ -1,3 +1,6 @@
+
+LOAD DATA INFILE "C:/Users/Suporte/Desktop/SENAI/Senai2022/PRISMA/TechMan/docs/perfis.csv"
+
 LOAD DATA INFILE "C:/Users/Desenvolvimento/Desktop/Senai2022/PRISMA/TechMan/docs/perfis.csv"
 INTO TABLE perfis
 FIELDS TERMINATED BY ';'
@@ -6,12 +9,19 @@ LINES TERMINATED BY '\r\n'
 IGNORE 1 ROWS;
 
 
+LOAD DATA INFILE "C:/Users/Suporte/Desktop/SENAI/Senai2022/PRISMA/TechMan/docs/usuarios.csv"
+
+
 LOAD DATA INFILE "C:/Users/Desenvolvimento/Desktop/Senai2022/PRISMA/TechMan/docs/usuarios.csv"
+
 INTO TABLE user
 FIELDS TERMINATED BY ';'
 ENCLOSED BY '"'
 LINES TERMINATED BY '\r\n'
 IGNORE 1 ROWS;
+
+
+LOAD DATA INFILE "C:/Users/Suporte/Desktop/SENAI/Senai2022/PRISMA/TechMan/docs/equipamentos.csv"
 
 LOAD DATA INFILE "C:/Users/Desenvolvimento/Desktop/Senai2022/PRISMA/TechMan/docs/equipamentos.csv"
 INTO TABLE equipamentos
