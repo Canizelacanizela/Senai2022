@@ -59,9 +59,10 @@ btc.addEventListener("click", function () {
 });
 
 bplay.addEventListener("click", function () {
-     let info = {
-        "senha":senha.value
+    let info = {
+        "senha": senha_digitada
     };
+
     fetch("http://localhost:3000/login", {
         "method": "POST",
         "headers": {
@@ -74,65 +75,18 @@ bplay.addEventListener("click", function () {
             status: res.status
         }
         return data;
-    })
-    .then(res => {
-        if(res.status == 404)
+    }).then(res => {
+        if (res.status == 404) {
             alert("Dados inválidos")
-        else
+            window.location.reload();
+        } else {
             return res.info
-            
-     }).then(data => {
-        if (senha_digitada == senha) {
-            alert("Senha correta!");
-        window.localStorage.setItem("info", JSON.stringify(data));
-        window.location.href = "../Home/index.html";
         }
+    }).then(res => {
+        window.localStorage.setItem("info", JSON.stringify(res[0]));
+        if (res[0].perfil == 2)
+            window.location.href = "../Home/index.html";
+        else
+            window.location.href = "../HomeComum/index.html";
     })
-    })
-        // .then(res => {
-        //     if (res.status == 404)
-        //         alert("Dados inválidos")
-        //     else
-        //         return res.info
-        // }).then(data => {
-        //     window.localStorage.setItem("info", JSON.stringify(data));
-        //     window.location.href = "../Home/index.html";
-        // })
-
-    // if (senha_digitada == senha) {
-    //     alert("Senha correta!");
-    //     window.location.href = "../home/index.html";
-    // } else {
-    //     alert("Senha incorreta!");
-    // }
-// });
-
-
-// function login() {
-//     let info = {
-//         "senha":senha.value
-//     };
-
-//     fetch("http://localhost:3000/login", {
-//         "method": "POST",
-//         "headers": {
-//             "Content-Type": "application/json"
-//         },
-//         "body": JSON.stringify(info)
-//     }).then(res => {
-//         let data = {
-//             info: res.json(),
-//             status: res.status
-//         }
-//         return data;
-//     })
-//         .then(res => {
-//             if (res.status == 404)
-//                 alert("Dados inválidos")
-//             else
-//                 return res.info
-//         }).then(data => {
-//             window.localStorage.setItem("info", JSON.stringify(data));
-//             window.location.href = "../Home/index.html";
-//         })
-// }
+});

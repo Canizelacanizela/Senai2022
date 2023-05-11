@@ -12,6 +12,9 @@ const create = async (req, res) => {
 
 const read = async (req, res) => {
     let equipamentos = await prisma.equipamentos.findMany({
+        where: {
+            ativo: 1
+        },
         select: {
             id: true,
             imagem: true,

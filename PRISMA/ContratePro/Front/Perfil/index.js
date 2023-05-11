@@ -11,7 +11,6 @@ var perfil = {}
 
 var listar = [];
 
-<<<<<<< HEAD
 
 // function listInfo() {
 //   const options = { method: 'GET' };
@@ -22,7 +21,7 @@ var listar = [];
 //     .then((info) => {
 //       let prof = document.querySelector(".all").cloneNode(true);
 //       prof.classList.remove("model");
-=======
+
 function listInfo() {
   const options = { method: 'GET' };
   let info = JSON.parse(window.localStorage.getItem("info"))
@@ -41,7 +40,7 @@ function listInfo() {
       prof.querySelector("#edit").setAttribute("onclick", `dadosAlterar()`);
       prof.querySelector("#biografia").innerHTML += info.biografia;
       prof.querySelector("#cat").innerHTML += info.categoria.nome_categoria;
->>>>>>> 5e8764514cd95cb544f8edd00c075007fbde821a
+
 
 //       prof.querySelector("#nome").innerHTML += info.nome;
 //       prof.querySelector("#hora").innerHTML += info.porhora;
@@ -49,7 +48,7 @@ function listInfo() {
 //       prof.querySelector("#email").innerHTML += info.email;
 //       prof.querySelector("#biografia").innerHTML += info.biografia;
 
-<<<<<<< HEAD
+
 //       // prof.Comentario.forEach((comentario) => {
 //       //   prof.querySelector("#coment").innerHTML += comentario.comentario + "<br>";
 //       // });

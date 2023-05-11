@@ -18,28 +18,28 @@ model User {
 }
 
 model Equipamentos {
-  id          Int      @id @default(autoincrement())
+  id          Int           @id @default(autoincrement())
   equipamento String
   imagem      String
   descricao   String
   ativo       Int
-  data        DateTime @default(now())
-  coment   Comentarios[]
+  data        DateTime      @default(now())
+  coment      Comentarios[]
 }
 
 model Perfis {
-  id     Int    @id @default(autoincrement())
-  perfil String
-  user   User[]
-  comentario   Comentarios[]
+  id         Int           @id @default(autoincrement())
+  perfil     String
+  user       User[]
+  comentario Comentarios[]
 }
 
 model Comentarios {
-  id          Int       @id @default(autoincrement())
+  id          Int          @id @default(autoincrement())
   comentario  String
   equipamento Int
   perfil      Int
   data        DateTime?
-  perf  Perfis @relation(fields: [perfil], references: [id])
-  equipa Equipamentos @relation(fields: [equipamento], references: [id])
+  perf        Perfis       @relation(fields: [perfil], references: [id], onDelete: Cascade)
+  equipa      Equipamentos @relation(fields: [equipamento], references: [id])
 }

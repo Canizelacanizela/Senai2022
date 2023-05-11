@@ -9,16 +9,13 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="../assets/icone.png">
-    <title>TechMan Adm</title>
+    <title>TechMan Comum</title>
     <header>
         <div class="logo">
             <img class="i" src="../assets/techman.png" alt="TechMan">
         </div>
         <nav>
             <ul>
-                <li><button class="btn">
-                        <p class="t" onclick="modal1.setAttribute('style','display:flex')">Novo equipamento</p>
-                    </button></li>
                 <li><img id="sair" onclick="sair()" src="../assets/logout_sair.png" alt="LogOut"></li>
             </ul>
         </nav>
@@ -37,25 +34,11 @@
                             <p id="descricao"></p>
                             <div class="contain">
                                 <div class="btn-btn" id="coment">
-                                    <img  onclick="openModal()"
-                                    width="32"src="../assets/comentario.png" alt="Alterar">
-                                </div>
-                                <div class="btn-btn" id="del">
-                                    <img width="32" src="../assets/deletar.png" alt="Alterar">
+                                    <img onclick="openModal()" width="32" src="../assets/comentario.png" alt="Alterar">
                                 </div>
                             </div>
                         </div>
-                        <!-- <p id="biografia"></p>
-                    <h4 id="nome_categoria"></h4>
-                    <div class="contain">
-                        <div class="btn" id="edit">
-                            <img width="32" onclick="modal1.setAttribute('style','display:flex')"
-                                src="../assets/comente.png" alt="Alterar">
-                        </div> -->
-                        <!-- <div class="btn" id="edit">
-                            <img width="32" onclick="modal1.setAttribute('style','display:flex')"
-                                src="../assets/comente.png" alt="Alterar">
-                        </div> -->
+
                     </div>
                 </div>
             </div>
@@ -91,41 +74,16 @@
     </div>
 
     <!-- ---------------------- Comentario ---------------------------------------- -->
-
-
-
     <div id="Mymodal" class="modamdm">
-
         <div class="modal-contentt">
             <span class="close">&times;</span>
-            <p class="p">Cometários</p>
-            <div id="listarEq"></div>
-            <button id="cmd">Adm</button>
+            <form id="proposal-form">
+                <label for="perfil">Nome:</label>
+                <label for="data">Data:</label>
+                <label for="cm">Comentario</label>
+                <button type="adm">Adicionar comentário</button>
+            </form>
         </div>
-    </div>
-
-    <!-- <div id="modal3" class="modall">
-        <div id="novo3">
-            <div class="modal3Header">
-                <h3>Alterar Motorista</h3>
-                <button class="fechar" onclick="modal3.setAttribute('style','display:none')">X</button>
-            </div>
-            <div class="modal3Form">
-                <input type="hidden" id="ida" />
-                <label class="lab1" for="">Nome:</label> 
-            </div>
-            <div class="modal3Footer">
-                <button class="bn-alt" onclick="alterar()">Enviar</button>
-            </div>
-        </div>
-    </div> -->
-
-
-
-    <div id="modalExcluir" class="modall excluir">
-        <h3>Exclusão de equipamento<input type="button" value="X" onclick="modalExcluir.setAttribute('style','display:none;')"> </h3>
-        <p>Atenção! Tem certeza que deseja excluir o equipamento <label hidden id="idExclui"></label>? Essa ação não poderá ser desfeita.</p>
-        <button id="confirmaExclusao" onclick="excluir(idExclui.innerHTML)">Excluir</button>
     </div>
 
 </body>

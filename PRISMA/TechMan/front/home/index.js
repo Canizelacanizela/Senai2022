@@ -94,8 +94,13 @@ function sair() {
 }
 
 function preparaExclusao(id) {
+
   mExcluir.setAttribute("style", "display:flex");
   labelid.innerHTML = id;
+
+    mExcluir.setAttribute('style', 'display:flex');
+    labelid.innerHTML = id;
+
 }
 
 function excluir(id) {
@@ -134,12 +139,17 @@ function openModal() {
     carregar();
 }
 
+
 function listacomentario(comentarios) {
     const listarEq = document.getElementById("listarEq");
 
     comentarios.forEach((comentario) => {
       let cm = document.createElement("div");
       cm.classList.add("comment");
+
+      let id = document.createElement("p");
+      cm.innerHTML = comentario.id;
+      cm.appendChild(id);
 
       let perfil = document.createElement("p");
       cm.innerHTML = comentario.perf.perfil;
@@ -196,6 +206,19 @@ function remover(id, equip) {
       else console.log(resp);
     });
 }
+
+// Fechar modal ao clicar no botão de fechar
+document.getElementsByClassName("close")[0].addEventListener("click", function () {
+    document.getElementById("Mymodal").style.display = "none";
+});
+
+// Fechar modal ao clicar fora do conteúdo do modal
+window.addEventListener("click", function (event) {
+    if (event.target == document.getElementById("Mymodal")) {
+        document.getElementById("Mymodal").style.display = "none";
+    }
+});
+
 
 // function remover(id, equip) {
 //     fetch("http://localhost:3000/equipdel/" + id, {
