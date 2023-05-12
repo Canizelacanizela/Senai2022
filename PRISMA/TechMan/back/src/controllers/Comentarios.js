@@ -1,14 +1,14 @@
-const { PrismaClient } = require('@prisma/client');
+const { PrismaClient } = require("@prisma/client");
 
 const prisma = new PrismaClient();
 
 const create = async (req, res) => {
-    let comentarios = await prisma.comentarios.create({
-        data: req.body
-    });
+  let comentarios = await prisma.comentarios.create({
+    data: req.body,
+  });
 
-    res.status(200).json(comentarios).end();
-}
+  res.status(200).json(comentarios).end();
+};
 
 const readOne = async (req, res) => {
     let comentarios = await prisma.comentarios.findMany({
@@ -38,8 +38,20 @@ const readOne = async (req, res) => {
 }
 
 const read = async (req, res) => {
-    let comentarios = await prisma.comentarios.findMany({
+  let comentarios = await prisma.comentarios.findMany({
+    select: {
+      id: true,
+      comentario: true,
+      data: true,
+      perf: {
         select: {
+<<<<<<< HEAD
+          perfil: true,
+        },
+      },
+    },
+  });
+=======
             id: true,
             comentario: true,
             data: true,
@@ -55,25 +67,64 @@ const read = async (req, res) => {
               }
         }
     });
+>>>>>>> 7dd274dc5387ae917ad4554726a8aeb68534bb4b
 
-    //SELECT email, nome FROM comentarios WHERE email = ''
+  //SELECT email, nome FROM comentarios WHERE email = ''
 
-    res.status(200).json(comentarios).end();
-}
+  res.status(200).json(comentarios).end();
+};
+
+const readOne = async (req, res) => {
+  let comentarios = await prisma.comentarios.findMany({
+    where: {
+      equipamento: Number(req.params.id),
+    },
+
+    select: {
+      id: true,
+
+      comentario: true,
+
+      data: true,
+
+      equipa: {
+        select: {
+          id: true,
+        },
+      },
+
+      perf: {
+        select: {
+          perfil: true,
+        },
+      },
+    },
+  }); //SELECT email, nome FROM comentarios WHERE email = ''
+
+  res.status(200).json(comentarios).end();
+};
 
 const del = async (req, res) => {
-    console.log(req.params);
-    const comentarios = await prisma.comentarios.delete({
-        where: {
-            id: Number(req.params.id)
-        }
-    })
-    res.status(204).end();
-}
+  console.log(req.params);
+  const comentarios = await prisma.comentarios.delete({
+    where: {
+      id: Number(req.params.id),
+    },
+  });
+  res.status(204).end();
+};
 
 module.exports = {
+<<<<<<< HEAD
+  create,
+  read,
+  del,
+  readOne,
+};
+=======
     create,
     read,
     readOne,
     del
 }
+>>>>>>> 7dd274dc5387ae917ad4554726a8aeb68534bb4b

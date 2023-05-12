@@ -17,7 +17,7 @@
         <nav>
             <ul>
                 <li><button class="btn">
-                        <p class="t" onclick="modal1.setAttribute('style','display:flex')">Novo equipamento</p>
+                        <p class="t" onclick="openModalCad()">Novo equipamento</p>
                     </button></li>
                 <li><img id="sair" onclick="sair()" src="../assets/logout_sair.png" alt="LogOut"></li>
             </ul>
@@ -50,6 +50,7 @@
         </div>
     </div>
     <!-- --------------------------Cadastro----------------------------- -->
+<<<<<<< HEAD
     <div id="modal1" class="modal">
         <div id="novo">
             <div class="modalHeader">
@@ -69,8 +70,21 @@
             <div class="modalHeader">
                 <h3>Mensagem</h3>
                 <button onclick="modal2.setAttribute('style','display:none')">X</button>
+=======
+  <div id="Mymodel" class="modalmm">
+
+        <div class="modal-contentt-cont">
+            <span class="close">&times;</span>
+            <p class="p">Cadastro de equipamento</p>
+            <input type="text" placeholder="Name">
+            <input type="text" placeholder="Endereço da imagem">
+            <input type="text" placeholder="Descrição">
+            <div class="chatbox">
+                <input type="checkbox" id="ativo" name="ativo" value="1">
+                <p>Ativo</p>
+>>>>>>> 48fc95f297c15a74eca0d7c8c8113c895864c6a3
             </div>
-            <div id="msg"></div>
+            <button id="castro">Cadastrar</button>
         </div>
     </div>
 
