@@ -15,6 +15,7 @@ const User = require('../controllers/User');
 
 // ------------------------------Comentarios-----------------------------------------
 router.get('/coment', Comentarios.read);
+router.get('/coment/:id', Comentarios.readOne);
 router.post('/comentcriar', Comentarios.create);
 router.delete('/comentdel/:id', Comentarios.del);
 router.get('/coment/:id', Comentarios.readOne);
