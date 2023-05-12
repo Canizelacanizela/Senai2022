@@ -254,6 +254,8 @@ ul li .nn {
 }
 
 
+
+/* ---------------- Novoequipamento ------------------------- */
 .modal {
     display: none;
     flex-direction: column;
@@ -265,7 +267,7 @@ ul li .nn {
     left: 0px;
     align-items: center;
 }
-/* ---------------- Proposta ------------------------- */
+
 #novo{
     border-radius: 10px;
 }
@@ -414,11 +416,11 @@ textarea {
     color: #2f2841;
     background-color: #59adbe;
     cursor: pointer;
-    box-shadow: 0px 10px 40px -12px #076aeb8f;
+    box-shadow: 0px 10px 15px -12px #0790eb8f;
 }
 
 .enviar-proposta:hover {
-    background-color: #aa6bdf;
+    background-color: #1da9cc;
     transition: all .6s;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
   }
@@ -432,6 +434,7 @@ textarea {
     font-size: medium;
     padding: 10px;
     flex-direction: column;
+    margin-left: 90px;
     justify-content: space-between;
     border: solid 1px #35797d;
     box-shadow: 1px 1px #888;
@@ -460,9 +463,16 @@ textarea {
     color: #fff;
     background-color: #f00;
     border-radius: 10px;
+    border: none;
     box-shadow: 2px 2px #888;
     margin-left: 0px;
     cursor: pointer;
+}
+
+.modall button:hover{
+    background-color: #c91e1e;
+    transition: all .6s;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
 }
 
 .excluir{
@@ -493,10 +503,6 @@ textarea {
     overflow: auto; 
     background-color: rgba(0,0,0,0.4); 
   }
-  /* .model{
-  display: none;
-  visibility: hidden;
-  } */
   
   .modal-contentt {
     background-color: #fefefe;
@@ -551,21 +557,30 @@ textarea {
     padding-bottom: 15px; 
   }
   
+#cmd{
+    background-color:  #35797d;
+    color: white;
+    border-radius: 10px;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
 
-  .comment p {
+#cmd:hover{
+    background-color: #44babc;
+    transition: all .6s;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+}
+
+.comment p {
     margin: 0;
     color: #6c6c6c;
-  }
+}
   
-  .comment p:first-child{
+.comment p:first-child{
     display: flex;
     align-items: center;
     color: #939393;
     font-weight: 300;
-  }
+}
   
-  /* .comment p:last-child {
-    margin-top: 3px;
-   
-  } */
- 

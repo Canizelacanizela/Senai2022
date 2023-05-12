@@ -1,7 +1,8 @@
 var UrList = "http://localhost:3000/equip";
+var Urcoment = "http://localhost:3000/coment";
 var listarEquip = document.querySelector(".profileTwo");
 var itemSec = document.querySelector(".profile-body-section");
-const labelid = document.querySelector("#idExclui");
+const mComent = document.querySelector("#Mymodal");
 
 function carregar() {
     const options = {
@@ -41,8 +42,72 @@ function sair() {
 
 // Abrir modal ao clicar no botão
 function openModal() {
-    mComent.setAttribute('style', 'display:block');
+    const mComent = document.getElementById('myModal');
+    document.getElementById("Mymodal").style.display = "block";
+
+    function carregar() {
+        const options = {
+            method: "GET"
+        }
+        fetch(Urcoment, options)
+            .then(res => res.json())
+            .then(res => {
+                listacomentario(res);
+            })
+            .catch(err => console.error(err));
+    }
+
+    carregar();
 }
+
+
+function listacomentario(comentarios) {
+    const listarEq = document.getElementById("listarEq");
+
+    comentarios.forEach((comentario) => {
+      let cm = document.createElement("div");
+      cm.classList.add("comment");
+
+      let id = document.createElement("p");
+      cm.innerHTML = comentario.id;
+      cm.appendChild(id);
+
+      let perfil = document.createElement("p");
+      cm.innerHTML = comentario.perf.perfil;
+      cm.appendChild(perfil);
+  
+      let data = document.createElement("p");
+      let dataObj = new Date(comentario.data);
+      let dia = dataObj.getDate();
+      let mes = dataObj.getMonth() + 1; // Lembre-se que o mês começa em 0, então somamos 1
+      let ano = dataObj.getFullYear();
+      
+      data.innerHTML =  dia + "/" + mes + "/" + ano;
+      cm.appendChild(data);
+
+      let cmText = document.createElement("p");
+      cmText.innerHTML = comentario.comentario;
+      cm.appendChild(cmText);
+
+      listarEq.appendChild(cm);
+    });
+  }
+
+// Fechar modal ao clicar no botão de fechar
+document
+  .getElementsByClassName("close")[0]
+  .addEventListener("click", function () {
+    document.getElementById("Mymodal").style.display = "none";
+  });
+
+// Fechar modal ao clicar fora do conteúdo do modal
+window.addEventListener("click", function (event) {
+  if (event.target == document.getElementById("Mymodal")) {
+    document.getElementById("Mymodal").style.display = "none";
+  }
+});
+
+
 
 // Fechar modal ao clicar no botão de fechar
 document.getElementsByClassName("close")[0].addEventListener("click", function () {
@@ -55,3 +120,4 @@ window.addEventListener("click", function (event) {
         document.getElementById("Mymodal").style.display = "none";
     }
 });
+

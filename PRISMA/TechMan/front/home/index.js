@@ -34,59 +34,7 @@ function listaEquipamento(profissionais) {
   });
 }
 
-// function montaImg(img) {
-//     if (img != null) {
-//         return `data:image/png;base64,${img}`;
-//     } else
-//         return `../assets/disaster.jpg`;
-// }
 
-// function dados(i) {
-//     console.log(listar[i]);
-//     modal1.setAttribute('style', 'display:flex');
-//     idc.value = listar[i].id;
-// }
-
-// const button = document.querySelector('.enviar-proposta');
-// const profissionalId = button.dataset.id_profissional;
-
-// button.addEventListener('click', () => {
-//     let id = document.querySelector("#idc").value
-//     let nome = document.querySelector("#nomec").value
-//     let proposta = document.querySelector("#propostac").value
-
-//     let corpo = {
-//         "id_profissionais": profissionalId,
-//         "nome": nome,
-//         "proposta": proposta
-//     }
-
-//     let options = {
-//         "method": "POST",
-//         "headers": {
-//             "content-type": "application/json",
-//             // "Bearer": JSON.parse(localStorage.getItem('info')).token
-//         },
-//         "body": JSON.stringify(corpo)
-//     };
-
-//     fetch('http://localhost:3000/prop', options)
-//         .then(res => { return res.json() })
-//         .then(resp => {
-//             if (resp != undefined) {
-//                 alert("Proposta enviada para o profissional.");
-//                 window.location.reload();
-//             } else {
-//                 console.log("Parece que aconteceu um erro inesperado. Tente novamente mais tarde.");
-//             }
-//         });
-// });
-
-// function alerta(a) {
-//     document.querySelector('#modal2').setAttribute('style', 'display:flex;');
-//     document.querySelector('#alerta').setAttribute('style', 'display:flex;');
-//     document.querySelector('#msg').innerHTML = a;
-// }
 
 function sair() {
   window.localStorage.removeItem("info");
@@ -124,11 +72,11 @@ function openModal() {
     const mComent = document.getElementById('myModal');
     document.getElementById("Mymodal").style.display = "block";
 
-    function carregar() {
+    function carregar(id) {
         const options = {
             method: "GET"
         }
-        fetch(Urcoment, options)
+        fetch("http://localhost:3000/coment/", + id, options)
             .then(res => res.json())
             .then(res => {
                 listacomentario(res);
@@ -138,7 +86,6 @@ function openModal() {
 
     carregar();
 }
-
 
 function listacomentario(comentarios) {
     const listarEq = document.getElementById("listarEq");
@@ -186,27 +133,6 @@ window.addEventListener("click", function (event) {
   }
 });
 
-// function sair() {
-//     window.localStorage.removeItem("info");
-//     window.location.href = "../LoginProf.html"
-// }
-
-function remover(id, equip) {
-  fetch("http://localhost:3000/equipdel/" + id, {
-    method: "DELETE",
-    headers: {
-      "Content-Type": "application/json",
-    },
-  })
-    .then((resp) => {
-      return resp.status;
-    })
-    .then((resp) => {
-      if (resp == 204) window.location.reload();
-      else console.log(resp);
-    });
-}
-
 // Fechar modal ao clicar no botão de fechar
 document.getElementsByClassName("close")[0].addEventListener("click", function () {
     document.getElementById("Mymodal").style.display = "none";
@@ -219,35 +145,3 @@ window.addEventListener("click", function (event) {
     }
 });
 
-
-// function remover(id, equip) {
-//     fetch("http://localhost:3000/equipdel/" + id, {
-//         "method": "DELETE",
-//         headers: {
-//             'Content-Type': 'application/json'
-//         },
-//     })
-//     .then(resp => { return resp.status })
-//     .then(resp => {
-//         if (resp == 204)
-//             window.location.reload();
-//         else
-//             console.log(resp)
-//     })
-// }
-
-// function remover(id) {
-//     fetch("http://localhost:3000/equipdel/" + id, {
-//         "method": "DELETE",
-//         headers: {
-//             'Content-Type': 'application/json'
-//         },
-//     })
-//     .then(resp => { return resp.status })
-//     .then(resp => {
-//         if (resp == 204)
-//             window.location.reload();
-//         else
-//             console.log(resp)
-//     })
-// }

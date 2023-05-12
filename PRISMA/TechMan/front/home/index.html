@@ -37,25 +37,13 @@
                             <p id="descricao"></p>
                             <div class="contain">
                                 <div class="btn-btn" id="coment">
-                                    <img  onclick="openModal()"
-                                    width="32"src="../assets/comentario.png" alt="Alterar">
+                                    <img onclick="openModal()" width="32" src="../assets/comentario.png" alt="Alterar">
                                 </div>
                                 <div class="btn-btn" id="del">
                                     <img width="32" src="../assets/deletar.png" alt="Alterar">
                                 </div>
                             </div>
                         </div>
-                        <!-- <p id="biografia"></p>
-                    <h4 id="nome_categoria"></h4>
-                    <div class="contain">
-                        <div class="btn" id="edit">
-                            <img width="32" onclick="modal1.setAttribute('style','display:flex')"
-                                src="../assets/comente.png" alt="Alterar">
-                        </div> -->
-                        <!-- <div class="btn" id="edit">
-                            <img width="32" onclick="modal1.setAttribute('style','display:flex')"
-                                src="../assets/comente.png" alt="Alterar">
-                        </div> -->
                     </div>
                 </div>
             </div>
@@ -69,7 +57,7 @@
                 <button class="fechar" onclick="modal1.setAttribute('style','display:none')">X</button>
             </div>
             <div class="modalForm">
-               
+
             </div>
             <div class="modalFooter">
                 <button class="enviar-proposta" data-profissional-id="123">Enviar</button>
@@ -88,39 +76,23 @@
 
     <!-- ---------------------- Comentario ---------------------------------------- -->
 
-
-
     <div id="Mymodal" class="modamdm">
 
         <div class="modal-contentt">
             <span class="close">&times;</span>
-            <p class="p">Cometários</p>
+            <p class="p">Comentários</p>
             <div id="listarEq"></div>
-            <button id="cmd">Adm</button>
+            <button id="cmd">Criar Comentario</button>
         </div>
     </div>
 
-    <!-- <div id="modal3" class="modall">
-        <div id="novo3">
-            <div class="modal3Header">
-                <h3>Alterar Motorista</h3>
-                <button class="fechar" onclick="modal3.setAttribute('style','display:none')">X</button>
-            </div>
-            <div class="modal3Form">
-                <input type="hidden" id="ida" />
-                <label class="lab1" for="">Nome:</label> 
-            </div>
-            <div class="modal3Footer">
-                <button class="bn-alt" onclick="alterar()">Enviar</button>
-            </div>
-        </div>
-    </div> -->
-
-
+    <!-- Excluir -->
 
     <div id="modalExcluir" class="modall excluir">
-        <h3>Exclusão de equipamento<input type="button" value="X" onclick="modalExcluir.setAttribute('style','display:none;')"> </h3>
-        <p>Atenção! Tem certeza que deseja excluir o equipamento <label hidden id="idExclui"></label>? Essa ação não poderá ser desfeita.</p>
+        <h3>Exclusão de equipamento<input type="button" value="X"
+                onclick="modalExcluir.setAttribute('style','display:none;')"> </h3>
+        <p>Atenção! Tem certeza que deseja excluir o equipamento <label hidden id="idExclui"></label>? Essa ação não
+            poderá ser desfeita.</p>
         <button id="confirmaExclusao" onclick="excluir(idExclui.innerHTML)">Excluir</button>
     </div>
 
