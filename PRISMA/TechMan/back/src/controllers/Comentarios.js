@@ -10,12 +10,44 @@ const create = async (req, res) => {
     res.status(200).json(comentarios).end();
 }
 
+const readOne = async (req, res) => {
+    let comentarios = await prisma.comentarios.findMany({
+        where: {
+            equipamento: Number(req.params.id),
+        },
+        select: {
+            id: true,
+            comentario: true,
+            data: true,
+            equipa: {
+                select: {
+                    id: true,
+                }
+              },
+            perf: {
+                select: {
+                  perfil: true
+                }
+              }
+        }
+    });
+
+    //SELECT email, nome FROM comentarios WHERE email = ''
+
+    res.status(200).json(comentarios).end();
+}
+
 const read = async (req, res) => {
     let comentarios = await prisma.comentarios.findMany({
         select: {
             id: true,
             comentario: true,
             data: true,
+            equipa: {
+                select: {
+                    id: true,
+                }
+              },
             perf: {
                 select: {
                   perfil: true
@@ -42,5 +74,6 @@ const del = async (req, res) => {
 module.exports = {
     create,
     read,
+    readOne,
     del
 }
