@@ -1,5 +1,4 @@
 var UrList = "http://localhost:3000/equip";
-var Urcoment = "http://localhost:3000/coment";
 var listarEquip = document.querySelector(".profileTwo");
 var itemSec = document.querySelector(".profile-body-section");
 const mExcluir = document.querySelector("#modalExcluir");
@@ -116,6 +115,26 @@ function excluir(id) {
       }
     });
 }
+// __________________cadastrar_________________
+
+function openModalCad() {
+  const mCadas = document.getElementById('Mymodel');
+  document.getElementById("Mymodel").style.display = "block";
+}
+
+// Fechar modal ao clicar fora do conteúdo do modal
+window.addEventListener("click", function (event) {
+  if (event.target == document.getElementById("Mymodel")) {
+    document.getElementById("Mymodel").style.display = "none";
+  }
+});
+
+// Fechar modal ao clicar no botão de fechar
+document.getElementsByClassName("close")[0].addEventListener("click", function () {
+  document.getElementById("Mymodel").style.display = "none";
+});
+
+
 
 //  ______________modal coment_____________________
 
@@ -124,16 +143,19 @@ function openModal() {
     const mComent = document.getElementById('myModal');
     document.getElementById("Mymodal").style.display = "block";
 
-    function carregar() {
-        const options = {
-            method: "GET"
-        }
-        fetch(Urcoment, options)
-            .then(res => res.json())
-            .then(res => {
-                listacomentario(res);
-            })
-            .catch(err => console.error(err));
+    function carregar(id) {
+      const options = {
+        method: "GET"
+      };
+    
+      fetch("http://localhost:3000/coment/" + id, options)
+        .then((resp) => resp.json())
+        .then((data) => {
+          listacomentario(data);
+        })
+        .catch((error) => {
+          console.error("Ocorreu um erro:", error);
+        });
     }
 
     carregar();
@@ -148,7 +170,7 @@ function listacomentario(comentarios) {
       cm.classList.add("comment");
 
       let id = document.createElement("p");
-      cm.innerHTML = comentario.id;
+      cm.innerHTML = comentario.equipa.id;
       cm.appendChild(id);
 
       let perfil = document.createElement("p");

@@ -17,7 +17,7 @@
         <nav>
             <ul>
                 <li><button class="btn">
-                        <p class="t" onclick="modal1.setAttribute('style','display:flex')">Novo equipamento</p>
+                        <p class="t" onclick="openModalCad()">Novo equipamento</p>
                     </button></li>
                 <li><img id="sair" onclick="sair()" src="../assets/logout_sair.png" alt="LogOut"></li>
             </ul>
@@ -62,27 +62,19 @@
         </div>
     </div>
     <!-- --------------------------Cadastro----------------------------- -->
-    <div id="modal1" class="modal">
-        <div id="novo">
-            <div class="modalHeader">
-                <h3>Cadastro de equipamento</h3>
-                <button class="fechar" onclick="modal1.setAttribute('style','display:none')">X</button>
+  <div id="Mymodel" class="modalmm">
+
+        <div class="modal-contentt-cont">
+            <span class="close">&times;</span>
+            <p class="p">Cadastro de equipamento</p>
+            <input type="text" placeholder="Name">
+            <input type="text" placeholder="Endereço da imagem">
+            <input type="text" placeholder="Descrição">
+            <div class="chatbox">
+                <input type="checkbox" id="ativo" name="ativo" value="1">
+                <p>Ativo</p>
             </div>
-            <div class="modalForm">
-               
-            </div>
-            <div class="modalFooter">
-                <button class="enviar-proposta" data-profissional-id="123">Enviar</button>
-            </div>
-        </div>
-    </div>
-    <div id="modal2" class="modal">
-        <div id="alerta">
-            <div class="modalHeader">
-                <h3>Mensagem</h3>
-                <button onclick="modal2.setAttribute('style','display:none')">X</button>
-            </div>
-            <div id="msg"></div>
+            <button id="castro">Cadastrar</button>
         </div>
     </div>
 
@@ -94,7 +86,7 @@
 
         <div class="modal-contentt">
             <span class="close">&times;</span>
-            <p class="p">Cometários</p>
+            <p class="p">Comentários</p>
             <div id="listarEq"></div>
             <button id="cmd">Adm</button>
         </div>

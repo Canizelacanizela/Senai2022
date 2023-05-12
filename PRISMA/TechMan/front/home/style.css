@@ -265,17 +265,79 @@ ul li .nn {
     left: 0px;
     align-items: center;
 }
-/* ---------------- Proposta ------------------------- */
+/* ---------------- Cadastro ------------------------- */
 #novo{
     border-radius: 10px;
 }
 
-.fechar{
-    cursor:pointer;
-    outline: none;
-    border:none;
-    font-weight: 800;
+.modalmm{
+    /* display:none; */
+    position: fixed; 
+    z-index: 1; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgba(0,0,0,0.4); 
 }
+
+.modal-contentt-cont{
+    display: column;
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 500px; 
+    
+}
+
+.modal-contentt-cont .p{
+    padding: 10px;
+    color: #35797d;
+    font-size: 20px;
+    font-weight: bold;
+}
+ 
+.modal-contentt-cont button{
+    display: block;
+    margin-right: 50px;
+    margin: 10px;
+    border: none;
+    border-radius: 10px;
+    background-color:#35797d ;
+    color: white;
+    padding: 10px;
+}
+
+.modal-contentt-cont input[type="text"]{
+ border: none;
+ border-bottom: 1px solid #000;
+ outline: none;
+ width: 20vw;
+ padding: 20px;
+}
+
+.chatbox{
+ display: flex;
+ color:rgba(0, 0, 0, 0.672);
+ font-size:15px;
+ padding: 10px;
+}
+.close {
+    color: #35797d;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
 
 
 .modalHeader {
@@ -454,7 +516,7 @@ textarea {
     border: none;
 }
 
-.modall button{
+.modal button{
     width: 120px;
     height: 40px;
     color: #fff;
@@ -482,7 +544,6 @@ textarea {
 /* _________________________Modal Comentário_________________ */
 
 .modamdm {
-   
     display:none;
     position: fixed; 
     z-index: 1; 
