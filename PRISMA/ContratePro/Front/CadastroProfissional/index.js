@@ -30,7 +30,6 @@ function cadastrarUsuario() {
     };
 
     fetch('http://localhost:3000/profcriar', options)
-<<<<<<< HEAD
         .then(res => { return res.json() })
         .then(resp => {
             if (resp != undefined) {
@@ -41,16 +40,3 @@ function cadastrarUsuario() {
             }
         });
 }
-=======
-            .then(res => { return res.json() })
-            .then(resp => {
-                if (resp != undefined) {
-                    alert("Deu Certo");
-                    window.location.reload();
-                } else {
-                    alert("Parece que deu erro");
-                    window.location.reload();
-                }
-            });
-    }
->>>>>>> 8007879744f02549ad53119606a6f44879b068b9
