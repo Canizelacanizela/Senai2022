@@ -97,5 +97,5 @@ function search() {
 
 function sair() {
     window.localStorage.removeItem("info");
-    window.location.href = "../LoginProf/index.html";
+    window.location.href = "../LoginCliente/index.html";
 }

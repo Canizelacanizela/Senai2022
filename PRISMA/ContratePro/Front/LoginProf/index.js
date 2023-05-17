@@ -14,20 +14,18 @@ function login() {
             "Content-Type": "application/json"
         },
         "body": JSON.stringify(info)
-    }).then(res => {
-        let data = {
-            info: res.json(),
-            status: res.status
-        }
-        return data;
-    })
-        .then(res => {
-            if (res.status == 404)
-                alert("Dados inválidos")
-            else
-                return res.info
-        }).then(data => {
-            window.localStorage.setItem("info", JSON.stringify(data));
-            window.location.href = "../HomeProfissa/index.html";
-        })
+    }).then(res => { if (res.status === 404){ 
+        throw new Error("Dados inválidos");
+    }else{ 
+        return res.json(); } })
+    
+        .then(data=> 
+            { window.localStorage.setItem("info", JSON.stringify(data));
+            alert("Dados válidos");
+              window.location.href = "../HomeProfissa/index.html"; 
+            })
+        
+        .catch(error => { alert(error.message);
+        
+        window.location.reload(); });
 }
