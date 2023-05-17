@@ -16,7 +16,7 @@ header {
     justify-content: space-around;
     align-items: center;
     background-color: #ffffff;
-    box-shadow: 0px 1px 10px rgb(36, 85, 158);
+    box-shadow: 0px 1px 10px #f22b509f;
 }
 
 #i {
@@ -82,6 +82,11 @@ li .btn-cad:hover::after {
 
 .logo {
     display: flex;
+    align-items: center;
+}
+.imgage{
+    width: 20%;
+    height: 25%;
 }
 
 /* ---- */
@@ -110,34 +115,38 @@ li .btn-cad:hover::after {
 .profile-header .lapis {
     width: 35px;
     height:40px;
+    cursor: pointer;
 }
-.modal{
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
+.modalmm {
+    display: none;
+    position: fixed;
+    z-index: 1;
     left: 0;
     top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    width: 100%;
+    height: 100%;
+    /* overflow: auto; */
+    background-color: rgba(0, 0, 0, 0.4);
 }
 
 .modal-content {
     display: column;
+    position: absolute;
     background-color: #fefefe;
     margin: 15% auto;
     padding: 20px;
     border-radius: 20px;
-    width: 45%; /* Could be more or less, depending on screen size */
+    width: 25%; /* Could be more or less, depending on screen size */
+    top: -15%;
+    left: 38%;
 }
   
 .modal-content-footer {
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
-    margin-top:4rem;
-    margin-right: 25px;
+    justify-content:center;
+    margin-top:0.1rem;
+    /* margin-right: 25px; */
   }
   
 .modal-content-body {
@@ -148,17 +157,18 @@ li .btn-cad:hover::after {
     flex-direction: column;
 }
 .input {
-    /* padding: 15px */
-    margin: 5px;
+    align-items: center;
+    width: 80%;
+    border: none;
     border-radius: 10px;
-    padding: 10px;
-    width: 60%;
+    padding: 12px;
+    background-color: #ecf0f1;
+    font-size: 12pt;
+    box-shadow: 0px 10px 40px #f0ffffde;
+    outline: none;
+    margin: 10px;
 }
 
-.model{
-    display: none;
-    visibility: hidden;
-}
 
 .profile-header .lapis {
     width: 7%;
@@ -204,12 +214,13 @@ li .btn-cad:hover::after {
     margin: 0;
 }
 .hr{
+    display: flex;
     font-size: 20px;
     font-weight: 600;
     /* padding-left:40px; */
 }
 .hr p{
-    font-weight: 700;
+   font-weight: 700;
    font-size: 22px;
  }
 .profile-body-section p{
@@ -218,7 +229,7 @@ li .btn-cad:hover::after {
 }
 
 .btn {
-    background-color: #aa6bdf;
+    background-color:#f22b4f;
     color: white;
     margin: 15px;
     padding: 10px 20px;
@@ -227,10 +238,11 @@ li .btn-cad:hover::after {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.205);
     transition: all 0.3s ease-in-out;
     font-family: 'Oxygen', sans-serif;
+    cursor: pointer;
   }
   
   .btn:hover {
-    background-color: #5589c0;
+    background-color: #eb133b;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
   }
   .footer{
@@ -239,144 +251,16 @@ li .btn-cad:hover::after {
       
   }
 
-  /* -------------------------------------- Alterar -------------------------------------------------*/
-
-.modall {
-    display: none;
-    flex-direction: column;
-    background-color: rgba(0, 0, 0, 0.5);
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0px;
-    left: 0px;
-    align-items: center;
+  .close {
+    color: #35797d;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
 }
-
-.btnn img{
-  width: 2vw;
-  height: 4vh;
-}
-.btnn {
-    padding-right: 35rem;
-    border: none;
-    border-radius: 5px;
-  }
-  
-#novo3{
-    border-radius: 10px;
-}
-
-.fechar{
-    cursor:pointer;
-    outline: none;
-    border:none;
-    font-weight: 800;
-}
-
-
-.modal3Header {
-    display: flex;
-    border-radius: 5px;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 5px;
-    box-shadow: 0px 1px 3px rgba(14, 93, 211, 0.493);
-}
-
-.modal3Header h3{
-    margin: 5px;
-}
-
-.modal3Header button {
-    padding: 8px;
-    padding-left: 12px;
-    padding-right: 12px;  
-    margin: 4px;
-    background-color: #eceaeae5;
-    border-radius: 5px;
-    box-shadow: 0px 2px 5px rgb(53, 54, 54);
-}
-
-.modal3Form{
-    width: 100%;
-    display: grid;
-    grid-template-columns: 30% 70%;
-}
-
-.modal3Footer{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 10px;
-}
-
-.modal3Footer .bn-alt {
-    padding: 14px 10px;
-    margin: 4px;
-    width: 40%;
-    height: 50px;
-    text-transform: uppercase;
-    font-weight: 800;
-    letter-spacing: 3px;
-    outline: none;
-    border: none;
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
     cursor: pointer;
-    background-color: #eceaeae5;
-    border-radius: 5px;
-    box-shadow: 0px 3px 5px rgb(47, 47, 48);
 }
-
-#novo3 {
-    display: block;
-    position: relative;
-    width: 450px;
-    top: 250px;
-    padding: 25px;
-    background-color: #fff;
-    box-shadow: 2px 2px 5px black;
-}
-.lab1{
-    gap:25px;
-    margin-top: 7px;
-    margin-left: 68px;
-}
-.lab2{
-    gap:25px;
-    margin-top: 8px;
-    margin-left: 70px;
-}
-.lab3{
-    gap:25px;
-    margin-top: 8px;
-    margin-left: 75px;
-}
-
-#novo3 input{
-    border: solid 1px #ccc;
-    padding: 5px;
-    border-radius: 5px;
-    margin-top: 5px;
-    margin-bottom: 2px;
-    outline:none;
-    
-}
-
-#novo3 .pl{
-    border: solid 1px #ccc;
-    padding: 5px;
-    border-radius: 5px;
-    margin-top: 10px;
-}
-
-#alerta {
-    display: block;
-    position: relative;
-    width: 400px;
-    top: 200px;
-    padding: 20px;
-    background-color: #fff;
-    box-shadow: 2px 2px 5px black;
-    flex-direction: column;
-}
+  

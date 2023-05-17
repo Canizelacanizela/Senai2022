@@ -53,6 +53,20 @@ nav ul li {
     transition: 0.5s;
 }
 
+.btnn {
+    display: inline-block;
+    text-decoration: none;
+    padding: 14px 40px;
+    font-size: 14px;
+    border: 1px  solid  #f22b4f;
+    color:  #f22b4f;
+    font-weight: 300;
+    border-radius: 30px;
+    border-top-right-radius: 0;
+    transition: 0.5s;
+}
+
+
 .btn {
     display: inline-block;
     text-decoration: none;
@@ -111,6 +125,9 @@ nav ul li {
 }
 
 .btn:hover {
+    border-top-right-radius: 30px;
+}
+.btnn:hover {
     border-top-right-radius: 30px;
 }
 

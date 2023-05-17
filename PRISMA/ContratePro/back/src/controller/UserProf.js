@@ -51,8 +51,8 @@ const read = async (req, res) => {
       categoria: {
         select: {
           nome_categoria: true
-        }
-      }
+        },
+      },
     },
   });
 
@@ -81,7 +81,12 @@ const login = async (req, res) => {
       biografia: true,
       telefone: true,
       cidade: true,
-      porhora: true
+      porhora: true,
+      categoria: {
+        select: {
+          nome_categoria: true
+        }
+      }
     },
   })
   jwt.sign(userProfissionais[0], process.env.KEY, { expiresIn: '10h' }, function (err, token) {

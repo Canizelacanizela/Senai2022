@@ -6,12 +6,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/5379/5379448.png">
+    <link rel="icon" href="../assets/cc.png">
     <title>Tela de perfil</title>
     <header>
         <div class="logo">
-            <img id="i" src="../assets/logo.png" alt="" width="94px" height="94px">
-
+            <a href="../HomeTeste/index.html"><img class="imgage" src="../assets/c2.png" alt="c2"></a>
         </div>
         <nav>
             <ul>
@@ -26,31 +25,20 @@
 
 <body onload="listInfo()">
     <div class="profile">
-        <div class="all model">
+        <div class="all ">
             <div class="profile-header">
                 <img src="https://via.placeholder.com/150" alt="Foto de Perfil">
                 <div>
                     <p id="id" hidden>id:</p>
                     <h1 id="nome"></h1>
                 </div>
-               <div>
-                    <img id="myBtn" onclick="AbrirModalEditar()" class="lapis" src="../assets/relatorio.png"
-                        alt="lapis">
+                <div>
+                    <img id="myBtn" onclick="openModal()" class="lapis" src="../assets/relatorio.png" alt="lapis">
                 </div>
                 <div class="hr">
-                    <p>Por hora R$:
-                    <p id="hora"></p>
+                    <p>Por hora:
+                    <p id="hora">R$</p>
                 </div>
-               <div class="btnn" id="edit">
-                    <img  width="32" src="../assets/relatorio.png" alt="Alterar">
-                </div>
-                <!-- <div>
-                    <img  class="lapis" src="../assets/relatorio.png" alt="lapis">
-                </div> -->
-                <p class="hr">Por hora R$:
-                <p class="hr" id="hora"></p>
-
-                </p>
             </div>
             <button class="btn">Enviar mensagem</button>
             <div class="profile-body">
@@ -76,59 +64,12 @@
                 </main>
             </div>
         </div>
-<!-- ------------------------------Modal de alterar------------------------------ -->
-<div id="modal3" class="modall">
-    <div id="novo3">
-        <div class="modal3Header">
-            <h3>Alterar Trouxa</h3>
-            <button class="fechar" onclick="modal3.setAttribute('style','display:none')">X</button>
-        </div>
-        <div class="modal3Form">
-            <input type="hidden" id="ida" />
-            <label class="lab1" for="">Nome:</label> 
-            <input type="text" id="nomea" />
-            <label class="lab2" for="">E-mail:</label> 
-            <input type="text" id="emaila" />
-            <label class="lab3" for="">Cidade:</label> 
-            <input class="text" type="text" id="cidadea" />
-            <label class="lab1" for="">Biografia:</label> 
-            <input type="text" id="biografiaa" />
-            <label class="lab2" for="">Valor Por hora:</label> 
-            <input type="text" id="porhoraa" />
-            <label class="lab3" for="">Telefone:</label> 
-            <input class="text" type="text" id="telefonea" />
-        </div>
-        <div class="modal3Footer">
-            <button class="bn-alt" onclick="alterar()">Enviar</button>
-        </div>
-    </div>
-    
-<!-- -----------------------------------------alterar----------------------------------------- -->
-    <div id="myModal" class="modal editar">
-    <div class="modal-content">
-        <span class="close">&times;</span>
-        <div class="modal-content-body">
-            <input type="text" class="input" id="id" placeholder="id" readonly>
-            <input type="text" class="input" id="nome" placeholder="nome">
-            <input type="text" class="input" id="email" placeholder="email">
-            <input type="text" class="input" id="cidade" placeholder="cidade">
-            <input type="text" class="input" id="biografia" placeholder="biografia">
-            <input type="text" class="input" id="porhora" placeholder="porhora">
-            <input type="text" class="input" id="telefone" placeholder="telefone">
-    
-        </div>
-        <div class="modal-content-footer">
-            <button onclick="alterarModal()" class="btn confirm">Alterar</button>
-            <button id="close" onclick="fecharCadastro()" class="btn cancel">Cancelar</button>
-        </div>
-    </div>
-2
-</div>
 
-<!-- <div id="myModal" class="model editar">
-             <div class="modal-content">
-                 <span class="close">&times;</span>
-                 <div class="modal-content-body">
+        <!-- -----------------------------------------alterar----------------------------------------- -->
+        <div id="myModalEdit" class="modalmm">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <div class="modal-content-body">
                     <input type="text" class="input" id="id" placeholder="id" readonly>
                     <input type="text" class="input" id="nome" placeholder="nome">
                     <input type="text" class="input" id="email" placeholder="email">
@@ -137,13 +78,14 @@
                     <input type="text" class="input" id="porhora" placeholder="porhora">
                     <input type="text" class="input" id="telefone" placeholder="telefone">
 
-                    </div>
-                 <div class="modal-content-footer">
-                     <button onclick="alterarModal()" class="btn confirm">Altera
-                     <button id="close" onclick="fecharCadastro()" class="btn cancel">Cancelar</button>
-                     </div>
-                 </div>
-        </div> -->
+                </div>
+                <div class="modal-content-footer">
+                    <button onclick="alterarModal()" class="btn confirm">Altera
+                        <button id="close" onclick="fecharCadastro()" class="btn cancel">Cancelar</button>
+                </div>
+            </div>
+        </div>
 </body>
 <script src="index.js"></script>
+
 </html>
