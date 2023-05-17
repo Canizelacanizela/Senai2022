@@ -160,18 +160,12 @@ li .btn-cad:hover::after {
     visibility: hidden;
 }
 
-<<<<<<< HEAD
-=======
-
-<<<<<<< HEAD
 .profile-header .lapis {
     width: 7%;
     height: 10%;
    
 }
->>>>>>> 8007879744f02549ad53119606a6f44879b068b9
-=======
->>>>>>> 5e8764514cd95cb544f8edd00c075007fbde821a
+
 .profile-header h1 {
     font-size: 25px;
     margin: 0;
@@ -210,15 +204,9 @@ li .btn-cad:hover::after {
     margin: 0;
 }
 .hr{
-<<<<<<< HEAD
-   display: flex;
-   margin-left: 42rem;
-   margin-top: 2rem;
-=======
     font-size: 20px;
     font-weight: 600;
     /* padding-left:40px; */
->>>>>>> 5e8764514cd95cb544f8edd00c075007fbde821a
 }
 .hr p{
     font-weight: 700;
@@ -251,23 +239,6 @@ li .btn-cad:hover::after {
       
   }
 
-<<<<<<< HEAD
-
-  /* The Close Button */
-  .close {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-  }
-  
-  .close:hover,
-  .close:focus {
-    color: black;
-    text-decoration: none;
-    cursor: pointer;
-  }
-=======
   /* -------------------------------------- Alterar -------------------------------------------------*/
 
 .modall {
@@ -409,4 +380,3 @@ li .btn-cad:hover::after {
     box-shadow: 2px 2px 5px black;
     flex-direction: column;
 }
->>>>>>> 5e8764514cd95cb544f8edd00c075007fbde821a

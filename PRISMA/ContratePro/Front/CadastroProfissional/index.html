@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,55 +9,51 @@
     <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/5379/5379448.png">
     <title>Cadastro de Profissional</title>
 </head>
+
 <body>
     <div class="main">
         <div class="esq">
-           <img src="../assets/customer.svg" alt="cliente">
-           
+            <img src="../assets/customer.svg" alt="cliente">
         </div>
         <div class="dir">
-            <div class="card">
-                <h1 class="h1">Cadastre-se</h1>
-                <div class="in">
+          
+	    <div class="meio">
+		<table>
+			<tr>
+				<td class="td1" style="border-right: 2px solid rgba(118, 213, 230, 0.603)">
                     <label for="Nome">Nome</label>
                     <input id="nome" value="Aninha" placeholder="Nome" type="text">
-                </div>
-                <div class="in">
-                    <label for="E-mail">E-mail</label>
+					<label for="E-mail">E-mail</label>
                     <input id="email" value="bana@gmail.com" placeholder="E-mail" type="text">
-                </div>
-                <div class="in">
                     <label for="Senha">Senha</label>
                     <input id="senha" value="123" placeholder="Senha" type="password">
-                </div>
-                <div class="in">
-                    <label for="Cidade">Cidade</label>
-                    <input id="cidade" placeholder="Cidade" type="text">
-                </div>
-                <div class="in">
-                    <label for="Biografia">Biografia</label>
+					<label for="Biografia">Biografia</label>
                     <input id="biografia" placeholder="Biografia" type="text">
-                </div>
-                <div class="in">
-                    <label for="Porhora">Por Hora:</label>
+					
+				</td>
+				<td class="td2">
+                    <label for="Cidade">Cidade:</label>
+                    <input id="cidade" placeholder="Cidade" type="text">
+					<label for="Porhora">Por Hora:</label>
                     <input id="porhora" placeholder="Preço Por Hora" type="text">
-                </div>
-                <div class="in">
-                    <label for="Telefone">Telefone</label>
+					<label for="Telefone">Telefone</label>
                     <input id="telefone" placeholder="Telefone" type="text">
-                </div>
-                <div class="in">
                     <label for="categoria">Tipo:</label>
                     <select name="categoria" id="id_categoria">
                         <option value="1">Medico</option>
                         <option value="2">Engenheiro</option>
                     </select>
-                   
-                </div>
-                <button class="btn" onclick="cadastrarUsuario()">Cadastre</button>
-            </div>
-            <a href="../LoginProf/index.html"><p class="p">Já tem uma conta? Faça Login</p></a>
-    </div>
+                    <div class="btn">
+                        <button onclick="cadastrarUsuario()" >Cadastrar</button>
+                    </div>
+				</td>
+			</tr>
+		</table>
+	</div>
+	
+        </div>
+        <div>
 </body>
 <script src="index.js"></script>
+
 </html>

@@ -131,17 +131,17 @@ function alterarModal() {
       
 }
 
-function dadosAlterar() {
-  console.log(perfil);
-  modal3.setAttribute('style', 'display:flex');
-  ida.value = perfil.id;
-  nomea.value = perfil.nome;
-  emaila.value = perfil.email;
-  cidadea.value = perfil.cidade;
-  biografiaa.value = perfil.biografia;
-  porhoraa.value = perfil.porhora;
-  telefonea.value = perfil.telefone;
-}
+// function dadosAlterar() {
+//   console.log(perfil);
+//   modal3.setAttribute('style', 'display:flex');
+//   ida.value = perfil.id;
+//   nomea.value = perfil.nome;
+//   emaila.value = perfil.email;
+//   cidadea.value = perfil.cidade;
+//   biografiaa.value = perfil.biografia;
+//   porhoraa.value = perfil.porhora;
+//   telefonea.value = perfil.telefone;
+// }
 
 function alterar() {
 
