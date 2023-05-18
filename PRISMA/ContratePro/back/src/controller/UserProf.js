@@ -89,7 +89,7 @@ const login = async (req, res) => {
       }
     },
   })
-  jwt.sign(userProfissionais[0], process.env.KEY, { expiresIn: '10h' }, function (err, token) {
+  jwt.sign(userProfissionais[0], process.env.KEY, { expiresIn: '20h' }, function (err, token) {
     console.log(err)
     if (err == null) {
       userProfissionais[0]["token"] = token;
