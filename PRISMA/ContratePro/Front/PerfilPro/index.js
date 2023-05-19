@@ -7,7 +7,7 @@ var alterar = document.querySelector("#alterar");
 var perfil = {};
 
 var listar = [];
-const idPerfil = new URLSearchParams(window.location.search).get("id");
+// const idPerfil = new URLSearchParams(window.location.search).get("id");
 
 function listInfo() {
   const options = { method: "GET" };
