@@ -27,6 +27,7 @@ function listInfo() {
         if (profile.id === info.id) {
           // Atualizar as informações do objeto info com os dados do perfil atual
           info.nome = profile.nome;
+          info.imagem = profile.imagem;
           info.porhora = profile.porhora;
           info.telefone = profile.telefone;
           info.email = profile.email;
@@ -41,6 +42,7 @@ function listInfo() {
 
       // Exibir as informações atualizadas
       document.querySelector("#nome").innerHTML = info.nome;
+      document.querySelector("#imagem").src = "../assets/" + info.imagem;
       document.querySelector("#hora").innerHTML = info.porhora;
       document.querySelector("#tel").innerHTML = info.telefone;
       document.querySelector("#email").innerHTML = info.email;
@@ -84,6 +86,7 @@ function openModal() {
   document.querySelector("#m_id").value = user.id;
   document.querySelector("#m_nome").value = user.nome;
   document.querySelector("#m_email").value = user.email;
+  document.querySelector("#imagem").value = "../assets/" + user.imagem;
   document.querySelector("#m_cidade").value = user.cidade;
   document.querySelector("#m_biografia").value = user.biografia;
   document.querySelector("#m_porhora").value = user.porhora;
@@ -98,6 +101,7 @@ function alteracao() {
     id: Number(id),
     nome: document.querySelector("#m_nome").value,
     email: document.querySelector("#m_email").value,
+    imagem: document.querySelector("#m_imagem").value,
     cidade: document.querySelector("#m_cidade").value,
     biografia: document.querySelector("#m_biografia").value,
     porhora: document.querySelector("#m_porhora").value,
@@ -126,4 +130,10 @@ function alteracao() {
     .catch((error) => {
       console.error("Fetch error:", error);
     });
+}
+
+
+function sair() {
+  window.localStorage.removeItem("info");
+  window.location.href = "../LoginProf/index.html";
 }

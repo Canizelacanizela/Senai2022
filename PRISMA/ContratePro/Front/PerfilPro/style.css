@@ -29,6 +29,14 @@ img {
     height: 30px;
 }
 
+#sair {
+    height: 40px;
+    margin-left: 20px;
+    width: 40px;
+    cursor: pointer;
+}
+
+
 ul {
     display: flex;
     list-style-type: none;

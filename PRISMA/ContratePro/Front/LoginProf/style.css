@@ -19,6 +19,9 @@ body {
   background: hsl(0, 0%, 100%);
   border-radius: 4px;
 }
+
+
+
 /* ----------------esquerda----------------- */
 .esq {
   float: left;
@@ -83,8 +86,17 @@ body {
 .in > label {
   color: rgb(179, 179, 179);
   margin-bottom: 10px;
+  
 }
-
+.olhar{
+  position: absolute;
+  top: 53%;
+  left: 73%;
+  transform: translateY(-80%);
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
 img{
     width: 34vw;
 }

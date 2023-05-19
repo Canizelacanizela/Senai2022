@@ -29,3 +29,17 @@ function login() {
         
         window.location.reload(); });
 }
+
+function olharSenha() {
+    let img = document.querySelector(".olhar");
+    let input = document.querySelector(".senha")
+
+    if (input.type == "password") {
+        input.type = "text";
+        img.src = "../Assets/icones/visibility.png"
+
+    } else {
+        input.type = "password";
+        img.src = "../Assets/icones/view.png"
+    }
+}
