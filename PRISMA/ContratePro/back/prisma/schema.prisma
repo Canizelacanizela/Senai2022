@@ -23,6 +23,7 @@ model UserCliente {
 
 model UserProfissionais {
     id           Int                  @id @default(autoincrement())
+    imagem       String
     nome         String
     email        String
     senha        String
@@ -35,7 +36,6 @@ model UserProfissionais {
     Comentario   avaliaProfissional[]
     profissi     Propostas[]
 }
-
 
 model categoriaProfissoes {
     id             Int                 @id @default(autoincrement())

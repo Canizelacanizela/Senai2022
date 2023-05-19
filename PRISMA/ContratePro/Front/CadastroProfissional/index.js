@@ -8,6 +8,7 @@ function cadastrarUsuario() {
     let biografia = document.querySelector("#biografia").value
     let porhora = document.querySelector("#porhora").value
     let telefone = document.querySelector("#telefone").value
+    let imagem = document.querySelector("#imagem").value
     let id_categoria = document.querySelector("#id_categoria").value
 
     let corpo = {
@@ -17,7 +18,8 @@ function cadastrarUsuario() {
         "cidade": cidade, 
         "biografia": biografia, 
         "porhora": porhora, 
-        "telefone": telefone, 
+        "telefone": telefone,
+        "imagem": imagem,
         "id_categoria": Number(id_categoria) 
     }
 

@@ -24,6 +24,7 @@ const readOne = async (req, res) => {
       telefone: true,
       porhora: true,
       cidade: true,
+      imagem: true,
       categoria: {
         select: {
           nome_categoria: true
@@ -48,6 +49,7 @@ const read = async (req, res) => {
       telefone: true,
       cidade: true,
       porhora: true,
+      imagem: true,
       categoria: {
         select: {
           nome_categoria: true
@@ -82,6 +84,7 @@ const login = async (req, res) => {
       telefone: true,
       cidade: true,
       porhora: true,
+      imagem: true,
       categoria: {
         select: {
           nome_categoria: true

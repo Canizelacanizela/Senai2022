@@ -239,6 +239,12 @@ ul li .nn {
     margin: 0;
 }
 
+#perfil{
+    width: 50px;
+    height: 50px;
+    border-radius: 30px;
+}
+
 /* ---------------- Proposta ------------------------- */
 .modal {
     display: none;

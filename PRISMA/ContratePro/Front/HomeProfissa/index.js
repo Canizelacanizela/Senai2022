@@ -2,6 +2,13 @@ var UrList = "http://localhost:3000/prof";
 var listarProf = document.querySelector(".profileTwo");
 var busca = document.querySelector("#search");
 var itemSec = document.querySelector(".profile-body-section");
+const imguser = document.querySelector("#perfil");
+
+var info = JSON.parse(localStorage.getItem("info"));
+
+imguser.src = "../assets/" + info.imagem;
+
+
 
 function carregar() {
     const options = {
@@ -19,10 +26,10 @@ function listaProfissionais(profissionais) {
     profissionais.forEach((e, i) => {
         let prof = document.querySelector(".profile-body-section").cloneNode(true);
         prof.classList.remove("model");
-
         
 
         prof.querySelector("#id").innerHTML += e.id;
+        prof.querySelector("#imagem").src = "../assets/" + e.imagem;
         prof.querySelector("#nome").innerHTML += e.nome;
         prof.querySelector("#biografia").innerHTML += e.biografia;
         prof.querySelector("#nome_categoria").innerHTML += e.categoria.nome_categoria;
