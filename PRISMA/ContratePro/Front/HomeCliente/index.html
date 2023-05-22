@@ -33,57 +33,50 @@
             <div class="profileTwo">
                 <div class="profile-body-section model">
                     <div class="profile-header">
-                        <a href="../Perfil/index.html"><img src="https://via.placeholder.com/150"
-                                alt="Foto de Perfil"></a>
 
-                        <div>
-                            <p id="id" hidden></p>
-                            <a href="../PerfilPro/index.html" onclick="capturarPerfil()">
-                                <h2 id="nome"></h2>
-                            </a>
-                            <p id="porhora">Preço Por hora: R$</p>
-                        </div>
-                    </div>
-                    <p id="biografia"></p>
-                    <h4 id="nome_categoria"></h4>
-                    <div class="contain">
-                        <div class="btn" id="edit">
-                            <img width="32" onclick="modal1.setAttribute('style','display:flex')"
-                                src="../assets/comente.png" alt="Alterar">
+                        <p id="id" hidden></p>
+                        <h2 id="nome"></h2>
+                        <p id="porhora">Preço Por hora: R$</p>
+                        <p id="biografia"></p>
+                        <h4 id="nome_categoria"></h4>
+                        <div class="contain">
+                            <div class="btn" id="edit">
+                                <img width="32" onclick="modal1.setAttribute('style','display:flex')"
+                                    src="../assets/comente.png" alt="Alterar">
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    <!-- ------------------------cadastro de proposta------------------------------- -->
-    <div id="modal1" class="modal">
-        <div id="novo">
-            <div class="modalHeader">
-                <h3> Enviar Proposta</h3>
-                <button class="fechar" onclick="modal1.setAttribute('style','display:none')">X</button>
-            </div>
-            <div class="modalForm">
-                <input type="hidden" id="idc" />
-                <label class="lab1" for="">Nome Completo:</label>
-                <input type="text" id="nomec" />
-                <label class="lab2" for="">Proposta:</label>
-                <textarea name="" id="propostac" cols="20" rows="3"></textarea>
-            </div>
-            <div class="modalFooter">
-                <button class="enviar-proposta" data-profissional-id="123">Enviar</button>
+        <!-- ------------------------cadastro de proposta------------------------------- -->
+        <div id="modal1" class="modal">
+            <div id="novo">
+                <div class="modalHeader">
+                    <h3> Enviar Proposta</h3>
+                    <button class="fechar" onclick="modal1.setAttribute('style','display:none')">X</button>
+                </div>
+                <div class="modalForm">
+                    <input type="hidden" id="idc" />
+                    <label class="lab1" for="">Nome Completo:</label>
+                    <input type="text" id="nomec" />
+                    <label class="lab2" for="">Proposta:</label>
+                    <textarea name="" id="propostac" cols="20" rows="3"></textarea>
+                </div>
+                <div class="modalFooter">
+                    <button class="enviar-proposta" data-profissional-id="123">Enviar</button>
+                </div>
             </div>
         </div>
-    </div>
-    <div id="modal2" class="modal">
-        <div id="alerta">
-            <div class="modalHeader">
-                <h3>Mensagem</h3>
-                <button onclick="modal2.setAttribute('style','display:none')">X</button>
+        <div id="modal2" class="modal">
+            <div id="alerta">
+                <div class="modalHeader">
+                    <h3>Mensagem</h3>
+                    <button onclick="modal2.setAttribute('style','display:none')">X</button>
+                </div>
+                <div id="msg"></div>
             </div>
-            <div id="msg"></div>
         </div>
-    </div>
 </body>
 <script src="index.js"></script>
 

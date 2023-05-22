@@ -21,24 +21,17 @@ function listaProfissionais(profissionais) {
     prof.classList.remove("model");
 
     prof.querySelector("#id").innerHTML += e.id;
-    prof.querySelector("#nome").innerHTML += e.nome;
+    prof.querySelector("#biografia").innerHTML += e.nome;
     prof.querySelector("#biografia").innerHTML += e.biografia;
     prof.querySelector("#nome_categoria").innerHTML +=
       e.categoria.nome_categoria;
     prof.querySelector("#porhora").innerHTML += e.porhora;
+    prof.querySelector("#img").src = "../assets/" + e.img;
 
     listarProf.appendChild(prof);
   });
 }
 
-function capturarPerfil() {
-  // const perfilSelecionado = {
-  //   id: document.querySelector("#id").value,
-  //   nome: document.querySelector("#nome").value,
-  // };
-  // console.log(perfilSelecionado);
-  // localStorage.setItem("perfilSelecionado", JSON.stringify(perfilSelecionado));
-}
 
 function dados(i) {
   console.log(listar[i]);
