@@ -53,6 +53,14 @@ ul li a {
     font-size: 20px;
 }
 
+button {
+    border: none;
+    border-radius: none;
+    outline: none;
+    background-color: #ab6bdf2c;
+    cursor: pointer;
+}
+
 #sair {
     height: 40px;
     margin-left: 20px;
@@ -105,6 +113,7 @@ ul li .n {
     display: inline-block;
     font-size: 16px;
 }
+
 ul li .nnn {
     padding: 6px 14px;
     text-decoration: none;
@@ -118,7 +127,7 @@ ul li .nn {
     font-size: 20px;
 }
 
-.n{
+.n {
 
     padding: 14px 10px;
     border: none;
@@ -127,9 +136,10 @@ ul li .nn {
     font-weight: 600;
     letter-spacing: 2px;
     color: #2f2841;
-    
+
 }
-.nnn{
+
+.nnn {
     padding: 14px 10px;
     border: none;
     border-radius: 8px;
@@ -139,11 +149,12 @@ ul li .nn {
     background-color: #aa6bdf;
     cursor: pointer;
 }
+
 .nnn:hover {
     background-color: #5881e0;
     transition: all .6s;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
-  }
+}
 
 .logo {
     display: flex;
@@ -162,8 +173,9 @@ ul li .nn {
     display: flex;
     align-items: center;
     margin-bottom: 10px;
-    
+
 }
+
 .profile-header img {
     width: 50px;
     height: 50px;
@@ -193,14 +205,14 @@ ul li .nn {
     align-items: center;
 }
 
-.contain{
+.contain {
     display: flex;
-    flex-direction:row ;
+    flex-direction: row;
     align-items: center;
-    margin-top:6px;
-} 
+    margin-top: 6px;
+}
 
-.btn{
+.btn {
     padding: 4px 10px;
     margin-top: 4px;
     margin-left: 1px;
@@ -211,7 +223,7 @@ ul li .nn {
     color: #2f2841;
     background-color: #aa6bdf;
     cursor: pointer;
-    box-shadow: 0px 3px 4px  #82868b52;
+    box-shadow: 0px 3px 4px #82868b52;
 }
 
 .profile-body {
@@ -239,7 +251,7 @@ ul li .nn {
     margin: 0;
 }
 
-#perfil{
+#perfil {
     width: 50px;
     height: 50px;
     border-radius: 30px;
@@ -258,14 +270,14 @@ ul li .nn {
     align-items: center;
 }
 
-#novo{
+#novo {
     border-radius: 10px;
 }
 
-.fechar{
-    cursor:pointer;
+.fechar {
+    cursor: pointer;
     outline: none;
-    border:none;
+    border: none;
     font-weight: 800;
 }
 
@@ -280,27 +292,27 @@ ul li .nn {
     box-shadow: 0px 2px 5px rgba(36, 85, 158, 0.767);
 }
 
-.modalHeader h3{
+.modalHeader h3 {
     margin: 5px;
 }
 
 .modalHeader button {
     padding: 8px;
     padding-left: 12px;
-    padding-right: 12px;  
+    padding-right: 12px;
     margin: 4px;
     background-color: #eceaeae5;
     border-radius: 5px;
     box-shadow: 0px 1px 4px rgb(53, 54, 54);
 }
 
-.modalForm{
+.modalForm {
     width: 100%;
     display: grid;
     grid-template-columns: 30% 70%;
 }
 
-.modalFooter{
+.modalFooter {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -333,30 +345,30 @@ ul li .nn {
     box-shadow: 2px 2px 5px black;
 }
 
-.lab1{
-    gap:25px;
+.lab1 {
+    gap: 25px;
     margin-top: 4px;
     margin-left: 30px;
 }
 
 
-.lab2{
-    gap:25px;
+.lab2 {
+    gap: 25px;
     margin-top: 12px;
     margin-left: 35px;
 }
 
-#novo input{
+#novo input {
     border: solid 1px #ccc;
     padding: 5px;
     border-radius: 5px;
     margin-top: 5px;
     margin-bottom: 2px;
-    outline:none;
-    
+    outline: none;
+
 }
 
-#novo .pl{
+#novo .pl {
     border: solid 1px #ccc;
     padding: 5px;
     border-radius: 5px;
@@ -374,7 +386,7 @@ ul li .nn {
     flex-direction: column;
 }
 
-#btn-cad{
+#btn-cad {
     width: 100%;
     padding: 14px 10px;
     border: none;
@@ -392,9 +404,9 @@ ul li .nn {
 textarea {
     resize: none;
     border-radius: 4px;
-  }
+}
 
-.enviar-proposta{
+.enviar-proposta {
     width: 50%;
     padding: 14px 10px;
     border: none;
@@ -413,7 +425,8 @@ textarea {
     background-color: #aa6bdf;
     transition: all .6s;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
-  }
+}
+
 /* --------------------- */
 
 .model {

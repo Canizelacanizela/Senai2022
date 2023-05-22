@@ -26,20 +26,29 @@ function listaProfissionais(profissionais) {
     profissionais.forEach((e, i) => {
         let prof = document.querySelector(".profile-body-section").cloneNode(true);
         prof.classList.remove("model");
-        
+
 
         prof.querySelector("#id").innerHTML += e.id;
         prof.querySelector("#imagem").src = "../assets/" + e.imagem;
         prof.querySelector("#nome").innerHTML += e.nome;
         prof.querySelector("#biografia").innerHTML += e.biografia;
         prof.querySelector("#nome_categoria").innerHTML += e.categoria.nome_categoria;
+        prof.querySelector(".redirect").innerHTML = `<button onclick="redirecionar(${e.id})">Ver Perfil</button>`
         prof.querySelector("#porhora").innerHTML += e.porhora;
-
 
         listarProf.appendChild(prof);
     });
 
 }
+
+
+function redirecionar(id) {
+    // Construir a URL com os parâmetros de consulta
+    const url = `Front/teste_perfil/pagina_destino.html?id=${id}`;
+  
+    // Redirecionar para a página de destino
+    window.location.href = url;
+  }
 
 function dados(i) {
     console.log(listar[i]);
@@ -82,6 +91,9 @@ button.addEventListener('click', () => {
             }
         });
 });
+
+
+
 
 function alerta(a) {
     document.querySelector('#modal2').setAttribute('style', 'display:flex;');

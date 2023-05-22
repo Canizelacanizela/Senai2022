@@ -9,6 +9,7 @@ var perfil = {};
 var listar = [];
 // const idPerfil = new URLSearchParams(window.location.search).get("id");
 
+
 function listInfo() {
   const options = { method: "GET" };
 
