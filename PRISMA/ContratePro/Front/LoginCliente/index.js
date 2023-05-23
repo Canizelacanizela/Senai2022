@@ -28,3 +28,16 @@ function login() {
         
         window.location.reload(); });
 }
+
+function olharSenha() {
+    let img = document.querySelector(".olhar");
+    let input = document.querySelector("#senha")
+
+    if (input.type === "password") {
+        input.type = "text";
+        img.src = "../assets/olho.png";
+      } else {
+        input.type = "password";
+        img.src = "../assets/olhofechado.png";
+      }
+}
