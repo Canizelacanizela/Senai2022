@@ -20,7 +20,7 @@ const readOne = async (req, res) => {
       nome: true,
       email: true,
       telefone: true,
-      tipo: true
+      imagem: true,
     },
   });
 
@@ -37,6 +37,7 @@ const read = async (req, res) => {
       nome: true,
       senha: true,
       telefone: true,
+      imagem: true,
       cidade: true
     },
   });
@@ -56,6 +57,7 @@ const login = async (req, res) => {
       nome: true,
       email: true,
       telefone: true,
+      imagem: true,
       cidade: true
     },
   });

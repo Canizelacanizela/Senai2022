@@ -2,109 +2,119 @@ var UrList = "http://localhost:3000/prof";
 var listarProf = document.querySelector(".profileTwo");
 var busca = document.querySelector("#search");
 var itemSec = document.querySelector(".profile-body-section");
+const imguser = document.querySelector("#perfil");
+
+var info = JSON.parse(localStorage.getItem("info"));
+
+imguser.src = "../assets/" + info.imagem;
+
+
 
 function carregar() {
-  const options = {
-    method: "GET",
-  };
-  fetch(UrList, options)
-    .then((res) => res.json())
-    .then((res) => {
-      listaProfissionais(res);
-    })
-    .catch((err) => console.error(err));
+    const options = {
+        method: "GET"
+    }
+    fetch(UrList, options)
+        .then(res => res.json())
+        .then(res => {
+            listaProfissionais(res);
+        })
+        .catch(err => console.error(err));
 }
 
 function listaProfissionais(profissionais) {
-  profissionais.forEach((e, i) => {
-    let prof = document.querySelector(".profile-body-section").cloneNode(true);
-    prof.classList.remove("model");
+    profissionais.forEach((e, i) => {
+        let prof = document.querySelector(".profile-body-section").cloneNode(true);
+        prof.classList.remove("model");
 
-    prof.querySelector("#id").innerHTML += e.id;
-    prof.querySelector("#nome").innerHTML += e.nome;
-    prof.querySelector("#biografia").innerHTML += e.biografia;
-    prof.querySelector("#nome_categoria").innerHTML +=
-      e.categoria.nome_categoria;
-    prof.querySelector("#porhora").innerHTML += e.porhora;
 
-    listarProf.appendChild(prof);
-  });
+        prof.querySelector("#id").innerHTML += e.id;
+        prof.querySelector("#imagem").src = "../assets/" + e.imagem;
+        prof.querySelector("#nome").innerHTML += e.nome;
+        prof.querySelector("#biografia").innerHTML += e.biografia;
+        prof.querySelector("#nome_categoria").innerHTML += e.categoria.nome_categoria;
+        // prof.querySelector(".redirect").innerHTML = `<button onclick="redirecionar(${e.id})">Ver Perfil</button>`
+        prof.querySelector("#porhora").innerHTML += e.porhora;
+
+        listarProf.appendChild(prof);
+    });
+
 }
 
-function capturarPerfil() {
-  // const perfilSelecionado = {
-  //   id: document.querySelector("#id").value,
-  //   nome: document.querySelector("#nome").value,
-  // };
-  // console.log(perfilSelecionado);
-  // localStorage.setItem("perfilSelecionado", JSON.stringify(perfilSelecionado));
-}
+
+// function redirecionar(id) {
+//     // Construir a URL com os parâmetros de consulta
+//     const url = `/Front/teste_perfil/pagina_destino.html?id=${id}`;
+  
+//     // Redirecionar para a página de destino
+//     window.location.href = url;
+//   }
 
 function dados(i) {
-  console.log(listar[i]);
-  modal1.setAttribute("style", "display:flex");
-  idc.value = listar[i].id;
+    console.log(listar[i]);
+    modal1.setAttribute('style', 'display:flex');
+    idc.value = listar[i].id;
 }
 
-const button = document.querySelector(".enviar-proposta");
+const button = document.querySelector('.enviar-proposta');
 const profissionalId = button.dataset.id_profissional;
 
-button.addEventListener("click", () => {
-  let id = document.querySelector("#idc").value;
-  let nome = document.querySelector("#nomec").value;
-  let proposta = document.querySelector("#propostac").value;
 
-  let corpo = {
-    id_profissionais: profissionalId,
-    nome: nome,
-    proposta: proposta,
-  };
+button.addEventListener('click', () => {
+    let id = document.querySelector("#idc").value
+    let nome = document.querySelector("#nomec").value
+    let proposta = document.querySelector("#propostac").value
 
-  let options = {
-    method: "POST",
-    headers: {
-      "content-type": "application/json",
-      // "Bearer": JSON.parse(localStorage.getItem('info')).token
-    },
-    body: JSON.stringify(corpo),
-  };
+    let corpo = {
+        "id_profissionais": profissionalId,
+        "nome": nome,
+        "proposta": proposta
+    }
 
-  fetch("http://localhost:3000/prop", options)
-    .then((res) => {
-      return res.json();
-    })
-    .then((resp) => {
-      if (resp != undefined) {
-        alert("Proposta enviada para o profissional.");
-        window.location.reload();
-      } else {
-        console.log(
-          "Parece que aconteceu um erro inesperado. Tente novamente mais tarde."
-        );
-      }
-    });
+    let options = {
+        "method": "POST",
+        "headers": {
+            "content-type": "application/json",
+            // "Bearer": JSON.parse(localStorage.getItem('info')).token
+        },
+        "body": JSON.stringify(corpo)
+    };
+
+    fetch('http://localhost:3000/prop', options)
+        .then(res => { return res.json() })
+        .then(resp => {
+            if (resp != undefined) {
+                alert("Proposta enviada para o profissional.");
+                window.location.reload();
+            } else {
+                console.log("Parece que aconteceu um erro inesperado. Tente novamente mais tarde.");
+            }
+        });
 });
 
+
+
+
 function alerta(a) {
-  document.querySelector("#modal2").setAttribute("style", "display:flex;");
-  document.querySelector("#alerta").setAttribute("style", "display:flex;");
-  document.querySelector("#msg").innerHTML = a;
+    document.querySelector('#modal2').setAttribute('style', 'display:flex;');
+    document.querySelector('#alerta').setAttribute('style', 'display:flex;');
+    document.querySelector('#msg').innerHTML = a;
 }
 
 function search() {
-  const Categorias = document.querySelectorAll("#nome_categoria");
+    const Categorias = document.querySelectorAll('#nome_categoria');
 
-  Categorias.forEach((name) => {
-    if (!name.parentNode.className.includes("model"))
-      name.parentNode.style.display = "block";
+    Categorias.forEach((name) => {
+        if (!name.parentNode.className.includes("model")) name.parentNode.style.display = 'block';
 
-    if (!name.innerHTML.toLowerCase().includes(busca.value.toLowerCase())) {
-      name.parentNode.style.display = "none";
-    }
-  });
+
+        if (!name.innerHTML.toLowerCase().includes(busca.value.toLowerCase())) {
+            name.parentNode.style.display = 'none';
+        }
+    });
 }
 
 function sair() {
-  window.localStorage.removeItem("info");
-  window.location.href = "../LoginCliente/index.html";
+    window.localStorage.removeItem("info");
+    window.location.href = "../LoginCliente/index.html";
 }

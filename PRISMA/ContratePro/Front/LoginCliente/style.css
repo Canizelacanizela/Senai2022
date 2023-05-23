@@ -107,6 +107,19 @@ text-decoration: none;
   cursor: pointer;
 }
 
+.olhar{
+  position: absolute;
+  top: 53%;
+  left: 73%;
+  transform: translateY(-80%);
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+img{
+    width: 34vw;
+}
+
 .p {
     display: flex;
     align-items: center;

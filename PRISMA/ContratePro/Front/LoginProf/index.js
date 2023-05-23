@@ -32,14 +32,13 @@ function login() {
 
 function olharSenha() {
     let img = document.querySelector(".olhar");
-    let input = document.querySelector(".senha")
+    let input = document.querySelector("#senha")
 
-    if (input.type == "password") {
+    if (input.type === "password") {
         input.type = "text";
-        img.src = "../Assets/icones/visibility.png"
-
-    } else {
+        img.src = "../assets/olho.png";
+      } else {
         input.type = "password";
-        img.src = "../Assets/icones/view.png"
-    }
+        img.src = "../assets/olhofechado.png";
+      }
 }

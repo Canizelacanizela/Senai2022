@@ -44,7 +44,7 @@ function listaProfissionais(profissionais) {
 
 function redirecionar(id) {
     // Construir a URL com os parâmetros de consulta
-    const url = `Front/teste_perfil/pagina_destino.html?id=${id}`;
+    const url = `/Front/teste_perfil/pagina_destino.html?id=${id}`;
   
     // Redirecionar para a página de destino
     window.location.href = url;
