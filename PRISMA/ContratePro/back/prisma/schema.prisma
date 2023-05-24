@@ -55,7 +55,6 @@ model avaliaProfissional {
 
 model Propostas {
     id              Int               @id @default(autoincrement())
-    nome            String
     proposta        String
     id_cliente      Int
     id_profissional Int

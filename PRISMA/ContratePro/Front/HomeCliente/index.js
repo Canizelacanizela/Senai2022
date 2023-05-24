@@ -46,52 +46,53 @@ function listaProfissionais(profissionais) {
 function redirecionar(id) {
     // Construir a URL com os parâmetros de consulta
     const url = `/Front/teste_perfilCli/pagina_destino.html?id=${id}`;
-  
+
     // Redirecionar para a página de destino
     window.location.href = url;
-  }
+}
 
 function dados(i) {
     console.log(listar[i]);
     modal1.setAttribute('style', 'display:flex');
-    idc.value = listar[i].id;
+    idc.value = listar[i].id_profissional;
+    idcl.value = listar[i].id_cliente;
 }
 
 const button = document.querySelector('.enviar-proposta');
-const profissionalId = button.dataset.id_profissional;
+// const profissionalId = button.dataset.id_profissional;
 
+//Falta arrumar a proposta, pegar o id do proffisional  como esse exemplo aqui <button onclick="abremodaldaProposta(${e.id})""> ai pega e coloca como e.id ou id mesmo 
+//e nao colocar como id_profissional...Não precisa de nome porque o id já pega ele com todo o resto das informações!
 
 button.addEventListener('click', () => {
     let id_profissional = document.querySelector("#idc").value
     let id_cliente = document.querySelector("#idcl").value
-    let nome = document.querySelector("#nomec").value
     let proposta = document.querySelector("#propostac").value
 
     let corpo = {
-        "nome": nome,
         "proposta": proposta,
-        "id_cliente": Number(id_cliente),
+        "id_cliente": Number(info.id),
         "id_profissional": Number(id_profissional),
     }
+    console.log(corpo);
+    // let options = {
+    //     "method": "POST",
+    //     "headers": {
+    //         "content-type": "application/json",
+    //     },
+    //     "body": JSON.stringify(corpo)
+    // };
 
-    let options = {
-        "method": "POST",
-        "headers": {
-            "content-type": "application/json",
-        },
-        "body": JSON.stringify(corpo)
-    };
-
-    fetch('http://localhost:3000/prop', options)
-        .then(res => { return res.json() })
-        .then(resp => {
-            if (resp != undefined) {
-                alert("Proposta enviada para o profissional.");
-                window.location.reload();
-            } else {
-                console.log("Parece que aconteceu um erro inesperado. Tente novamente mais tarde.");
-            }
-        });
+    // fetch('http://localhost:3000/propcriar', options)
+    //     .then(res => { return res.json() })
+    //     .then(resp => {
+    //         if (resp != undefined) {
+    //             alert("Proposta enviada para o profissional.");
+    //             window.location.reload();
+    //         } else {
+    //             console.log("Parece que aconteceu um erro inesperado. Tente novamente mais tarde.");
+    //         }
+    //     });
 });
 
 

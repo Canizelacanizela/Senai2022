@@ -44,6 +44,7 @@
                     <p id="biografia"></p>
                     <h4 id="nome_categoria"></h4>
                     <div class="contain">
+                        <!-- Proposta-modal -->
                         <div class="btn" id="edit">
                             <img width="32" onclick="modal1.setAttribute('style','display:flex')"
                                 src="../assets/comente.png" alt="Alterar">
@@ -63,13 +64,11 @@
             <div class="modalForm">
                 <input type="hidden" id="idc" />
                 <input type="hidden" id="idcl" />
-                <label class="lab1" for="">Nome Completo:</label>
-                <input type="text" id="nomec" />
                 <label class="lab2" for="">Proposta:</label>
                 <textarea name="" id="propostac" cols="20" rows="3"></textarea>
             </div>
             <div class="modalFooter">
-                <button class="enviar-proposta" data-profissional-id="123">Enviar</button>
+                <button class="enviar-proposta" onclick="">Enviar</button>
             </div>
         </div>
     </div>

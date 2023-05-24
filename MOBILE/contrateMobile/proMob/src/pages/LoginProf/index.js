@@ -9,7 +9,7 @@ export default function SignIn({navigation}) {
     const [senha, setSenha] = useState("1234");
 
   const login = () => {
-    fetch("http://10.87.207.28:5000/forum/login", {
+    fetch("http://10.87.207.28:3000/contrateproprisma/loginProf", {
       "method": "POST",
       "headers":{
         "Content-Type": "application/json"

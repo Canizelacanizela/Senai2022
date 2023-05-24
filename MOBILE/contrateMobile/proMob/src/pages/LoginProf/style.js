@@ -41,6 +41,7 @@ export default StyleSheet.create({
         backgroundColor: '#F7F7F7'
     },
     im: {
+        
         width: '205px',
         height: '205px',
         shadowColor: "#000",
@@ -51,6 +52,7 @@ export default StyleSheet.create({
         shadowOpacity: 0.58,
         shadowRadius: 3.00,
         elevation: 24,
+
     },
     input: {
         width: '75%',
