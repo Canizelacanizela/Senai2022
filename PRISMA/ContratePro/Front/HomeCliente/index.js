@@ -31,9 +31,10 @@ function listaProfissionais(profissionais) {
         prof.querySelector("#id").innerHTML += e.id;
         prof.querySelector("#imagem").src = "../assets/" + e.imagem;
         prof.querySelector("#nome").innerHTML += e.nome;
+        prof.querySelector("#cidade").innerHTML += e.cidade;
         prof.querySelector("#biografia").innerHTML += e.biografia;
         prof.querySelector("#nome_categoria").innerHTML += e.categoria.nome_categoria;
-        // prof.querySelector(".redirect").innerHTML = `<button onclick="redirecionar(${e.id})">Ver Perfil</button>`
+        prof.querySelector(".redirect").innerHTML = `<button onclick="redirecionar(${e.id})">Ver Perfil</button>`
         prof.querySelector("#porhora").innerHTML += e.porhora;
 
         listarProf.appendChild(prof);
@@ -42,13 +43,13 @@ function listaProfissionais(profissionais) {
 }
 
 
-// function redirecionar(id) {
-//     // Construir a URL com os parâmetros de consulta
-//     const url = `/Front/teste_perfil/pagina_destino.html?id=${id}`;
+function redirecionar(id) {
+    // Construir a URL com os parâmetros de consulta
+    const url = `/Front/teste_perfilCli/pagina_destino.html?id=${id}`;
   
-//     // Redirecionar para a página de destino
-//     window.location.href = url;
-//   }
+    // Redirecionar para a página de destino
+    window.location.href = url;
+  }
 
 function dados(i) {
     console.log(listar[i]);
@@ -61,21 +62,22 @@ const profissionalId = button.dataset.id_profissional;
 
 
 button.addEventListener('click', () => {
-    let id = document.querySelector("#idc").value
+    let id_profissional = document.querySelector("#idc").value
+    let id_cliente = document.querySelector("#idcl").value
     let nome = document.querySelector("#nomec").value
     let proposta = document.querySelector("#propostac").value
 
     let corpo = {
-        "id_profissionais": profissionalId,
         "nome": nome,
-        "proposta": proposta
+        "proposta": proposta,
+        "id_cliente": Number(id_cliente),
+        "id_profissional": Number(id_profissional),
     }
 
     let options = {
         "method": "POST",
         "headers": {
             "content-type": "application/json",
-            // "Bearer": JSON.parse(localStorage.getItem('info')).token
         },
         "body": JSON.stringify(corpo)
     };

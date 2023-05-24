@@ -1,4 +1,4 @@
-var UrList = "http://localhost:3000/prof";
+var UrList = "http://localhost:3000/user";
 var listarProf = document.querySelector(".profileTwo");
 var busca = document.querySelector("#search");
 var itemSec = document.querySelector(".profile-body-section");
@@ -31,10 +31,9 @@ function listaProfissionais(profissionais) {
         prof.querySelector("#id").innerHTML += e.id;
         prof.querySelector("#imagem").src = "../assets/" + e.imagem;
         prof.querySelector("#nome").innerHTML += e.nome;
-        prof.querySelector("#biografia").innerHTML += e.biografia;
-        prof.querySelector("#nome_categoria").innerHTML += e.categoria.nome_categoria;
+        prof.querySelector("#telefone").innerHTML += e.telefone;
+        prof.querySelector("#cidade").innerHTML += e.cidade;
         prof.querySelector(".redirect").innerHTML = `<button onclick="redirecionar(${e.id})">Ver Perfil</button>`
-        prof.querySelector("#porhora").innerHTML += e.porhora;
 
         listarProf.appendChild(prof);
     });

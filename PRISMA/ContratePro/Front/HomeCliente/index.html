@@ -31,11 +31,14 @@
                     <div class="profile-header">
                         <img id="imagem" src="https://via.placeholder.com/150"
                                 alt="Foto de Perfil">
-                                
                         <div>
                             <p id="id" hidden></p>
                             <h2 id="nome"></h2>
+                            <h4 id="cidade"></h4>
                             <p id="porhora">Preço Por hora: R$</p>
+                            <div class="redirect">
+                                <button  onclick="redirecionar()">Ver perfil</button>
+                            </div>
                         </div>
                     </div>
                     <p id="biografia"></p>
@@ -59,6 +62,7 @@
             </div>
             <div class="modalForm">
                 <input type="hidden" id="idc" />
+                <input type="hidden" id="idcl" />
                 <label class="lab1" for="">Nome Completo:</label>
                 <input type="text" id="nomec" />
                 <label class="lab2" for="">Proposta:</label>

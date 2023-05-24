@@ -57,6 +57,7 @@ button {
     border: none;
     border-radius: none;
     outline: none;
+    margin: 3px;
     background-color: #ab6bdf2c;
     cursor: pointer;
 }
@@ -189,7 +190,7 @@ ul li .nn {
     font-size: 20px;
     margin: 0;
     padding: 5px;
-    margin-top: 5px;
+    margin-top: 7px;
 }
 
 

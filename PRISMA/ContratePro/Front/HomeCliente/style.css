@@ -57,6 +57,7 @@ button {
     border: none;
     border-radius: none;
     outline: none;
+    margin-left: 3px;
     background-color: #ab6bdf2c;
     cursor: pointer;
 }
