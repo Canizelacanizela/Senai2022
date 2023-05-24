@@ -6,7 +6,7 @@
   box-sizing: border-box;
 }
 body {
-  background-color: #87cefa;
+  background-color: #fd7a7aea;
 }
 
 .main {
@@ -24,7 +24,7 @@ body {
   float: left;
   width: 50%;
   text-align: center; /* centraliza o texto */
-  background-color: #4ca7df82;
+  background-color: #e44a4a82;
 }
 .esq h1 {
   margin-top: 15rem;

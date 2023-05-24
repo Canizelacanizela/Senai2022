@@ -36,9 +36,9 @@ function olharSenha() {
 
     if (input.type === "password") {
         input.type = "text";
-        img.src = "../assets/olho.png";
+        img.src = "../assets/olhofechado.png";
       } else {
         input.type = "password";
-        img.src = "../assets/olhofechado.png";
+        img.src = "../assets/olho.png";
       }
 }
