@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,7 +12,9 @@
         <div class="logo">
             <img id="i" src="../assets/c2.png" alt="" width="94px" height="94px">
             <ul class="ni">
-                <li><label class="nn" for="search">Pesquisar:</label> <input class="n" type="search" id="search" name="search" placeholder="Pesquisar"> <button class="nnn" onclick="search()" type="submit">Buscar</button></li>
+                <li><label class="nn" for="search">Pesquisar:</label> <input class="n" type="search" id="search"
+                        name="search" placeholder="Pesquisar"> <button class="nnn" onclick="search()"
+                        type="submit">Buscar</button></li>
             </ul>
         </div>
         <nav>
@@ -23,27 +26,37 @@
         </nav>
     </header>
 </head>
+
 <body onload="carregar()">
     <div class="main">
         <div class="lista">
+            <select id="filtro-cidade" onchange="aplicarFiltro()">
+                <option value="">Todas as cidades</option>
+                <option value="cidade1">São Paulo</option>
+                <option value="cidade2">Jaguariúna</option>
+                <option value="cidade3">Campinas</option>
+                <option value="cidade3">Holambra</option>
+                <option value="cidade3">Artur Nogueira</option>
+                <!-- Adicione mais opções de cidades, se necessário -->
+            </select>
             <div class="profileTwo">
                 <div class="profile-body-section model">
                     <div class="profile-header">
-                        <img id="imagem" src="https://via.placeholder.com/150"
-                                alt="Foto de Perfil">
-                                
+                        <img id="imagem" src="https://via.placeholder.com/150" alt="Foto de Perfil">
+                        <a href="../teste_perfilCli/pagina_destino.html"></a>
                         <div>
                             <p id="id" hidden></p>
                             <h2 id="nome"></h2>
-                            
+
                             <div class="redirect">
-                                <button  onclick="redirecionar()">Ver perfil</button>
+                                <button onclick="redirecionar()">Ver perfil</button>
                             </div>
                             <h4 id="cidade"></h4>
                             <h4 id="telefone">Contato: </h4>
+                            <p id="des"></p>
                         </div>
                     </div>
-                    
+
                     <div class="contain">
                         <div class="btn" id="edit">
                             <img width="32" onclick="modal1.setAttribute('style','display:flex')"

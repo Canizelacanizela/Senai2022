@@ -1,9 +1,10 @@
-// Obter o ID dos parâmetros da URL
-const params = new URLSearchParams(window.location.search);
-const id = params.get("id");
+// Obter o ID dos parâmetros do localStorage
+let user_verificar = JSON.parse(window.localStorage.getItem("user_verificar"));
 
+
+console.log(user_verificar.id_user);
 // Fazer uma requisição Fetch para obter as informações do perfil
-fetch(`http://localhost:3000/prof/` + id, params)
+fetch(`http://localhost:3000/userOne/` + user_verificar.id_user)
   .then((res) => {
     if (res.ok) {
       return res.json();
@@ -15,12 +16,10 @@ fetch(`http://localhost:3000/prof/` + id, params)
     // Exibir as informações obtidas na página
     document.querySelector("#nome").innerHTML = profile.nome;
     document.querySelector("#imagem").src = "../assets/" + profile.imagem;
-    document.querySelector("#hora").innerHTML = profile.porhora;
     document.querySelector("#tel").innerHTML = profile.telefone;
     document.querySelector("#email").innerHTML = profile.email;
     document.querySelector("#city").innerHTML = profile.cidade;
-    document.querySelector("#cat").innerHTML = profile.categoria.nome_categoria;
-    document.querySelector("#biografia").innerHTML = profile.biografia;
+    document.querySelector("#des").innerHTML = profile.descricao;
   })
   .catch((error) => {
     console.log("Ocorreu um erro:", error);

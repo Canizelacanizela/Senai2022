@@ -3,7 +3,24 @@
     box-sizing: border-box;
     margin: 0;
 }
-
+/* //filtar cidade */
+#filtro-cidade {
+    /* Propriedades de estilo para o select em geral */
+    width: 200px;
+    padding: 8px;
+    font-size: 16px;
+    color: #333;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  #filtro-cidade option {
+    /* Propriedades de estilo para as opções do select */
+    font-size: 14px;
+    color: #333;
+    background-color: #fff;
+  }
 
 header {
     height: 100px;

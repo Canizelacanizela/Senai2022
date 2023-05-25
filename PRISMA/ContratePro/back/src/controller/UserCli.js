@@ -19,7 +19,10 @@ const readOne = async (req, res) => {
     select: {
       nome: true,
       email: true,
+      descricao: true,
       telefone: true,
+      email: true,
+      cidade: true,
       imagem: true,
     },
   });
@@ -35,6 +38,7 @@ const read = async (req, res) => {
       id: true,
       email: true,
       nome: true,
+      descricao: true,
       senha: true,
       telefone: true,
       imagem: true,

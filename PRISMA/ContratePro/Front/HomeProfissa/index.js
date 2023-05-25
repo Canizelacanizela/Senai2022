@@ -33,6 +33,7 @@ function listaProfissionais(profissionais) {
         prof.querySelector("#nome").innerHTML += e.nome;
         prof.querySelector("#telefone").innerHTML += e.telefone;
         prof.querySelector("#cidade").innerHTML += e.cidade;
+        prof.querySelector("#des").innerHTML += e.descricao;
         prof.querySelector(".redirect").innerHTML = `<button onclick="redirecionar(${e.id})">Ver Perfil</button>`
 
         listarProf.appendChild(prof);
@@ -42,12 +43,15 @@ function listaProfissionais(profissionais) {
 
 
 function redirecionar(id) {
+
+    // console.log(id);
     // Construir a URL com os parâmetros de consulta
-    const url = `/Front/teste_perfil/pagina_destino.html?id=${id}`;
-  
+    const url = `../teste_perfilCli/pagina_destino.html`;
+
+    localStorage.setItem("user_verificar", JSON.stringify({ "id_user": id.toString() }));
     // Redirecionar para a página de destino
     window.location.href = url;
-  }
+}
 
 function dados(i) {
     console.log(listar[i]);
@@ -92,7 +96,21 @@ button.addEventListener('click', () => {
 });
 
 
-
+function aplicarFiltro() {
+    const filtroCidade = document.querySelector("#filtro-cidade");
+    const cidadeSelecionada = filtroCidade.value;
+    const perfis = document.querySelectorAll(".profileTwo");
+  
+    perfis.forEach((perfil) => {
+      const cidadePerfil = perfil.querySelector("#cidade").value;
+  
+      if (cidadeSelecionada === "" || cidadePerfil === cidadeSelecionada) {
+        perfil.style.display = "block";
+      } else {
+        perfil.style.display = "none";
+      }
+    });
+  }
 
 function alerta(a) {
     document.querySelector('#modal2').setAttribute('style', 'display:flex;');
@@ -100,18 +118,18 @@ function alerta(a) {
     document.querySelector('#msg').innerHTML = a;
 }
 
-function search() {
-    const Categorias = document.querySelectorAll('#nome_categoria');
+// function search() {
+//     const Categorias = document.querySelectorAll('#nome_categoria');
 
-    Categorias.forEach((name) => {
-        if (!name.parentNode.className.includes("model")) name.parentNode.style.display = 'block';
+//     Categorias.forEach((name) => {
+//         if (!name.parentNode.className.includes("model")) name.parentNode.style.display = 'block';
 
 
-        if (!name.innerHTML.toLowerCase().includes(busca.value.toLowerCase())) {
-            name.parentNode.style.display = 'none';
-        }
-    });
-}
+//         if (!name.innerHTML.toLowerCase().includes(busca.value.toLowerCase())) {
+//             name.parentNode.style.display = 'none';
+//         }
+//     });
+// }
 
 function sair() {
     window.localStorage.removeItem("info");

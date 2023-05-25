@@ -44,9 +44,12 @@ function listaProfissionais(profissionais) {
 
 
 function redirecionar(id) {
-    // Construir a URL com os parâmetros de consulta
-    const url = `/Front/teste_perfilCli/pagina_destino.html?id=${id}`;
 
+    // console.log(id);
+    // Construir a URL com os parâmetros de consulta
+    const url = `../teste_perfil/pagina_destino.html`;
+
+    localStorage.setItem("user_profissional", JSON.stringify({ "id_user": id.toString() }));
     // Redirecionar para a página de destino
     window.location.href = url;
 }

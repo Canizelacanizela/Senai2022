@@ -109,7 +109,7 @@ text-decoration: none;
 
 .olhar{
   position: absolute;
-  top: 53%;
+  top: 50%;
   left: 73%;
   transform: translateY(-80%);
   width: 20px;
@@ -120,6 +120,11 @@ img{
     width: 34vw;
 }
 
+a{
+  padding: 10px;
+text-decoration: none;
+color: rgb(179, 179, 179) ;
+}
 .p {
     display: flex;
     align-items: center;

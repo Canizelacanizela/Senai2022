@@ -1,9 +1,7 @@
-// Obter o ID dos parâmetros da URL
-  const params = new URLSearchParams(window.location.search);
-  const id = params.get("id");
-
+// Obter o ID dos parâmetros do localStorage
+let user_profissional = JSON.parse(window.localStorage.getItem("user_profissional"));
   // Fazer uma requisição Fetch para obter as informações do perfil
-  fetch(`http://localhost:3000/prof/`+id, params)
+  fetch(`http://localhost:3000/prof/`+ user_profissional.id_user)
     .then((res) => {
       if (res.ok) {
         return res.json();
