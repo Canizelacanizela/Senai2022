@@ -96,18 +96,23 @@ button.addEventListener('click', () => {
 });
 
 
-function aplicarFiltro(filtro) {
-    const dados = document.querySelectorAll(".profile-header");
-    dados.forEach(e => {
-        const cidade = e.querySelector("#cidade").innerHTML;
-        if (cidade !== filtro) {
-            e.parentNode.style.display = "none";
-        } else {
-            e.parentNode.style.display = "block";
-        }
-    });
-    if (filtro == "Todas") window.location.reload();
+document.querySelector('#busca').addEventListener('input', search);
+
+function search() {
+  const busca = document.querySelector('#busca').value.toLowerCase();
+  const perfis = document.querySelectorAll('.profile-body-section');
+
+  perfis.forEach((perfil) => {
+    const nome = perfil.querySelector('#nome').textContent.toLowerCase();
+
+    if (busca === '' || nome.includes(busca)) {
+      perfil.style.display = 'block';
+    } else {
+      perfil.style.display = 'none';
+    }
+  });
 }
+
 function alerta(a) {
     document.querySelector('#modal2').setAttribute('style', 'display:flex;');
     document.querySelector('#alerta').setAttribute('style', 'display:flex;');

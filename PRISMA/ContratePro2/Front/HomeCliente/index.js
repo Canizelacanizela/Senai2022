@@ -82,34 +82,34 @@ const button = document.querySelector('.enviar-proposta');
 //e nao colocar como id_profissional...Não precisa de nome porque o id já pega ele com todo o resto das informações!
 
 button.addEventListener('click', () => {
-    let id = document.querySelector("#idc").value
-    // let id_cliente = document.querySelector("#idcl").value
+    let id_cliente = document.querySelector("#idc").value
+    let id_prof = document.querySelector("#idp").value
     let proposta = document.querySelector("#propostac").value
 
     let corpo = {
         "proposta": proposta,
-        "id_cliente": Number(info.id),
-        "id_profissional": Number(id),
+        "id": Number(id_cliente),
+        "id": Number(id_prof),
     }
     console.log(corpo);
-    // let options = {
-    //     "method": "POST",
-    //     "headers": {
-    //         "content-type": "application/json",
-    //     },
-    //     "body": JSON.stringify(corpo)
-    // };
+    let options = {
+        "method": "POST",
+        "headers": {
+            "content-type": "application/json",
+        },
+        "body": JSON.stringify(corpo)
+    };
 
-    // fetch('http://localhost:3000/propcriar', options)
-    //     .then(res => { return res.json() })
-    //     .then(resp => {
-    //         if (resp != undefined) {
-    //             alert("Proposta enviada para o profissional.");
-    //             window.location.reload();
-    //         } else {
-    //             console.log("Parece que aconteceu um erro inesperado. Tente novamente mais tarde.");
-    //         }
-    //     });
+    fetch('http://localhost:3000/propcriar', options)
+        .then(res => { return res.json() })
+        .then(resp => {
+            if (resp != undefined) {
+                alert("Proposta enviada para o profissional.");
+                window.location.reload();
+            } else {
+                console.log("Parece que aconteceu um erro inesperado. Tente novamente mais tarde.");
+            }
+        });
 });
 
 
