@@ -42,6 +42,18 @@ function listaProfissionais(profissionais) {
 
 }
 
+function aplicarFiltro(filtro) {
+    const dados = document.querySelectorAll(".profile-header");
+    dados.forEach(e => {
+        const cidade = e.querySelector("#cidade").innerHTML;
+        if (cidade !== filtro) {
+            e.parentNode.style.display = "none";
+        } else {
+            e.parentNode.style.display = "block";
+        }
+    });
+    if (filtro == "Todas") window.location.reload();
+}
 
 function redirecionar(id) {
 
@@ -107,16 +119,31 @@ function alerta(a) {
     document.querySelector('#msg').innerHTML = a;
 }
 
+// function search() {
+//     const Categorias = document.querySelectorAll('#nome_categoria');
+
+//     Categorias.forEach((name) => {
+//         if (!name.parentNode.className.includes("model")) name.parentNode.style.display = 'block';
+       
+//         if (!name.innerHTML.toLowerCase().includes(busca.value.toLowerCase())) {
+//             name.parentNode.style.display = 'none';
+//         }
+//     });
+// }
+
 function search() {
-    const Categorias = document.querySelectorAll('#nome_categoria');
-
-    Categorias.forEach((name) => {
-        if (!name.parentNode.className.includes("model")) name.parentNode.style.display = 'block';
-
-
-        if (!name.innerHTML.toLowerCase().includes(busca.value.toLowerCase())) {
-            name.parentNode.style.display = 'none';
-        }
+    const busca = document.querySelector('#busca').value.toLowerCase();
+    const perfis = document.querySelectorAll('.profile-body-section');
+  
+    perfis.forEach((perfil) => {
+      const nome = perfil.querySelector('#nome').textContent.toLowerCase();
+   
+  
+      if (nome.includes(busca)) {
+        perfil.style.display = 'block';
+      } else {
+        perfil.style.display = 'none';
+      }
     });
 }
 

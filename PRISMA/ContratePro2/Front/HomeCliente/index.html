@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -12,52 +11,49 @@
         <div class="logo">
             <img id="i" src="../assets/c2.png" alt="" width="94px" height="94px">
             <ul class="ni">
-                <li><label class="nn" for="search">Pesquisar:</label> <input class="n" type="search" id="search"
-                        name="search" placeholder="Pesquisar"> <button class="nnn" onclick="search()"
-                        type="submit">Buscar</button></li>
+                <li><label class="nn" for="search">Pesquisar:</label> <input class="n" type="search" id="busca" name="search" placeholder="Pesquisar"> <button class="nnn" onclick="search()" type="submit">Buscar</button></li>
             </ul>
         </div>
         <nav>
             <ul>
                 <li><a href="#"><img src="../assets/bater-papo.png" alt="Bate-Papo"></a></li>
-                <li><a href="../PerfilPro/index.html"><img id="perfil" src="../assets/perfil.png" alt="Foto"></a></li>
+                <li><a href="../PerfilCli/index.html"><img id="perfil" src="../assets/perfil.png" alt="Foto"></a></li>
                 <li><img id="sair" onclick="sair()" src="../assets/logout_sair.png" alt="LogOut"></li>
             </ul>
         </nav>
     </header>
 </head>
-
 <body onload="carregar()">
     <div class="main">
         <div class="lista">
-            <select id="filtro-cidade" onchange="aplicarFiltro()">
-                <option value="">Todas as cidades</option>
-                <option value="cidade1">São Paulo</option>
-                <option value="cidade2">Jaguariúna</option>
-                <option value="cidade3">Campinas</option>
-                <option value="cidade3">Holambra</option>
-                <option value="cidade3">Artur Nogueira</option>
+            <select id="filtro-cidade" onchange="aplicarFiltro(this.value)">
+                <option value="Todas">Todas as cidades</option>
+                <option value="São Paulo">São Paulo</option>
+                <option value="Jaguariúna">Jaguariúna</option>
+                <option value="Campinas">Campinas</option>
+                <option value="Maranhao">Maranhão</option>
+                <option value="Artur Nogueira">Artur Nogueira</option>
                 <!-- Adicione mais opções de cidades, se necessário -->
             </select>
             <div class="profileTwo">
                 <div class="profile-body-section model">
                     <div class="profile-header">
-                        <img id="imagem" src="https://via.placeholder.com/150" alt="Foto de Perfil">
-                        <a href="../teste_perfilCli/pagina_destino.html"></a>
+                        <img id="imagem" src="https://via.placeholder.com/150"
+                                alt="Foto de Perfil">
                         <div>
                             <p id="id" hidden></p>
                             <h2 id="nome"></h2>
-
-                            <div class="redirect">
-                                <button onclick="redirecionar()">Ver perfil</button>
-                            </div>
                             <h4 id="cidade"></h4>
-                            <h4 id="telefone">Contato: </h4>
-                            <p id="des"></p>
+                            <p id="porhora">Preço Por hora: R$</p>
+                            <div class="redirect">
+                                <button  onclick="redirecionar()">Ver perfil</button>
+                            </div>
                         </div>
                     </div>
-
+                    <p id="biografia"></p>
+                    <h4 id="nome_categoria"></h4>
                     <div class="contain">
+                        <!-- Proposta-modal -->
                         <div class="btn" id="edit">
                             <img width="32" onclick="modal1.setAttribute('style','display:flex')"
                                 src="../assets/comente.png" alt="Alterar">
@@ -76,13 +72,12 @@
             </div>
             <div class="modalForm">
                 <input type="hidden" id="idc" />
-                <label class="lab1" for="">Nome Completo:</label>
-                <input type="text" id="nomec" />
+                <input type="hidden" id="idcl" />
                 <label class="lab2" for="">Proposta:</label>
                 <textarea name="" id="propostac" cols="20" rows="3"></textarea>
             </div>
             <div class="modalFooter">
-                <button class="enviar-proposta" data-profissional-id="123">Enviar</button>
+                <button class="enviar-proposta" onclick="">Enviar</button>
             </div>
         </div>
     </div>

@@ -96,22 +96,18 @@ button.addEventListener('click', () => {
 });
 
 
-function aplicarFiltro() {
-    const filtroCidade = document.querySelector("#filtro-cidade");
-    const cidadeSelecionada = filtroCidade.value;
-    const perfis = document.querySelectorAll(".profileTwo");
-  
-    perfis.forEach((perfil) => {
-      const cidadePerfil = perfil.querySelector("#cidade").value;
-  
-      if (cidadeSelecionada === "" || cidadePerfil === cidadeSelecionada) {
-        perfil.style.display = "block";
-      } else {
-        perfil.style.display = "none";
-      }
+function aplicarFiltro(filtro) {
+    const dados = document.querySelectorAll(".profile-header");
+    dados.forEach(e => {
+        const cidade = e.querySelector("#cidade").innerHTML;
+        if (cidade !== filtro) {
+            e.parentNode.style.display = "none";
+        } else {
+            e.parentNode.style.display = "block";
+        }
     });
-  }
-
+    if (filtro == "Todas") window.location.reload();
+}
 function alerta(a) {
     document.querySelector('#modal2').setAttribute('style', 'display:flex;');
     document.querySelector('#alerta').setAttribute('style', 'display:flex;');
