@@ -35,6 +35,7 @@ function listaProfissionais(profissionais) {
         prof.querySelector("#biografia").innerHTML += e.biografia;
         prof.querySelector("#nome_categoria").innerHTML += e.categoria.nome_categoria;
         prof.querySelector(".redirect").innerHTML = `<button onclick="redirecionar(${e.id})">Ver Perfil</button>`
+        // prof.querySelector("#dit").setAttribute("onclick", `dadoProp('${i}')`);
         prof.querySelector("#porhora").innerHTML += e.porhora;
 
         listarProf.appendChild(prof);
@@ -55,6 +56,8 @@ function aplicarFiltro(filtro) {
     if (filtro == "Todas") window.location.reload();
 }
 
+
+
 function redirecionar(id) {
 
     // console.log(id);
@@ -66,11 +69,10 @@ function redirecionar(id) {
     window.location.href = url;
 }
 
-function dados(i) {
+function dadoProp(i) {
     console.log(listar[i]);
     modal1.setAttribute('style', 'display:flex');
-    idc.value = listar[i].id_profissional;
-    idcl.value = listar[i].id_cliente;
+    idc.value = listar[i].id;
 }
 
 const button = document.querySelector('.enviar-proposta');
@@ -80,14 +82,14 @@ const button = document.querySelector('.enviar-proposta');
 //e nao colocar como id_profissional...Não precisa de nome porque o id já pega ele com todo o resto das informações!
 
 button.addEventListener('click', () => {
-    let id_profissional = document.querySelector("#idc").value
-    let id_cliente = document.querySelector("#idcl").value
+    let id = document.querySelector("#idc").value
+    // let id_cliente = document.querySelector("#idcl").value
     let proposta = document.querySelector("#propostac").value
 
     let corpo = {
         "proposta": proposta,
         "id_cliente": Number(info.id),
-        "id_profissional": Number(id_profissional),
+        "id_profissional": Number(id),
     }
     console.log(corpo);
     // let options = {
