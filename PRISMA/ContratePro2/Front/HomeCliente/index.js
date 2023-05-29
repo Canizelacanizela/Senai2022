@@ -35,7 +35,7 @@ function listaProfissionais(profissionais) {
         prof.querySelector("#biografia").innerHTML += e.biografia;
         prof.querySelector("#nome_categoria").innerHTML += e.categoria.nome_categoria;
         prof.querySelector(".redirect").innerHTML = `<button onclick="redirecionar(${e.id})">Ver Perfil</button>`
-        // prof.querySelector("#dit").setAttribute("onclick", `dadoProp('${i}')`);
+        prof.querySelector("#edit").setAttribute("onclick", `modalProposta(${e.id})`);
         prof.querySelector("#porhora").innerHTML += e.porhora;
 
         listarProf.appendChild(prof);
@@ -69,13 +69,11 @@ function redirecionar(id) {
     window.location.href = url;
 }
 
-function dadoProp(i) {
-    console.log(listar[i]);
-    modal1.setAttribute('style', 'display:flex');
-    idc.value = listar[i].id;
-}
 
-const button = document.querySelector('.enviar-proposta');
+
+function modalProposta(id_profissional){
+    modal1.setAttribute('style','display:flex')
+    const button = document.querySelector('.enviar-proposta');
 // const profissionalId = button.dataset.id_profissional;
 
 //Falta arrumar a proposta, pegar o id do proffisional  como esse exemplo aqui <button onclick="abremodaldaProposta(${e.id})""> ai pega e coloca como e.id ou id mesmo 
@@ -88,8 +86,8 @@ button.addEventListener('click', () => {
 
     let corpo = {
         "proposta": proposta,
-        "id": Number(id_cliente),
-        "id": Number(id_prof),
+        "id_cliente": Number(info.id),
+        "id_profissional": Number(id_profissional),
     }
     console.log(corpo);
     let options = {
@@ -111,6 +109,8 @@ button.addEventListener('click', () => {
             }
         });
 });
+
+}
 
 
 

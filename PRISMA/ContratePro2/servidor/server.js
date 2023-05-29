@@ -11,6 +11,8 @@ function broadcastMessage(message) {
   clients.forEach((client) => {
     if (client.readyState === WebSocket.OPEN) {
       client.send(message);
+    }else{
+      window.location.reload(message);
     }
   });
 }

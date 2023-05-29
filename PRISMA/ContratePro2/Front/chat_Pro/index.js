@@ -24,20 +24,16 @@ function handleMessage(message) {
 }
 
 function enviarMensagem() {
-  const mensagem = document.getElementById('mensagem').value;
-  socket.send(mensagem);
-  document.getElementById('mensagem').value = 'Eu' + '';
+  const texto = document.getElementById('mensagem').value;
+  const mensagem = { quem: "profissional", texto: texto };
+  socket.send(JSON.stringify(mensagem));
+  document.getElementById('mensagem').value = '';
 }
 
 function exibirMensagem(mensagem, remetente) {
   const divMensagens = document.getElementById('mensagens');
   const p = document.createElement('p');
-  p.textContent = mensagem;
-  if (remetente === 'cliente') {
-    p.classList.add('cliente');
-  } else if (remetente === 'profissional') {
-    p.classList.add('profissional');
-}
-
+  p.setAttribute('class', JSON.parse(mensagem).quem);
+  p.textContent = JSON.parse(mensagem).texto;
   divMensagens.appendChild(p);
 }
