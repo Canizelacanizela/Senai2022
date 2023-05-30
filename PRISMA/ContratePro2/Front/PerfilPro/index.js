@@ -43,7 +43,7 @@ function listInfo() {
 
       // Exibir as informações atualizadas
       document.querySelector("#nome").innerHTML = info.nome;
-      document.querySelector("#imagem").src = "../assets/" + info.imagem;
+         document.querySelector("#imagem").src = "../assets/" + info.imagem;
       document.querySelector("#hora").innerHTML = info.porhora;
       document.querySelector("#tel").innerHTML = info.telefone;
       document.querySelector("#email").innerHTML = info.email;
@@ -87,7 +87,7 @@ function openModal() {
   document.querySelector("#m_id").value = user.id;
   document.querySelector("#m_nome").value = user.nome;
   document.querySelector("#m_email").value = user.email;
-  document.querySelector("#imagem").value = "../assets/" + user.imagem;
+  document.querySelector("#m_imagem").value =  user.imagem;
   document.querySelector("#m_cidade").value = user.cidade;
   document.querySelector("#m_biografia").value = user.biografia;
   document.querySelector("#m_porhora").value = user.porhora;

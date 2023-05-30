@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,7 +12,9 @@
         <div class="logo">
             <img id="i" src="../assets/c2.png" alt="" width="94px" height="94px">
             <ul class="ni">
-                <li><label class="nn" for="search">Pesquisar:</label> <input class="n" type="search" id="busca" name="search" placeholder="Pesquisar"> <button class="nnn" onclick="search()" type="submit">Buscar</button></li>
+                <li><label class="nn" for="search">Pesquisar:</label> <input class="n" type="search" id="busca"
+                        name="search" placeholder="Pesquisar"> <button class="nnn" onclick="search()"
+                        type="submit">Buscar</button></li>
             </ul>
         </div>
         <nav>
@@ -23,6 +26,7 @@
         </nav>
     </header>
 </head>
+
 <body onload="carregar()">
     <div class="main">
         <div class="lista">
@@ -38,15 +42,14 @@
             <div class="profileTwo">
                 <div class="profile-body-section model">
                     <div class="profile-header">
-                        <img id="imagem" src="https://via.placeholder.com/150"
-                                alt="Foto de Perfil">
+                        <img id="imagem" src="https://via.placeholder.com/150" alt="Foto de Perfil">
                         <div>
                             <p id="id" hidden></p>
                             <h2 id="nome"></h2>
                             <h4 id="cidade"></h4>
                             <p id="porhora">Preço Por hora: R$</p>
                             <div class="redirect">
-                                <button  onclick="redirecionar()">Ver perfil</button>
+                                <button onclick="redirecionar()">Ver perfil</button>
                             </div>
                         </div>
                     </div>
@@ -55,7 +58,7 @@
                     <div class="contain">
                         <!-- Proposta-modal -->
                         <div class="btn" id="edit">
-                            <img width="32"  src="../assets/comente.png" alt="Alterar" onclick="modalProposta()">
+                            <img width="32" src="../assets/comente.png" alt="Alterar">
                         </div>
                     </div>
                 </div>
@@ -76,7 +79,7 @@
                 <textarea name="" id="propostac" cols="20" rows="3"></textarea>
             </div>
             <div class="modalFooter">
-                <button class="enviar-proposta" onclick="">Enviar</button>
+                <button class="enviar-proposta">Enviar</button>
             </div>
         </div>
     </div>

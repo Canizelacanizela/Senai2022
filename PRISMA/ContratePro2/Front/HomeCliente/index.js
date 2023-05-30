@@ -71,47 +71,42 @@ function redirecionar(id) {
 
 
 
-function modalProposta(id_profissional){
-    modal1.setAttribute('style','display:flex')
+function modalProposta(id_profissional) {
+    modal1.setAttribute('style', 'display:flex')
+
+    //Falta arrumar a proposta, pegar o id do proffisional  como esse exemplo aqui <button onclick="abremodaldaProposta(${e.id})""> ai pega e coloca como e.id ou id mesmo 
+    //e nao colocar como id_profissional...Não precisa de nome porque o id já pega ele com todo o resto das informações!
     const button = document.querySelector('.enviar-proposta');
-// const profissionalId = button.dataset.id_profissional;
+    button.addEventListener('click', () => {
+        let proposta = document.querySelector("#propostac").value
+        let corpo = {
+            "proposta": proposta,
+            "id_cliente": Number(info.id),
+            "id_profissional": Number(id_profissional),
+        }
 
-//Falta arrumar a proposta, pegar o id do proffisional  como esse exemplo aqui <button onclick="abremodaldaProposta(${e.id})""> ai pega e coloca como e.id ou id mesmo 
-//e nao colocar como id_profissional...Não precisa de nome porque o id já pega ele com todo o resto das informações!
-
-button.addEventListener('click', () => {
-    let id_cliente = document.querySelector("#idc").value
-    let id_prof = document.querySelector("#idp").value
-    let proposta = document.querySelector("#propostac").value
-
-    let corpo = {
-        "proposta": proposta,
-        "id_cliente": Number(info.id),
-        "id_profissional": Number(id_profissional),
-    }
-    console.log(corpo);
-    let options = {
-        "method": "POST",
-        "headers": {
-            "content-type": "application/json",
-        },
-        "body": JSON.stringify(corpo)
-    };
-
-    fetch('http://localhost:3000/propcriar', options)
-        .then(res => { return res.json() })
-        .then(resp => {
-            if (resp != undefined) {
-                alert("Proposta enviada para o profissional.");
-                window.location.reload();
-            } else {
-                console.log("Parece que aconteceu um erro inesperado. Tente novamente mais tarde.");
-            }
-        });
-});
+        let options = {
+            "method": "POST",
+            "headers": {
+                "content-type": "application/json",
+            },
+            "body": JSON.stringify(corpo)
+        };
+        console.log(options);
+        fetch('http://localhost:3000/propcriar', options)
+            .then(res => { return res.json() })
+            .then(resp => {
+                if (resp !== undefined) {
+                    alert("Proposta enviada para o profissional.");
+                    window.location.reload();
+                } else {
+                    alert("Parece que aconteceu um erro inesperado. Tente novamente mais tarde.");
+                    window.location.reload();
+                }
+            });
+    });
 
 }
-
 
 
 
@@ -126,7 +121,7 @@ function alerta(a) {
 
 //     Categorias.forEach((name) => {
 //         if (!name.parentNode.className.includes("model")) name.parentNode.style.display = 'block';
-       
+
 //         if (!name.innerHTML.toLowerCase().includes(busca.value.toLowerCase())) {
 //             name.parentNode.style.display = 'none';
 //         }
@@ -136,16 +131,16 @@ function alerta(a) {
 function search() {
     const busca = document.querySelector('#busca').value.toLowerCase();
     const perfis = document.querySelectorAll('.profile-body-section');
-  
+
     perfis.forEach((perfil) => {
-      const nome = perfil.querySelector('#nome').textContent.toLowerCase();
-   
-  
-      if (nome.includes(busca)) {
-        perfil.style.display = 'block';
-      } else {
-        perfil.style.display = 'none';
-      }
+        const nome = perfil.querySelector('#nome').textContent.toLowerCase();
+
+
+        if (nome.includes(busca)) {
+            perfil.style.display = 'block';
+        } else {
+            perfil.style.display = 'none';
+        }
     });
 }
 

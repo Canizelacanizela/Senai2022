@@ -131,6 +131,19 @@ function alerta(a) {
 //         }
 //     });
 // }
+function aplicarFiltro(filtro) {
+    const dados = document.querySelectorAll(".profile-header");
+    dados.forEach(e => {
+        const cidade = e.querySelector("#cidade").innerHTML;
+        if (cidade !== filtro) {
+            e.parentNode.style.display = "none";
+        } else {
+            e.parentNode.style.display = "block";
+        }
+    });
+    if (filtro == "Todas") window.location.reload();
+}
+
 
 function sair() {
     window.localStorage.removeItem("info");

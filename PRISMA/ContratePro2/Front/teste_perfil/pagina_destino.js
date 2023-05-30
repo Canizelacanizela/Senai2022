@@ -23,3 +23,8 @@ let user_profissional = JSON.parse(window.localStorage.getItem("user_profissiona
     .catch((error) => {
       console.log("Ocorreu um erro:", error);
     });
+
+    function sair() {
+      window.localStorage.removeItem("info");
+      window.location.href = "../LoginCliente/index.html";
+  }

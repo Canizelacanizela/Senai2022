@@ -79,7 +79,7 @@ function openModal() {
   document.querySelector("#m_id").value = user.id;
   document.querySelector("#m_nome").value = user.nome;
   document.querySelector("#m_email").value = user.email;
-  document.querySelector("#imagem").value = "../assets/" + user.imagem;
+  document.querySelector("#m_imagem").value =  user.imagem;
   document.querySelector("#m_cidade").value = user.cidade;
   document.querySelector("#m_telefone").value = user.telefone;
 }

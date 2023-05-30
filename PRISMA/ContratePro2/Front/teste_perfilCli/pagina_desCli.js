@@ -28,5 +28,5 @@ fetch(`http://localhost:3000/userOne/` + user_verificar.id_user)
 
 function sair() {
   window.localStorage.removeItem("info");
-  window.location.href = "../LoginCliente/index.html";
+  window.location.href = "../LoginProf/index.html";
 }
