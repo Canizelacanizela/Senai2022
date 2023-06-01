@@ -15,12 +15,36 @@ model UserCliente {
     imagem     String
     nome       String
     email      String
-    descricao String
+    descricao  String
     senha      String
     telefone   String
     cidade     String
     id_cli     avaliaProfissional[]
     id_cliente Propostas[]
+    mensage           mensagens[]
+    respostas           respostas[]
+}
+
+model mensagens {
+    id_mensagem    Int      @id @default(autoincrement())
+    id_cliente Int
+    id_profissional Int
+    conteudo       String
+    data           DateTime @default(now())
+    cliente          UserCliente @relation(fields: [id_cliente], references: [id])
+    profissional     UserProfissionais       @relation(fields: [id_profissional], references: [id])
+  
+}
+
+model respostas {
+    id_mensagem    Int      @id @default(autoincrement())
+    id_profiss Int
+    id_clien Int
+    conteudo       String
+    data           DateTime @default(now())
+    cliente          UserCliente @relation(fields: [id_clien], references: [id])
+    profissional     UserProfissionais       @relation(fields: [id_profiss], references: [id])
+  
 }
 
 model UserProfissionais {
@@ -37,6 +61,8 @@ model UserProfissionais {
     categoria    categoriaProfissoes  @relation(fields: [id_categoria], references: [id])
     Comentario   avaliaProfissional[]
     profissi     Propostas[]
+    mensage           mensagens[]
+    respostas           respostas[]
 }
 
 model categoriaProfissoes {
