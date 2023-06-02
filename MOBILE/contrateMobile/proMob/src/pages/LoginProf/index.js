@@ -5,11 +5,11 @@ import Button from '../../components/button/index';
 import styles from './style';
 
 export default function SignIn({navigation}) {
-    const [email, setEmail] = useState("stalker1@gmail.com");
-    const [senha, setSenha] = useState("1234");
+    const [email, setEmail] = useState("mama@gmail.com");
+    const [senha, setSenha] = useState("maly345");
 
   const login = () => {
-    fetch("http://10.87.207.28:3000/contrateproprisma/loginProf", {
+    fetch("http://10.87.207.28:3000/loginProf", {
       "method": "POST",
       "headers":{
         "Content-Type": "application/json"
@@ -21,7 +21,7 @@ export default function SignIn({navigation}) {
     })
     .then(res => {return res.json()})
     .then(data => {
-      if(data.id_user !== undefined){
+      if(data.id !== undefined){
         navigation.navigate("Home");
       }
     })
@@ -32,9 +32,7 @@ export default function SignIn({navigation}) {
           
 <Image
         style={styles.im}
-        source={{
-          uri: 'https://cdn-icons-png.flaticon.com/512/8666/8666268.png',
-        }}
+        source={require('../../../assets/good-team-animate.svg')}
       />
 
         <TextInput style={styles.input}

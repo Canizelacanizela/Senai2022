@@ -1,9 +1,6 @@
 import {StyleSheet} from 'react-native';
 
 export default StyleSheet.create({
-    container:{
-        flex: 1,
-    },
     title: {
         fontSize: '1.05rem',
         fontWeight: 'bold',
@@ -37,13 +34,12 @@ export default StyleSheet.create({
         flex: 1,
         alignItems: 'center',
         justifyContent: 'center',
-        gap: '20px',
-        backgroundColor: '#F7F7F7'
+        gap: '24px',
+        backgroundColor: '#a91a0dfa'
     },
     im: {
-        
-        width: '205px',
-        height: '205px',
+        width: '245px',
+        height: '225px',
         shadowColor: "#000",
         shadowOffset: {
             width: 0,
@@ -52,7 +48,6 @@ export default StyleSheet.create({
         shadowOpacity: 0.58,
         shadowRadius: 3.00,
         elevation: 24,
-
     },
     input: {
         width: '75%',
@@ -73,7 +68,7 @@ export default StyleSheet.create({
     },
     button: {
         width: '75%',
-        backgroundColor: '#396EE3',
+        backgroundColor: '#59adbe',
         paddingHorizontal: '12px',
         paddingVertical: '12px',
         alignItems: 'center',
@@ -94,10 +89,15 @@ export default StyleSheet.create({
         color: '#EFEFEF',
     },
     hairline: {
-        backgroundColor: '#A2A2A2',
+        backgroundColor: '#59adbe',
         height: 2,
         width: 200
       },
+      cadButton: {
+        fontSize: '1.0rem',
+        fontWeight: 'bold',
+        color: '#EFEFEF',
+    },
       cadButtont: {
         fontSize: '1.0rem',
         fontWeight: 'bold',

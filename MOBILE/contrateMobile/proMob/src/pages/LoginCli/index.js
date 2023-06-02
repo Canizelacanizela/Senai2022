@@ -5,11 +5,11 @@ import Button from '../../components/button/index';
 import styles from './style';
 
 export default function SignIn({navigation}) {
-    const [email, setEmail] = useState("stalker1@gmail.com");
-    const [senha, setSenha] = useState("1234");
+    const [email, setEmail] = useState("xama@gmail.com");
+    const [senha, setSenha] = useState("123");
 
   const login = () => {
-    fetch("http://10.87.207.28:3000/contrateproprisma/login", {
+    fetch("http://10.87.207.28:3000/login", {
       "method": "POST",
       "headers":{
         "Content-Type": "application/json"
@@ -32,13 +32,10 @@ export default function SignIn({navigation}) {
           
 <Image
         style={styles.im}
-        source={{
-          src: '../assets/business-deal-animate.svg',
-        }}
+        source={require('../../../assets/good-team-animate.svg')}
       />
 
         <TextInput style={styles.input}
-        icon="mail"
         placeholder=" E-mail"
         onChangeText={(e)=>{setEmail(e)}}
         value={email}
