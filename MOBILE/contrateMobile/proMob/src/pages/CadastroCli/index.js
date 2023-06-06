@@ -18,7 +18,7 @@ export default function SignIn({navigation}) {
   const cadastro = () => {
 
 
-   fetch("http://10.87.207.28:3000/contrateproprisma/usercriar", {
+   fetch("http://10.87.207.28:3000/usercriar", {
       "method": "POST",
       "headers":{
         "Content-Type": "application/json"

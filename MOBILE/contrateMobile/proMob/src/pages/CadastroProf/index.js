@@ -22,7 +22,7 @@ export default function SignIn({navigation}) {
   const cadastro = () => {
 
 
-   fetch("http://10.87.207.28:3000/contrateproprisma/profcriar", {
+   fetch("http://10.87.207.28:3000/profcriar", {
       "method": "POST",
       "headers":{
         "Content-Type": "application/json"
