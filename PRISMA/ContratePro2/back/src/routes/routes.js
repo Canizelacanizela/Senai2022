@@ -9,6 +9,7 @@ const Cat = require('../controller/Categoria');
 const Profissa = require('../controller/UserProf');
 const Aval = require('../controller/Avalia');
 const UserCli = require('../controller/UserCli');
+const Mensagem = require('../controller/mensagem');
 
 // router.put('*', Middle.ValidaAcesso);
 // router.delete('*', Middle.ValidaAcesso);
@@ -55,5 +56,8 @@ router.post('/usercriar', UserCli.create);
 router.post('/login', UserCli.login);
 router.put('/userupdate/:id', UserCli.update);
 router.delete('/userdel/:id', UserCli.del);
+// ------------------------------mensagens-----------------------------------------
+router.get('/men', Mensagem.read);
+
 
 module.exports = router;

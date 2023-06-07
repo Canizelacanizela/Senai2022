@@ -15,7 +15,7 @@ model UserCliente {
     imagem     String
     nome       String
     email      String
-    descricao  String
+    descricao  String?
     senha      String
     telefone   String
     cidade     String
