@@ -451,3 +451,30 @@ textarea {
     display: none;
     visibility: hidden;
 }
+
+
+@media screen and (max-width: 768px) {
+    input[type="search"] {
+        width: 200px;
+        padding: 10px;
+        border-radius: 5px;
+        border: 2px solid #ccc;
+        font-size: 16px;
+        background-color: #f2f2f2;
+        color: #333;
+    }
+    
+    ul {
+        display: flex;
+        list-style-type: none;
+        align-items: center;
+    }
+    
+    ul li a {
+        padding: 0 20px;
+        text-decoration: none;
+        color: rgb(66, 65, 65);
+        display: inline-block;
+        font-size: 20px;
+    }
+}
