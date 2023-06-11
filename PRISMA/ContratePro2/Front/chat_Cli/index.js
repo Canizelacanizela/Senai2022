@@ -1,5 +1,7 @@
-var info = JSON.parse(localStorage.getItem("info"));
+let info = JSON.parse(localStorage.getItem("info"));
 let user= JSON.parse(window.localStorage.getItem("info"));
+let nome = document.querySelector(".nomeUser2");
+let re = document.querySelector(".nome")
 
 fetch(`http://localhost:3000/prof/`+ user.id_user)
 .then((res) => {
@@ -80,21 +82,17 @@ function exibirMensagem(mensagem) {
     adicionarMensagem(mensagem.conteudo, mensagem.remetenteId);
   }
   
-  const messages = document.querySelector("#recebe");
-  const idPromotor = 2;
-  const nomePromotor = "Mariana";
-  
-  if (p.destinatarioId == idPromotor) {
+  if (nome.destinatarioId == user.id_user) {
     var lista = document.createElement('span');
     lista.classList.add('conteudo');
-    lista.innerHTML = p.conteudo;
+    lista.innerHTML = re.conteudo;
     document.querySelector('.nomeUser2').innerHTML = nomePromotor;
-    messages.appendChild(lista);
+    mensagem.appendChild(lista);
   } else {
     var lista = document.createElement('span');
     lista.classList.add('conteudoRemetente');
-    lista.innerHTML = p.conteudo;
-    messages.appendChild(lista);
+    lista.innerHTML = re.conteudo;
+    mensagem.appendChild(lista);
   } 
   
   
