@@ -26,7 +26,7 @@ wss.on('connection', (ws) => {
         const { remetenteId, destinatarioId, conteudo } = JSON.parse(message);
 
         try {
-            let conversa = await prisma.conversa.findFirst({
+            let conversa = await prisma.conversa.findOne({
                 where: {
                     participantes: {
                         some: {
