@@ -21,60 +21,26 @@ const prisma = new PrismaClient();
 
 const wss = new WebSocket.Server({ server: httpServer });
 
+const clients = new Set();
+
 wss.on('connection', (ws) => {
-    ws.on('message', async (message) => {
-        const { remetenteId, destinatarioId, conteudo } = JSON.parse(message);
+  // Adiciona o cliente à lista de clientes conectados
+  clients.add(ws);
 
-        try {
-            let conversa = await prisma.conversa.findOne({
-                where: {
-                    participantes: {
-                        some: {
-                            id_cliente: {
-                                in: [remetenteId, destinatarioId],
-                            },
-                        },
-                    },
-                    AND: [
-                        { participantes: { some: { id_cliente: remetenteId } } },
-                        { participantes: { some: { id_profissional: destinatarioId } } },
-                    ],
-                },
-            });
-
-            if (!conversa) {
-                conversa = await prisma.conversa.create({
-                    data: {
-                        participantes: {
-                            connect: [
-                                { id_cliente: remetenteId },
-                                { id_profissional: destinatarioId },
-                            ],
-                        },
-                    },
-                });
-            }
-
-            const novaMensagem = await prisma.mensagem.create({
-                data: {
-                    conteudo,
-                    remetente: { connect: { id_cliente: remetenteId } },
-                    destinatario: { connect: { id_profissional: destinatarioId } },
-                },
-            });
-
-            novaMensagem.data = new Date(); // Adicione a propriedade 'data' com a data atual
-
-            wss.clients.forEach((client) => {
-                client.send(JSON.stringify(novaMensagem));
-                if (client !== ws && client.readyState === WebSocket.OPEN) {
-                    client.send(JSON.stringify(novaMensagem));
-                }
-            });
-        } catch (error) {
-            console.error(error);
-        }
+  ws.on('message', (message) => {
+    // Envia a mensagem recebida para todos os clientes conectados
+    clients.forEach((client) => {
+      if (client !== ws && client.readyState === WebSocket.OPEN) {
+        client.send(message);
+      }
     });
+  });
+
+  ws.on('close', () => {
+    // Remove o cliente da lista de clientes conectados
+    clients.delete(ws);
+  });
 });
+
 
 console.log('Servidor WebSocket configurado e em execução');
