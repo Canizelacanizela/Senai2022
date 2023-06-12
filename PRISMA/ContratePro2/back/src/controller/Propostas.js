@@ -16,10 +16,8 @@ const read = async (req, res) => {
             proposta: true,
               id_cli: {
                 select: {
-                    email: true,
                     nome: true,
                     imagem: true,
-                    cidade: true
                 }
               }
         }

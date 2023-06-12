@@ -1,5 +1,5 @@
 var UrList = "http://localhost:3000/prop";
-var listarProf = document.querySelector(".profileTwo");
+var listarProp = document.querySelector(".profileTwo");
 var busca = document.querySelector("#search");
 var itemSec = document.querySelector(".profile-body-section");
 const imguser = document.querySelector("#perfil");
@@ -28,14 +28,11 @@ function listaPropostas(propostas) {
         prop.classList.remove("model");
 
 
-        prop.querySelector("#id").innerHTML += e.id;
-        prop.querySelector("#imagem").src = "../assets/" + e.imagem;
-        prop.querySelector("#nome").innerHTML += e.nome;
-        prop.querySelector("#cidade").innerHTML += e.cidade;
-        prop.querySelector("#proposta").innerHTML += e.biografia;
-        prop.querySelector("#nome_categoria").innerHTML += e.categoria.nome_categoria;
+        prop.querySelector("#id").innerHTML += e.id_cli.id;
+        prop.querySelector("#imagem").src = "../assets/" + e.id_cli.imagem;
+        prop.querySelector("#nome").innerHTML += e.id_cli.nome;
+        prop.querySelector("#proposta").innerHTML += e.proposta;
         prop.querySelector(".redirect").innerHTML = `<button onclick="redirecionar(${e.id})">Ver Perfil</button>`
-        prop.querySelector("#edit").setAttribute("onclick", `modalProposta(${e.id})`);
 
         listarProp.appendChild(prop);
     });
@@ -76,23 +73,7 @@ function alerta(a) {
     document.querySelector('#msg').innerHTML = a;
 }
 
-// function search() {
-//     const busca = document.querySelector('#busca').value.toLowerCase();
-//     const perfis = document.querySelectorAll('.profile-body-section');
-
-//     perfis.forEach((perfil) => {
-//         const nome = perfil.querySelector('#nome').textContent.toLowerCase();
-
-
-//         if (nome.includes(busca)) {
-//             perfil.style.display = 'block';
-//         } else {
-//             perfil.style.display = 'none';
-//         }
-//     });
-// }
-
 function sair() {
     window.localStorage.removeItem("info");
-    window.location.href = "../LoginCliente/index.html";
+    window.location.href = "../HomeTeste/index.html";
 }

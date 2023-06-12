@@ -12,9 +12,7 @@
         <div class="logo">
             <img id="i" src="../assets/c2.png" alt="" width="94px" height="94px">
             <ul class="ni">
-                <li><label class="nn" for="search">Pesquisar:</label> <input class="n" type="search" id="busca"
-                        name="search" placeholder="Pesquisar"> <button class="nnn" onclick="search()"
-                        type="submit">Buscar</button></li>
+                
             </ul>
         </div>
         <nav>
@@ -29,15 +27,6 @@
 <body onload="carregar()">
     <div class="main">
         <div class="lista">
-            <!-- <select id="filtro-cidade" onchange="aplicarFiltro(this.value)">
-                <option value="Todas">Todas as cidades</option>
-                <option value="São Paulo">São Paulo</option>
-                <option value="Jaguariúna">Jaguariúna</option>
-                <option value="Campinas">Campinas</option>
-                <option value="Maranhao">Maranhão</option>
-                <option value="Artur Nogueira">Artur Nogueira</option>
-                 Adicione mais opções de cidades, se necessário 
-            </select> -->
             <div class="profileTwo">
                 <div class="profile-body-section model">
                     <div class="profile-header">
@@ -52,41 +41,8 @@
                         </div>
                     </div>
                     <p id="proposta"></p>
-                    <div class="contain">
-                        <!-- Proposta-modal -->
-                        <div class="btn" id="edit">
-                            <img width="32" src="../assets/lata-de-lixo.png" alt="Lixo">
-                        </div>
-                    </div>
                 </div>
             </div>
-        </div>
-    </div>
-    <!-- ------------------------cadastro de proposta------------------------------- -->
-    <div id="modal1" class="modal">
-        <div id="novo">
-            <div class="modalHeader">
-                <h3> Enviar Proposta</h3>
-                <button class="fechar" onclick="modal1.setAttribute('style','display:none')">X</button>
-            </div>
-            <div class="modalForm">
-                <input type="hidden" id="idc" />
-                <input type="hidden" id="idp" />
-                <label class="lab2" for="">Proposta:</label>
-                <textarea name="" id="propostac" cols="20" rows="3"></textarea>
-            </div>
-            <div class="modalFooter">
-                <button class="enviar-proposta">Enviar</button>
-            </div>
-        </div>
-    </div>
-    <div id="modal2" class="modal">
-        <div id="alerta">
-            <div class="modalHeader">
-                <h3>Mensagem</h3>
-                <button onclick="modal2.setAttribute('style','display:none')">X</button>
-            </div>
-            <div id="msg"></div>
         </div>
     </div>
 </body>
