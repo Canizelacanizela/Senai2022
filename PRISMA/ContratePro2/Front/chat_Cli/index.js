@@ -145,12 +145,18 @@ ws.onopen = () => {
 };
 
 ws.onmessage = (event) => {
-  const mensagem = event.data;
+  const mensagemBlob = event.data;
 
-  // Cria a nova span e adiciona ao elemento recebe
-  const span = document.createElement('span');
-  span.textContent = `Profissional: ${mensagem}`;
-  recebe.appendChild(span);
+  const fileReader = new FileReader();
+  fileReader.onload = (event) => {
+    const mensagemTexto = event.target.result;
+
+    // Cria a nova span e adiciona ao elemento recebe
+    const span = document.createElement('span');
+    span.textContent = `Profissional: ${mensagemTexto}`;
+    recebe.appendChild(span);
+  };
+  fileReader.readAsText(mensagemBlob);
 };
 
 const recebe = document.getElementById('recebe');
